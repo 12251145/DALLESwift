@@ -7,113 +7,143 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD54DC729C2BD560035A8C5 /* RxPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54DC629C2BD560035A8C5 /* RxPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD54DCF29C2BDA70035A8C5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54DCE29C2BDA70035A8C5 /* RxCocoa */; };
-		6AD54DD129C2BDA70035A8C5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54DD029C2BDA70035A8C5 /* RxRelay */; };
-		6AD54DD329C2BDA70035A8C5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54DD229C2BDA70035A8C5 /* RxSwift */; };
-		6AD54E1E29C2F0EA0035A8C5 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54E1D29C2F0EA0035A8C5 /* ReactorKit */; };
-		6AD54E2D29C2F39B0035A8C5 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54E2C29C2F39B0035A8C5 /* RIBs */; };
+		6AD54E0F29C2F0280035A8C5 /* FeatureDALLEDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */; };
+		6AD54E1829C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6AD54E1B29C2F0C90035A8C5 /* StateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */; };
+		6AD54E2029C2F2880035A8C5 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1F29C2F2880035A8C5 /* Mapper.swift */; };
+		6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */; };
+		6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */; };
+		6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */; };
+		6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6AD54E1929C2F0320035A8C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6AD54E1829C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		6AD54DC329C2BD560035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54DC629C2BD560035A8C5 /* RxPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxPackage.h; sourceTree = "<group>"; };
+		6AD54E0B29C2F0280035A8C5 /* FeatureDALLEDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureDALLEDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDALLEDomain.h; sourceTree = "<group>"; };
+		6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLEUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAction.swift; sourceTree = "<group>"; };
+		6AD54E1F29C2F2880035A8C5 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEPresenter.swift; sourceTree = "<group>"; };
+		6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLERouter.swift; sourceTree = "<group>"; };
+		6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEBuilder.swift; sourceTree = "<group>"; };
+		6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD54DC029C2BD560035A8C5 /* Frameworks */ = {
+		6AD54E0829C2F0280035A8C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54E2D29C2F39B0035A8C5 /* RIBs in Frameworks */,
-				6AD54DD329C2BDA70035A8C5 /* RxSwift in Frameworks */,
-				6AD54DD129C2BDA70035A8C5 /* RxRelay in Frameworks */,
-				6AD54E1E29C2F0EA0035A8C5 /* ReactorKit in Frameworks */,
-				6AD54DCF29C2BDA70035A8C5 /* RxCocoa in Frameworks */,
+				6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD54DB929C2BD560035A8C5 = {
+		6AD54E0129C2F0280035A8C5 = {
 			isa = PBXGroup;
 			children = (
-				6AD54DC529C2BD560035A8C5 /* RxPackage */,
-				6AD54DC429C2BD560035A8C5 /* Products */,
+				6AD54E0D29C2F0280035A8C5 /* FeatureDALLEDomain */,
+				6AD54E0C29C2F0280035A8C5 /* Products */,
+				6AD54E1529C2F0310035A8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD54DC429C2BD560035A8C5 /* Products */ = {
+		6AD54E0C29C2F0280035A8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54DC329C2BD560035A8C5 /* RxPackage.framework */,
+				6AD54E0B29C2F0280035A8C5 /* FeatureDALLEDomain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD54DC529C2BD560035A8C5 /* RxPackage */ = {
+		6AD54E0D29C2F0280035A8C5 /* FeatureDALLEDomain */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54DC629C2BD560035A8C5 /* RxPackage.h */,
+				6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */,
+				6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */,
+				6AD54E1F29C2F2880035A8C5 /* Mapper.swift */,
+				6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */,
+				6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */,
+				6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */,
+				6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */,
 			);
-			path = RxPackage;
+			path = FeatureDALLEDomain;
+			sourceTree = "<group>";
+		};
+		6AD54E1529C2F0310035A8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD54DBE29C2BD560035A8C5 /* Headers */ = {
+		6AD54E0629C2F0280035A8C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54DC729C2BD560035A8C5 /* RxPackage.h in Headers */,
+				6AD54E0F29C2F0280035A8C5 /* FeatureDALLEDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD54DC229C2BD560035A8C5 /* RxPackage */ = {
+		6AD54E0A29C2F0280035A8C5 /* FeatureDALLEDomain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD54DCA29C2BD560035A8C5 /* Build configuration list for PBXNativeTarget "RxPackage" */;
+			buildConfigurationList = 6AD54E1229C2F0280035A8C5 /* Build configuration list for PBXNativeTarget "FeatureDALLEDomain" */;
 			buildPhases = (
-				6AD54DBE29C2BD560035A8C5 /* Headers */,
-				6AD54DBF29C2BD560035A8C5 /* Sources */,
-				6AD54DC029C2BD560035A8C5 /* Frameworks */,
-				6AD54DC129C2BD560035A8C5 /* Resources */,
+				6AD54E0629C2F0280035A8C5 /* Headers */,
+				6AD54E0729C2F0280035A8C5 /* Sources */,
+				6AD54E0829C2F0280035A8C5 /* Frameworks */,
+				6AD54E0929C2F0280035A8C5 /* Resources */,
+				6AD54E1929C2F0320035A8C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxPackage;
-			packageProductDependencies = (
-				6AD54DCE29C2BDA70035A8C5 /* RxCocoa */,
-				6AD54DD029C2BDA70035A8C5 /* RxRelay */,
-				6AD54DD229C2BDA70035A8C5 /* RxSwift */,
-				6AD54E1D29C2F0EA0035A8C5 /* ReactorKit */,
-				6AD54E2C29C2F39B0035A8C5 /* RIBs */,
-			);
-			productName = RxPackage;
-			productReference = 6AD54DC329C2BD560035A8C5 /* RxPackage.framework */;
+			name = FeatureDALLEDomain;
+			productName = FeatureDALLEDomain;
+			productReference = 6AD54E0B29C2F0280035A8C5 /* FeatureDALLEDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD54DBA29C2BD560035A8C5 /* Project object */ = {
+		6AD54E0229C2F0280035A8C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD54DC229C2BD560035A8C5 = {
+					6AD54E0A29C2F0280035A8C5 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD54DBD29C2BD560035A8C5 /* Build configuration list for PBXProject "RxPackage" */;
+			buildConfigurationList = 6AD54E0529C2F0280035A8C5 /* Build configuration list for PBXProject "FeatureDALLEDomain" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,23 +151,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD54DB929C2BD560035A8C5;
-			packageReferences = (
-				6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				6AD54E1C29C2F0EA0035A8C5 /* XCRemoteSwiftPackageReference "ReactorKit" */,
-				6AD54E2B29C2F39A0035A8C5 /* XCRemoteSwiftPackageReference "RIBs" */,
-			);
-			productRefGroup = 6AD54DC429C2BD560035A8C5 /* Products */;
+			mainGroup = 6AD54E0129C2F0280035A8C5;
+			productRefGroup = 6AD54E0C29C2F0280035A8C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD54DC229C2BD560035A8C5 /* RxPackage */,
+				6AD54E0A29C2F0280035A8C5 /* FeatureDALLEDomain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD54DC129C2BD560035A8C5 /* Resources */ = {
+		6AD54E0929C2F0280035A8C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,17 +172,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD54DBF29C2BD560035A8C5 /* Sources */ = {
+		6AD54E0729C2F0280035A8C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */,
+				6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */,
+				6AD54E2029C2F2880035A8C5 /* Mapper.swift in Sources */,
+				6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */,
+				6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */,
+				6AD54E1B29C2F0C90035A8C5 /* StateAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD54DC829C2BD560035A8C5 /* Debug */ = {
+		6AD54E1029C2F0280035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		6AD54DC929C2BD560035A8C5 /* Release */ = {
+		6AD54E1129C2F0280035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -277,9 +308,10 @@
 			};
 			name = Release;
 		};
-		6AD54DCB29C2BD560035A8C5 /* Debug */ = {
+		6AD54E1329C2F0280035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -295,19 +327,22 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.RxPackage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.FeatureDALLEDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6AD54DCC29C2BD560035A8C5 /* Release */ = {
+		6AD54E1429C2F0280035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -323,8 +358,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.RxPackage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.FeatureDALLEDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -336,80 +372,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD54DBD29C2BD560035A8C5 /* Build configuration list for PBXProject "RxPackage" */ = {
+		6AD54E0529C2F0280035A8C5 /* Build configuration list for PBXProject "FeatureDALLEDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54DC829C2BD560035A8C5 /* Debug */,
-				6AD54DC929C2BD560035A8C5 /* Release */,
+				6AD54E1029C2F0280035A8C5 /* Debug */,
+				6AD54E1129C2F0280035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD54DCA29C2BD560035A8C5 /* Build configuration list for PBXNativeTarget "RxPackage" */ = {
+		6AD54E1229C2F0280035A8C5 /* Build configuration list for PBXNativeTarget "FeatureDALLEDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54DCB29C2BD560035A8C5 /* Debug */,
-				6AD54DCC29C2BD560035A8C5 /* Release */,
+				6AD54E1329C2F0280035A8C5 /* Debug */,
+				6AD54E1429C2F0280035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		6AD54E1C29C2F0EA0035A8C5 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		6AD54E2B29C2F39A0035A8C5 /* XCRemoteSwiftPackageReference "RIBs" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uber/RIBs";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6AD54DCE29C2BDA70035A8C5 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		6AD54DD029C2BDA70035A8C5 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		6AD54DD229C2BDA70035A8C5 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		6AD54E1D29C2F0EA0035A8C5 /* ReactorKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54E1C29C2F0EA0035A8C5 /* XCRemoteSwiftPackageReference "ReactorKit" */;
-			productName = ReactorKit;
-		};
-		6AD54E2C29C2F39B0035A8C5 /* RIBs */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54E2B29C2F39A0035A8C5 /* XCRemoteSwiftPackageReference "RIBs" */;
-			productName = RIBs;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6AD54DBA29C2BD560035A8C5 /* Project object */;
+	rootObject = 6AD54E0229C2F0280035A8C5 /* Project object */;
 }

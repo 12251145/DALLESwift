@@ -10,7 +10,7 @@ import UIKit
 public class PromptView: UIView {
         
     private let backgroundShadowView = UIView()
-    private let promptTextView = UITextView(frame: .zero, textContainer: nil)        
+    public private(set) var promptTextView = UITextView(frame: .zero, textContainer: nil)
     
     public init(
         _ fontSize: CGFloat = 20,

@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 public enum FeatureDALLEPresentableAction {
-    case generate
+    case promtInput(string: String?)
 }
 
 public struct FeatureDALLEPresentableState {
@@ -41,5 +41,21 @@ public final class FeatureDALLEViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func bindAction() {
+        generateView.promptView.promptTextView.rx.text
+            .subscribe(onNext: { [weak self] text in
+                self?.listener?.action(.promtInput(string: text))
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func bindState() {
+        listener?.presentableState
+            .map(\.generateButtonEnabled)
+            .distinctUntilChanged()
+            .bind(to: generateView.generateButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }

@@ -10,8 +10,8 @@ import UIKit
 
 final public class DALLEGenerateView: UIView {
     
-    private let promptView = PromptView()
-    private let generateButton = CapsuleButton("GENERATE")
+    public private(set) var promptView = PromptView()
+    public private(set) var generateButton = CapsuleButton("GENERATE")
     
     public init() {
         super.init(frame: .zero)

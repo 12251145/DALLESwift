@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RxPackage/RxPackage.xcodeproj">
    </FileRef>
    <FileRef
