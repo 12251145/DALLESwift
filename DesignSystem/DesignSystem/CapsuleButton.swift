@@ -9,7 +9,7 @@ import UIKit
 
 public class CapsuleButton: UIButton {
     
-    init(_ title: String,
+    public init(_ title: String,
          _ backgroundColor: UIColor = .black,
          _ foregroundColor: UIColor = .white,
          _ titleSize: CGFloat = 18,
