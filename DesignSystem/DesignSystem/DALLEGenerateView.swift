@@ -9,6 +9,8 @@ import PinLayout
 import UIKit
 
 final public class DALLEGenerateView: UIView {
+    
+    private let promptView = PromptView()
     private let generateButton = CapsuleButton("GENERATE")
     
     public init() {
@@ -16,6 +18,7 @@ final public class DALLEGenerateView: UIView {
         
         backgroundColor = .white
         addSubview(generateButton)
+        addSubview(promptView)
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +28,7 @@ final public class DALLEGenerateView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        generateButton.pin.hCenter().vCenter().width(90%).height(50)
+        promptView.pin.hCenter().top(pin.safeArea.top + 20).width(90%).height(250)
+        generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
     }
 }

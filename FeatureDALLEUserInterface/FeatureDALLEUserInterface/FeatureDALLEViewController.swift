@@ -33,8 +33,10 @@ public final class FeatureDALLEViewController: UIViewController {
     public weak var listener: FeatureDALLEPresentableListener?
     private var disposeBag = DisposeBag()
     
+    private let generateView = DALLEGenerateView()
+    
     public override func loadView() {
-        self.view = DALLEGenerateView()
+        self.view = generateView
     }
 
     public override func viewDidLoad() {
