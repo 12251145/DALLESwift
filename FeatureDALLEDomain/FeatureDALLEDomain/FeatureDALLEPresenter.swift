@@ -6,8 +6,8 @@
 //
 
 import FeatureDALLEUserInterface
-import ReactorKit
 import RIBs
+import RxRelay
 import RxSwift
 import UIKit
 
@@ -32,7 +32,7 @@ private final class FeatureDALLEPresentableListenerMapper: FeatureDALLEUserInter
     
     var presentableState: Observable<FeatureDALLEUserInterface.FeatureDALLEPresentableState>
     
-    var action: ActionSubject<PresentationAction>
+    var action: PublishRelay<PresentationAction>
     var state: Observable<PresentationState>
     
     init(interactor: FeatureDALLEPresentableListener) {
@@ -42,6 +42,6 @@ private final class FeatureDALLEPresentableListenerMapper: FeatureDALLEUserInter
     }
     
     func action(_ userAction: FeatureDALLEUserInterface.FeatureDALLEPresentableAction) {
-        self.action.onNext(userAction.toMapper)
+        self.action.accept(userAction.toMapper)
     }
 }

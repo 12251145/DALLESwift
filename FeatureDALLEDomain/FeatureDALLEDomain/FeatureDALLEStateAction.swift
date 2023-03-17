@@ -1,14 +1,16 @@
 //
-//  StateAction.swift
+//  FeatureDALLEStateAction.swift
 //  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/16.
 //
 
-import ReactorKit
+import RxRelay
+import RxSwift
 
 public enum PresentationAction {
-    case promtInput(string: String?)    
+    case promtInput(string: String?)
+    case generateButtonTap
 }
 
 public struct PresentationState {
@@ -20,6 +22,6 @@ public struct PresentationState {
 }
 
 public protocol FeatureDALLEPresentableListener: AnyObject {
-    var action: ActionSubject<PresentationAction> { get }
+    var action: PublishRelay<PresentationAction> { get }
     var state: Observable<PresentationState> { get }
 }

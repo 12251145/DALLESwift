@@ -5,8 +5,8 @@
 //  Created by Hoen on 2023/03/16.
 //
 
-import ReactorKit
 import RIBs
+import RxRelay
 import RxSwift
 
 protocol FeatureDALLERouting: ViewableRouting {
@@ -22,30 +22,29 @@ protocol FeatureDALLEListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentable>, FeatureDALLEInteractable, FeatureDALLEPresentableListener, Reactor {
+final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentable>, FeatureDALLEInteractable, FeatureDALLEPresentableListener {
     
-    enum Mutation {
-        case generateButtonEnable(Bool)
-    }
+    let action = PublishRelay<PresentationAction>()
     
-    typealias Action = PresentationAction
-    typealias State = PresentationState
+    private let stateRelay: BehaviorRelay<PresentationState>
+    let state: Observable<PresentationState>
     
-    var initialState: State = .init(generateButtonEnabled: false)
-
     weak var router: FeatureDALLERouting?
     weak var listener: FeatureDALLEListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: FeatureDALLEPresentable) {
+        self.stateRelay = .init(value: .init(generateButtonEnabled: false))
+        self.state = stateRelay.asObservable()
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+            
+        bindAction()
     }
 
     override func willResignActive() {
@@ -53,23 +52,21 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
         // TODO: Pause any business logic.
     }
     
-    func mutate(action: PresentationAction) -> Observable<Mutation> {
-        switch action {
-        case .promtInput(let string):
-            let isEnabled = stringIsNotNilAndEmpty(string)
-            return .just(.generateButtonEnable(isEnabled))
-        }
-    }
-    
-    func reduce(state: PresentationState, mutation: Mutation) -> PresentationState {
-        var newState = state
-        
-        switch mutation {
-        case .generateButtonEnable(let isEnabled):
-            newState.generateButtonEnabled = isEnabled
-        }
-        
-        return newState
+    func bindAction() {
+        action
+            .subscribe(onNext: { [weak self] action in
+                switch action {
+                case .promtInput(let text):
+                    if let isEnabled = self?.stringIsNotNilAndEmpty(text),
+                       var newState = self?.stateRelay.value {
+                        newState.generateButtonEnabled = isEnabled
+                        self?.stateRelay.accept(newState)
+                    }
+                case .generateButtonTap:
+                    break
+                }
+            })
+            .disposeOnDeactivate(interactor: self)
     }
     
     func stringIsNotNilAndEmpty(_ string: String?) -> Bool {

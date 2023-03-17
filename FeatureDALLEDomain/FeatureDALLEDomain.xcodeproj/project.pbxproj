@@ -10,8 +10,8 @@
 		6AD54E0F29C2F0280035A8C5 /* FeatureDALLEDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */; };
 		6AD54E1829C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6AD54E1B29C2F0C90035A8C5 /* StateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */; };
-		6AD54E2029C2F2880035A8C5 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1F29C2F2880035A8C5 /* Mapper.swift */; };
+		6AD54E1B29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */; };
+		6AD54E2029C2F2880035A8C5 /* FeatureDALLEMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1F29C2F2880035A8C5 /* FeatureDALLEMapper.swift */; };
 		6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */; };
 		6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */; };
 		6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */; };
@@ -36,8 +36,8 @@
 		6AD54E0B29C2F0280035A8C5 /* FeatureDALLEDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureDALLEDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDALLEDomain.h; sourceTree = "<group>"; };
 		6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLEUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAction.swift; sourceTree = "<group>"; };
-		6AD54E1F29C2F2880035A8C5 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEStateAction.swift; sourceTree = "<group>"; };
+		6AD54E1F29C2F2880035A8C5 /* FeatureDALLEMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEMapper.swift; sourceTree = "<group>"; };
 		6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEPresenter.swift; sourceTree = "<group>"; };
 		6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLERouter.swift; sourceTree = "<group>"; };
 		6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEBuilder.swift; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */,
-				6AD54E1A29C2F0C90035A8C5 /* StateAction.swift */,
-				6AD54E1F29C2F2880035A8C5 /* Mapper.swift */,
+				6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */,
+				6AD54E1F29C2F2880035A8C5 /* FeatureDALLEMapper.swift */,
 				6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */,
 				6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */,
 				6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */,
@@ -178,10 +178,10 @@
 			files = (
 				6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */,
 				6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */,
-				6AD54E2029C2F2880035A8C5 /* Mapper.swift in Sources */,
+				6AD54E2029C2F2880035A8C5 /* FeatureDALLEMapper.swift in Sources */,
 				6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */,
 				6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */,
-				6AD54E1B29C2F0C90035A8C5 /* StateAction.swift in Sources */,
+				6AD54E1B29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
