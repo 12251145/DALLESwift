@@ -8,6 +8,7 @@
 import RIBs
 import RxRelay
 import RxSwift
+import Util
 
 protocol FeatureDALLERouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -57,11 +58,14 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             .subscribe(onNext: { [weak self] action in
                 switch action {
                 case .promtInput(let text):
-                    if let isEnabled = self?.stringIsNotNilAndEmpty(text),
-                       var newState = self?.stateRelay.value {
+                    
+                    let isEnabled = text.notNilNotEmpty()
+                    
+                    if var newState = self?.stateRelay.value {
                         newState.generateButtonEnabled = isEnabled
                         self?.stateRelay.accept(newState)
                     }
+                    
                 case .generateButtonTap:
                     break
                 }

@@ -8,21 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		6AD54DAC29C2B3270035A8C5 /* FeatureDALLEUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54DAB29C2B3270035A8C5 /* FeatureDALLEUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD54DB429C2B3650035A8C5 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DB329C2B3650035A8C5 /* DesignSystem.framework */; };
-		6AD54DB529C2B3650035A8C5 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DB329C2B3650035A8C5 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6AD54DB829C2BB040035A8C5 /* FeatureDALLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DB729C2BB040035A8C5 /* FeatureDALLEViewController.swift */; };
-		6AD54DD529C2BDB30035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */; };
-		6AD54DD629C2BDB30035A8C5 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6AD54DE029C2CBD20035A8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DDF29C2CBD20035A8C5 /* AppDelegate.swift */; };
 		6AD54DE229C2CBD20035A8C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DE129C2CBD20035A8C5 /* SceneDelegate.swift */; };
 		6AD54DE729C2CBD30035A8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD54DE529C2CBD30035A8C5 /* Main.storyboard */; };
 		6AD54DE929C2CBD50035A8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD54DE829C2CBD50035A8C5 /* Assets.xcassets */; };
 		6AD54DEC29C2CBD50035A8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD54DEA29C2CBD50035A8C5 /* LaunchScreen.storyboard */; };
 		6AD54DF129C2CBE30035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DA829C2B3270035A8C5 /* FeatureDALLEUserInterface.framework */; };
-		6AD54DF729C2CC6F0035A8C5 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DF629C2CC6F0035A8C5 /* DesignSystem.framework */; };
-		6AD54DF829C2CC6F0035A8C5 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DF629C2CC6F0035A8C5 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6AD54DFB29C2CC730035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DFA29C2CC730035A8C5 /* RxPackage.framework */; };
-		6AD54DFC29C2CC730035A8C5 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DFA29C2CC730035A8C5 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6AD54E9929C45F280035A8C5 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DB329C2B3650035A8C5 /* DesignSystem.framework */; };
+		6AD54E9A29C45F280035A8C5 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DB329C2B3650035A8C5 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6AD54E9C29C45F2C0035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */; };
+		6AD54E9D29C45F2C0035A8C5 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6AD54E9E29C4696E0035A8C5 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DB329C2B3650035A8C5 /* DesignSystem.framework */; };
+		6AD54EA129C469700035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,26 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6AD54DB629C2B3650035A8C5 /* Embed Frameworks */ = {
+		6AD54E9B29C45F290035A8C5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6AD54DB529C2B3650035A8C5 /* DesignSystem.framework in Embed Frameworks */,
-				6AD54DD629C2BDB30035A8C5 /* RxPackage.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6AD54DF929C2CC6F0035A8C5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6AD54DF829C2CC6F0035A8C5 /* DesignSystem.framework in Embed Frameworks */,
-				6AD54DFC29C2CC730035A8C5 /* RxPackage.framework in Embed Frameworks */,
+				6AD54E9A29C45F280035A8C5 /* DesignSystem.framework in Embed Frameworks */,
+				6AD54E9D29C45F2C0035A8C5 /* RxPackage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +63,7 @@
 		6AD54DED29C2CBD50035A8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AD54DF629C2CC6F0035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54DFA29C2CC730035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54E9129C454B20035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54DB429C2B3650035A8C5 /* DesignSystem.framework in Frameworks */,
-				6AD54DD529C2BDB30035A8C5 /* RxPackage.framework in Frameworks */,
+				6AD54E9E29C4696E0035A8C5 /* DesignSystem.framework in Frameworks */,
+				6AD54EA129C469700035A8C5 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +81,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD54DF129C2CBE30035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
-				6AD54DF729C2CC6F0035A8C5 /* DesignSystem.framework in Frameworks */,
-				6AD54DFB29C2CC730035A8C5 /* RxPackage.framework in Frameworks */,
+				6AD54E9929C45F280035A8C5 /* DesignSystem.framework in Frameworks */,
+				6AD54E9C29C45F2C0035A8C5 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +120,7 @@
 		6AD54DB229C2B3650035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD54E9129C454B20035A8C5 /* Util.framework */,
 				6AD54DFA29C2CC730035A8C5 /* RxPackage.framework */,
 				6AD54DF629C2CC6F0035A8C5 /* DesignSystem.framework */,
 				6AD54DD429C2BDB30035A8C5 /* RxPackage.framework */,
@@ -176,7 +164,6 @@
 				6AD54DA429C2B3270035A8C5 /* Sources */,
 				6AD54DA529C2B3270035A8C5 /* Frameworks */,
 				6AD54DA629C2B3270035A8C5 /* Resources */,
-				6AD54DB629C2B3650035A8C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,7 +181,7 @@
 				6AD54DD929C2CBD20035A8C5 /* Sources */,
 				6AD54DDA29C2CBD20035A8C5 /* Frameworks */,
 				6AD54DDB29C2CBD20035A8C5 /* Resources */,
-				6AD54DF929C2CC6F0035A8C5 /* Embed Frameworks */,
+				6AD54E9B29C45F290035A8C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -7,126 +7,108 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54D9229C2AB300035A8C5 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54D9A29C2AB630035A8C5 /* PinLayout */; };
-		6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */; };
-		6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */; };
-		6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DFD29C2D0050035A8C5 /* PromptView.swift */; };
-		6AD54E0029C2D59D0035A8C5 /* UIView+addShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */; };
-		6AD54EA429C46C0C0035A8C5 /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54EA329C46C0C0035A8C5 /* Util.framework */; };
+		6AD54E8329C453B40035A8C5 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54E8229C453B40035A8C5 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD54E8A29C453E70035A8C5 /* String?+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E8929C453E70035A8C5 /* String?+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54D9229C2AB300035A8C5 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
-		6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
-		6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEGenerateView.swift; sourceTree = "<group>"; };
-		6AD54DFD29C2D0050035A8C5 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
-		6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addShadow.swift"; sourceTree = "<group>"; };
-		6AD54EA329C46C0C0035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54E7F29C453B40035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54E8229C453B40035A8C5 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		6AD54E8929C453E70035A8C5 /* String?+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?+Validation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD54D8C29C2AB300035A8C5 /* Frameworks */ = {
+		6AD54E7C29C453B40035A8C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54EA429C46C0C0035A8C5 /* Util.framework in Frameworks */,
-				6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD54D8529C2AB300035A8C5 = {
+		6AD54E7529C453B40035A8C5 = {
 			isa = PBXGroup;
 			children = (
-				6AD54D9129C2AB300035A8C5 /* DesignSystem */,
-				6AD54D9029C2AB300035A8C5 /* Products */,
-				6AD54E8C29C454A10035A8C5 /* Frameworks */,
+				6AD54E8129C453B40035A8C5 /* Util */,
+				6AD54E8029C453B40035A8C5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD54D9029C2AB300035A8C5 /* Products */ = {
+		6AD54E8029C453B40035A8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */,
+				6AD54E7F29C453B40035A8C5 /* Util.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD54D9129C2AB300035A8C5 /* DesignSystem */ = {
+		6AD54E8129C453B40035A8C5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54D9229C2AB300035A8C5 /* DesignSystem.h */,
-				6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */,
-				6AD54DFD29C2D0050035A8C5 /* PromptView.swift */,
-				6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */,
-				6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */,
+				6AD54E8229C453B40035A8C5 /* Util.h */,
+				6AD54E8B29C454230035A8C5 /* Extension */,
 			);
-			path = DesignSystem;
+			path = Util;
 			sourceTree = "<group>";
 		};
-		6AD54E8C29C454A10035A8C5 /* Frameworks */ = {
+		6AD54E8B29C454230035A8C5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54EA329C46C0C0035A8C5 /* Util.framework */,
+				6AD54E8929C453E70035A8C5 /* String?+Validation.swift */,
 			);
-			name = Frameworks;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD54D8A29C2AB300035A8C5 /* Headers */ = {
+		6AD54E7A29C453B40035A8C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */,
+				6AD54E8329C453B40035A8C5 /* Util.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD54D8E29C2AB300035A8C5 /* DesignSystem */ = {
+		6AD54E7E29C453B40035A8C5 /* Util */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD54D9629C2AB300035A8C5 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
+			buildConfigurationList = 6AD54E8629C453B40035A8C5 /* Build configuration list for PBXNativeTarget "Util" */;
 			buildPhases = (
-				6AD54D8A29C2AB300035A8C5 /* Headers */,
-				6AD54D8B29C2AB300035A8C5 /* Sources */,
-				6AD54D8C29C2AB300035A8C5 /* Frameworks */,
-				6AD54D8D29C2AB300035A8C5 /* Resources */,
+				6AD54E7A29C453B40035A8C5 /* Headers */,
+				6AD54E7B29C453B40035A8C5 /* Sources */,
+				6AD54E7C29C453B40035A8C5 /* Frameworks */,
+				6AD54E7D29C453B40035A8C5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DesignSystem;
-			packageProductDependencies = (
-				6AD54D9A29C2AB630035A8C5 /* PinLayout */,
-			);
-			productName = DesignSystem;
-			productReference = 6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */;
+			name = Util;
+			productName = Util;
+			productReference = 6AD54E7F29C453B40035A8C5 /* Util.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD54D8629C2AB300035A8C5 /* Project object */ = {
+		6AD54E7629C453B40035A8C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD54D8E29C2AB300035A8C5 = {
+					6AD54E7E29C453B40035A8C5 = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD54D8929C2AB300035A8C5 /* Build configuration list for PBXProject "DesignSystem" */;
+			buildConfigurationList = 6AD54E7929C453B40035A8C5 /* Build configuration list for PBXProject "Util" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -134,21 +116,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD54D8529C2AB300035A8C5;
-			packageReferences = (
-				6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */,
-			);
-			productRefGroup = 6AD54D9029C2AB300035A8C5 /* Products */;
+			mainGroup = 6AD54E7529C453B40035A8C5;
+			productRefGroup = 6AD54E8029C453B40035A8C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD54D8E29C2AB300035A8C5 /* DesignSystem */,
+				6AD54E7E29C453B40035A8C5 /* Util */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD54D8D29C2AB300035A8C5 /* Resources */ = {
+		6AD54E7D29C453B40035A8C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,21 +137,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD54D8B29C2AB300035A8C5 /* Sources */ = {
+		6AD54E7B29C453B40035A8C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54E0029C2D59D0035A8C5 /* UIView+addShadow.swift in Sources */,
-				6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */,
-				6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */,
-				6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */,
+				6AD54E8A29C453E70035A8C5 /* String?+Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD54D9429C2AB300035A8C5 /* Debug */ = {
+		6AD54E8429C453B40035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +211,7 @@
 			};
 			name = Debug;
 		};
-		6AD54D9529C2AB300035A8C5 /* Release */ = {
+		6AD54E8529C453B40035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,7 +268,7 @@
 			};
 			name = Release;
 		};
-		6AD54D9729C2AB300035A8C5 /* Debug */ = {
+		6AD54E8729C453B40035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -312,7 +288,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.DesignSystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.Util;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -322,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		6AD54D9829C2AB300035A8C5 /* Release */ = {
+		6AD54E8829C453B40035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -342,7 +318,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.DesignSystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.Util;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -354,44 +330,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD54D8929C2AB300035A8C5 /* Build configuration list for PBXProject "DesignSystem" */ = {
+		6AD54E7929C453B40035A8C5 /* Build configuration list for PBXProject "Util" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54D9429C2AB300035A8C5 /* Debug */,
-				6AD54D9529C2AB300035A8C5 /* Release */,
+				6AD54E8429C453B40035A8C5 /* Debug */,
+				6AD54E8529C453B40035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD54D9629C2AB300035A8C5 /* Build configuration list for PBXNativeTarget "DesignSystem" */ = {
+		6AD54E8629C453B40035A8C5 /* Build configuration list for PBXNativeTarget "Util" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54D9729C2AB300035A8C5 /* Debug */,
-				6AD54D9829C2AB300035A8C5 /* Release */,
+				6AD54E8729C453B40035A8C5 /* Debug */,
+				6AD54E8829C453B40035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/layoutBox/PinLayout";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6AD54D9A29C2AB630035A8C5 /* PinLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */;
-			productName = PinLayout;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6AD54D8629C2AB300035A8C5 /* Project object */;
+	rootObject = 6AD54E7629C453B40035A8C5 /* Project object */;
 }

@@ -5,12 +5,15 @@
       location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RxPackage/RxPackage.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:RxPackage/RxPackage.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DesignSystem/DesignSystem.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Util/Util.xcodeproj">
    </FileRef>
 </Workspace>
