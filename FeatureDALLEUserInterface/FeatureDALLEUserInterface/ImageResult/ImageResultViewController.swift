@@ -37,4 +37,11 @@ public final class ImageResultViewController: UIViewController {
     public override func loadView() {
         self.view = imageResultView
     }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        self.isModalInPresentation = true
+    }
 }

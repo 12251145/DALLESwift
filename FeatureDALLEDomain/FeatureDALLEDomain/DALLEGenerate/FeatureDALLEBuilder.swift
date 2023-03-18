@@ -12,7 +12,7 @@ protocol FeatureDALLEDependency: Dependency {
     // created by this RIB.
 }
 
-final class FeatureDALLEComponent: Component<FeatureDALLEDependency> {
+final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResultDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -34,6 +34,9 @@ final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, FeatureDALLEBu
         let viewController = FeatureDALLEPresenter()
         let interactor = FeatureDALLEInteractor(presenter: viewController)
         interactor.listener = listener
-        return FeatureDALLERouter(interactor: interactor, viewController: viewController)
+        
+        let imageResultBuilder = ImageResultBuilder(dependency: component)
+        
+        return FeatureDALLERouter(imageResultBuilder: imageResultBuilder, interactor: interactor, viewController: viewController)
     }
 }
