@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ThirdPartyLibraryManager/ThirdPartyLibraryManager.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ImageResultDomain/ImageResultDomain.xcodeproj">
    </FileRef>
    <FileRef
