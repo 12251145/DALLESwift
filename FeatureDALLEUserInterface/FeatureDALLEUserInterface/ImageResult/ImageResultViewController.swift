@@ -1,8 +1,8 @@
 //
 //  ImageResultViewController.swift
-//  ImageResultUserInterface
+//  FeatureDALLEUserInterface
 //
-//  Created by Hoen on 2023/03/17.
+//  Created by Hoen on 2023/03/18.
 //
 
 import DesignSystem
@@ -29,17 +29,12 @@ public protocol ImageResultPresentableListener: AnyObject {
 }
 
 public final class ImageResultViewController: UIViewController {
-    
     public weak var listener: ImageResultPresentableListener?
     private var disposeBag = DisposeBag()
     
-    private let imageResultView = ImageResultView()
+    private var imageResultView = ImageResultView()
     
     public override func loadView() {
         self.view = imageResultView
-    }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }

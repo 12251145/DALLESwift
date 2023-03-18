@@ -1,11 +1,12 @@
 //
 //  ImageResultBuilder.swift
-//  ImageResultDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/18.
 //
 
 import RIBs
+
 
 protocol ImageResultDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be

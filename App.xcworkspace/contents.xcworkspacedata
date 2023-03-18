@@ -2,15 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ThirdPartyLibraryManager/ThirdPartyLibraryManager.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ImageResultDomain/ImageResultDomain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
    </FileRef>
    <FileRef
@@ -21,6 +12,9 @@
    </FileRef>
    <FileRef
       location = "group:DesignSystem/DesignSystem.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ThirdPartyLibraryManager/ThirdPartyLibraryManager.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Util/Util.xcodeproj">

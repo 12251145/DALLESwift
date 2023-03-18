@@ -1,6 +1,6 @@
 //
 //  ImageResultInteractor.swift
-//  ImageResultDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/18.
 //
@@ -27,10 +27,10 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
     weak var router: ImageResultRouting?
     weak var listener: ImageResultListener?
     
-    let action = PublishRelay<PresentationAction>()
+    let action = PublishRelay<ImageResultPresentationAction>()
     
-    private let stateRelay: BehaviorRelay<PresentationState>
-    let state: Observable<PresentationState>
+    private let stateRelay: BehaviorRelay<ImageResultPresentationState>
+    let state: Observable<ImageResultPresentationState>
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.

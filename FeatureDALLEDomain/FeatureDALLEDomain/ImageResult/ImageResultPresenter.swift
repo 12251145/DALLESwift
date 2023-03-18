@@ -1,11 +1,11 @@
 //
 //  ImageResultPresenter.swift
-//  ImageResultDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/18.
 //
 
-import ImageResultUserInterface
+import FeatureDALLEUserInterface
 import RIBs
 import RxRelay
 import RxSwift
@@ -28,12 +28,12 @@ public final class ImageResultPresenter: ImageResultPresentable, ImageResultView
     init() {}
 }
 
-private final class ImageResultPresentableListenerMapper: ImageResultUserInterface.ImageResultPresentableListener, ImageResultPresentableListener {
+private final class ImageResultPresentableListenerMapper: FeatureDALLEUserInterface.ImageResultPresentableListener, ImageResultPresentableListener {
     
-    var presentableState: Observable<ImageResultUserInterface.ImageResultPresentableState>
+    var presentableState: Observable<FeatureDALLEUserInterface.ImageResultPresentableState>
     
-    var action: PublishRelay<PresentationAction>
-    var state: Observable<PresentationState>
+    var action: PublishRelay<ImageResultPresentationAction>
+    var state: Observable<ImageResultPresentationState>
     
     init(interactor: ImageResultPresentableListener) {
         self.action = interactor.action
@@ -41,7 +41,8 @@ private final class ImageResultPresentableListenerMapper: ImageResultUserInterfa
         self.presentableState = interactor.state.map(\.toMapper)
     }
     
-    func action(_ userAction: ImageResultUserInterface.ImageResultPresentableAction) {
+    func action(_ userAction: FeatureDALLEUserInterface.ImageResultPresentableAction) {
         self.action.accept(userAction.toMapper)
     }
 }
+

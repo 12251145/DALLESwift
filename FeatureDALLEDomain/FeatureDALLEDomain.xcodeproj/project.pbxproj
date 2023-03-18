@@ -15,6 +15,12 @@
 		6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */; };
 		6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */; };
 		6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */; };
+		6AD5500729C5FBAA0035A8C5 /* ImageResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5500329C5FBAA0035A8C5 /* ImageResultRouter.swift */; };
+		6AD5500929C5FBAA0035A8C5 /* ImageResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5500529C5FBAA0035A8C5 /* ImageResultBuilder.swift */; };
+		6AD5500A29C5FBAA0035A8C5 /* ImageResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5500629C5FBAA0035A8C5 /* ImageResultInteractor.swift */; };
+		6AD5501029C5FD810035A8C5 /* ImageResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5500F29C5FD810035A8C5 /* ImageResultPresenter.swift */; };
+		6AD5501229C5FD8E0035A8C5 /* ImageResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */; };
+		6AD5501429C5FD9B0035A8C5 /* ImageResultStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,13 @@
 		6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLERouter.swift; sourceTree = "<group>"; };
 		6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEBuilder.swift; sourceTree = "<group>"; };
 		6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDALLEInteractor.swift; sourceTree = "<group>"; };
+		6AD54FFD29C5F9870035A8C5 /* ImageResultDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageResultDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5500329C5FBAA0035A8C5 /* ImageResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultRouter.swift; sourceTree = "<group>"; };
+		6AD5500529C5FBAA0035A8C5 /* ImageResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultBuilder.swift; sourceTree = "<group>"; };
+		6AD5500629C5FBAA0035A8C5 /* ImageResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultInteractor.swift; sourceTree = "<group>"; };
+		6AD5500F29C5FD810035A8C5 /* ImageResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultPresenter.swift; sourceTree = "<group>"; };
+		6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultMapper.swift; sourceTree = "<group>"; };
+		6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultStateAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */,
-				6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */,
-				6AD54E1F29C2F2880035A8C5 /* FeatureDALLEMapper.swift */,
-				6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */,
-				6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */,
-				6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */,
-				6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */,
+				6AD5500129C5FB6F0035A8C5 /* DALLEGenerate */,
+				6AD5500229C5FB8A0035A8C5 /* ImageResult */,
 			);
 			path = FeatureDALLEDomain;
 			sourceTree = "<group>";
@@ -75,9 +84,36 @@
 		6AD54E1529C2F0310035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD54FFD29C5F9870035A8C5 /* ImageResultDomain.framework */,
 				6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AD5500129C5FB6F0035A8C5 /* DALLEGenerate */ = {
+			isa = PBXGroup;
+			children = (
+				6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */,
+				6AD54E1F29C2F2880035A8C5 /* FeatureDALLEMapper.swift */,
+				6AD54E2129C2F32E0035A8C5 /* FeatureDALLEPresenter.swift */,
+				6AD54E2329C2F35F0035A8C5 /* FeatureDALLERouter.swift */,
+				6AD54E2529C2F35F0035A8C5 /* FeatureDALLEBuilder.swift */,
+				6AD54E2629C2F35F0035A8C5 /* FeatureDALLEInteractor.swift */,
+			);
+			path = DALLEGenerate;
+			sourceTree = "<group>";
+		};
+		6AD5500229C5FB8A0035A8C5 /* ImageResult */ = {
+			isa = PBXGroup;
+			children = (
+				6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */,
+				6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */,
+				6AD5500F29C5FD810035A8C5 /* ImageResultPresenter.swift */,
+				6AD5500329C5FBAA0035A8C5 /* ImageResultRouter.swift */,
+				6AD5500529C5FBAA0035A8C5 /* ImageResultBuilder.swift */,
+				6AD5500629C5FBAA0035A8C5 /* ImageResultInteractor.swift */,
+			);
+			path = ImageResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,12 +196,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD5500729C5FBAA0035A8C5 /* ImageResultRouter.swift in Sources */,
+				6AD5500A29C5FBAA0035A8C5 /* ImageResultInteractor.swift in Sources */,
 				6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */,
 				6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */,
+				6AD5500929C5FBAA0035A8C5 /* ImageResultBuilder.swift in Sources */,
+				6AD5501229C5FD8E0035A8C5 /* ImageResultMapper.swift in Sources */,
 				6AD54E2029C2F2880035A8C5 /* FeatureDALLEMapper.swift in Sources */,
 				6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */,
 				6AD54E2929C2F35F0035A8C5 /* FeatureDALLEBuilder.swift in Sources */,
 				6AD54E1B29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift in Sources */,
+				6AD5501429C5FD9B0035A8C5 /* ImageResultStateAction.swift in Sources */,
+				6AD5501029C5FD810035A8C5 /* ImageResultPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

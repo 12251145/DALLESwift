@@ -1,6 +1,6 @@
 //
 //  ImageResultRouter.swift
-//  ImageResultDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/18.
 //
