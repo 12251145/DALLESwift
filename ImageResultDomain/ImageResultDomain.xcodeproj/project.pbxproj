@@ -7,74 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54D9229C2AB300035A8C5 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54D9A29C2AB630035A8C5 /* PinLayout */; };
-		6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */; };
-		6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */; };
-		6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DFD29C2D0050035A8C5 /* PromptView.swift */; };
-		6AD54E0029C2D59D0035A8C5 /* UIView+addShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */; };
-		6AD54EA429C46C0C0035A8C5 /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54EA329C46C0C0035A8C5 /* Util.framework */; };
-		6AD54F9329C5449F0035A8C5 /* ImageResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54F9229C5449F0035A8C5 /* ImageResultView.swift */; };
+		6AD54FC829C556C60035A8C5 /* ImageResultDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54FC729C556C60035A8C5 /* ImageResultDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD54FD229C556DF0035A8C5 /* ImageResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FCE29C556DE0035A8C5 /* ImageResultRouter.swift */; };
+		6AD54FD429C556DF0035A8C5 /* ImageResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FD029C556DE0035A8C5 /* ImageResultBuilder.swift */; };
+		6AD54FD529C556DF0035A8C5 /* ImageResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FD129C556DE0035A8C5 /* ImageResultInteractor.swift */; };
+		6AD54FD729C556FC0035A8C5 /* ImageResultStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FD629C556FB0035A8C5 /* ImageResultStateAction.swift */; };
+		6AD54FD929C557060035A8C5 /* ImageResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FD829C557060035A8C5 /* ImageResultMapper.swift */; };
+		6AD54FDB29C557170035A8C5 /* ImageResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FDA29C557170035A8C5 /* ImageResultPresenter.swift */; };
+		6AD54FDE29C558E50035A8C5 /* ImageResultUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54FDD29C558E50035A8C5 /* ImageResultUserInterface.framework */; };
+		6AD54FDF29C558E50035A8C5 /* ImageResultUserInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54FDD29C558E50035A8C5 /* ImageResultUserInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6AD54FE029C558E50035A8C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6AD54FDF29C558E50035A8C5 /* ImageResultUserInterface.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54D9229C2AB300035A8C5 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
-		6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
-		6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEGenerateView.swift; sourceTree = "<group>"; };
-		6AD54DFD29C2D0050035A8C5 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
-		6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addShadow.swift"; sourceTree = "<group>"; };
-		6AD54EA329C46C0C0035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54F9229C5449F0035A8C5 /* ImageResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultView.swift; sourceTree = "<group>"; };
+		6AD54FC429C556C60035A8C5 /* ImageResultDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageResultDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD54FC729C556C60035A8C5 /* ImageResultDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageResultDomain.h; sourceTree = "<group>"; };
+		6AD54FCE29C556DE0035A8C5 /* ImageResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultRouter.swift; sourceTree = "<group>"; };
+		6AD54FD029C556DE0035A8C5 /* ImageResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultBuilder.swift; sourceTree = "<group>"; };
+		6AD54FD129C556DE0035A8C5 /* ImageResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultInteractor.swift; sourceTree = "<group>"; };
+		6AD54FD629C556FB0035A8C5 /* ImageResultStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultStateAction.swift; sourceTree = "<group>"; };
+		6AD54FD829C557060035A8C5 /* ImageResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultMapper.swift; sourceTree = "<group>"; };
+		6AD54FDA29C557170035A8C5 /* ImageResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultPresenter.swift; sourceTree = "<group>"; };
+		6AD54FDD29C558E50035A8C5 /* ImageResultUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageResultUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD54D8C29C2AB300035A8C5 /* Frameworks */ = {
+		6AD54FC129C556C60035A8C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54EA429C46C0C0035A8C5 /* Util.framework in Frameworks */,
-				6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */,
+				6AD54FDE29C558E50035A8C5 /* ImageResultUserInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD54D8529C2AB300035A8C5 = {
+		6AD54FBA29C556C60035A8C5 = {
 			isa = PBXGroup;
 			children = (
-				6AD54D9129C2AB300035A8C5 /* DesignSystem */,
-				6AD54D9029C2AB300035A8C5 /* Products */,
-				6AD54E8C29C454A10035A8C5 /* Frameworks */,
+				6AD54FC629C556C60035A8C5 /* ImageResultDomain */,
+				6AD54FC529C556C60035A8C5 /* Products */,
+				6AD54FDC29C558E50035A8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD54D9029C2AB300035A8C5 /* Products */ = {
+		6AD54FC529C556C60035A8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */,
+				6AD54FC429C556C60035A8C5 /* ImageResultDomain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD54D9129C2AB300035A8C5 /* DesignSystem */ = {
+		6AD54FC629C556C60035A8C5 /* ImageResultDomain */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54D9229C2AB300035A8C5 /* DesignSystem.h */,
-				6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */,
-				6AD54DFD29C2D0050035A8C5 /* PromptView.swift */,
-				6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */,
-				6AD54F9229C5449F0035A8C5 /* ImageResultView.swift */,
-				6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */,
+				6AD54FC729C556C60035A8C5 /* ImageResultDomain.h */,
+				6AD54FD629C556FB0035A8C5 /* ImageResultStateAction.swift */,
+				6AD54FD829C557060035A8C5 /* ImageResultMapper.swift */,
+				6AD54FDA29C557170035A8C5 /* ImageResultPresenter.swift */,
+				6AD54FCE29C556DE0035A8C5 /* ImageResultRouter.swift */,
+				6AD54FD029C556DE0035A8C5 /* ImageResultBuilder.swift */,
+				6AD54FD129C556DE0035A8C5 /* ImageResultInteractor.swift */,
 			);
-			path = DesignSystem;
+			path = ImageResultDomain;
 			sourceTree = "<group>";
 		};
-		6AD54E8C29C454A10035A8C5 /* Frameworks */ = {
+		6AD54FDC29C558E50035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54EA329C46C0C0035A8C5 /* Util.framework */,
+				6AD54FDD29C558E50035A8C5 /* ImageResultUserInterface.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,54 +98,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD54D8A29C2AB300035A8C5 /* Headers */ = {
+		6AD54FBF29C556C60035A8C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */,
+				6AD54FC829C556C60035A8C5 /* ImageResultDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD54D8E29C2AB300035A8C5 /* DesignSystem */ = {
+		6AD54FC329C556C60035A8C5 /* ImageResultDomain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD54D9629C2AB300035A8C5 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
+			buildConfigurationList = 6AD54FCB29C556C60035A8C5 /* Build configuration list for PBXNativeTarget "ImageResultDomain" */;
 			buildPhases = (
-				6AD54D8A29C2AB300035A8C5 /* Headers */,
-				6AD54D8B29C2AB300035A8C5 /* Sources */,
-				6AD54D8C29C2AB300035A8C5 /* Frameworks */,
-				6AD54D8D29C2AB300035A8C5 /* Resources */,
+				6AD54FBF29C556C60035A8C5 /* Headers */,
+				6AD54FC029C556C60035A8C5 /* Sources */,
+				6AD54FC129C556C60035A8C5 /* Frameworks */,
+				6AD54FC229C556C60035A8C5 /* Resources */,
+				6AD54FE029C558E50035A8C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DesignSystem;
-			packageProductDependencies = (
-				6AD54D9A29C2AB630035A8C5 /* PinLayout */,
-			);
-			productName = DesignSystem;
-			productReference = 6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */;
+			name = ImageResultDomain;
+			productName = ImageResultDomain;
+			productReference = 6AD54FC429C556C60035A8C5 /* ImageResultDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD54D8629C2AB300035A8C5 /* Project object */ = {
+		6AD54FBB29C556C60035A8C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD54D8E29C2AB300035A8C5 = {
+					6AD54FC329C556C60035A8C5 = {
 						CreatedOnToolsVersion = 14.2;
-						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD54D8929C2AB300035A8C5 /* Build configuration list for PBXProject "DesignSystem" */;
+			buildConfigurationList = 6AD54FBE29C556C60035A8C5 /* Build configuration list for PBXProject "ImageResultDomain" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -137,21 +150,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD54D8529C2AB300035A8C5;
-			packageReferences = (
-				6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */,
-			);
-			productRefGroup = 6AD54D9029C2AB300035A8C5 /* Products */;
+			mainGroup = 6AD54FBA29C556C60035A8C5;
+			productRefGroup = 6AD54FC529C556C60035A8C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD54D8E29C2AB300035A8C5 /* DesignSystem */,
+				6AD54FC329C556C60035A8C5 /* ImageResultDomain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD54D8D29C2AB300035A8C5 /* Resources */ = {
+		6AD54FC229C556C60035A8C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -161,22 +171,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD54D8B29C2AB300035A8C5 /* Sources */ = {
+		6AD54FC029C556C60035A8C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54E0029C2D59D0035A8C5 /* UIView+addShadow.swift in Sources */,
-				6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */,
-				6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */,
-				6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */,
-				6AD54F9329C5449F0035A8C5 /* ImageResultView.swift in Sources */,
+				6AD54FD429C556DF0035A8C5 /* ImageResultBuilder.swift in Sources */,
+				6AD54FD229C556DF0035A8C5 /* ImageResultRouter.swift in Sources */,
+				6AD54FDB29C557170035A8C5 /* ImageResultPresenter.swift in Sources */,
+				6AD54FD729C556FC0035A8C5 /* ImageResultStateAction.swift in Sources */,
+				6AD54FD529C556DF0035A8C5 /* ImageResultInteractor.swift in Sources */,
+				6AD54FD929C557060035A8C5 /* ImageResultMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD54D9429C2AB300035A8C5 /* Debug */ = {
+		6AD54FC929C556C60035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,7 +250,7 @@
 			};
 			name = Debug;
 		};
-		6AD54D9529C2AB300035A8C5 /* Release */ = {
+		6AD54FCA29C556C60035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,10 +307,9 @@
 			};
 			name = Release;
 		};
-		6AD54D9729C2AB300035A8C5 /* Debug */ = {
+		6AD54FCC29C556C60035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -315,21 +325,20 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.DesignSystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ImageResultDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6AD54D9829C2AB300035A8C5 /* Release */ = {
+		6AD54FCD29C556C60035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -345,8 +354,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.DesignSystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ImageResultDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -358,44 +368,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD54D8929C2AB300035A8C5 /* Build configuration list for PBXProject "DesignSystem" */ = {
+		6AD54FBE29C556C60035A8C5 /* Build configuration list for PBXProject "ImageResultDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54D9429C2AB300035A8C5 /* Debug */,
-				6AD54D9529C2AB300035A8C5 /* Release */,
+				6AD54FC929C556C60035A8C5 /* Debug */,
+				6AD54FCA29C556C60035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD54D9629C2AB300035A8C5 /* Build configuration list for PBXNativeTarget "DesignSystem" */ = {
+		6AD54FCB29C556C60035A8C5 /* Build configuration list for PBXNativeTarget "ImageResultDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54D9729C2AB300035A8C5 /* Debug */,
-				6AD54D9829C2AB300035A8C5 /* Release */,
+				6AD54FCC29C556C60035A8C5 /* Debug */,
+				6AD54FCD29C556C60035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/layoutBox/PinLayout";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6AD54D9A29C2AB630035A8C5 /* PinLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54D9929C2AB630035A8C5 /* XCRemoteSwiftPackageReference "PinLayout" */;
-			productName = PinLayout;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6AD54D8629C2AB300035A8C5 /* Project object */;
+	rootObject = 6AD54FBB29C556C60035A8C5 /* Project object */;
 }

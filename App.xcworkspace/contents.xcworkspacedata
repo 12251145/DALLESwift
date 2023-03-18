@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ImageResultDomain/ImageResultDomain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
    </FileRef>
    <FileRef
