@@ -68,7 +68,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     }
                     
                 case .generateButtonTap:
-                    break
+                    self?.router?.routeToImageResult()
                 }
             })
             .disposeOnDeactivate(interactor: self)

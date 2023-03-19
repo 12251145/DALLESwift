@@ -5,6 +5,8 @@
 //  Created by Hoen on 2023/03/19.
 //
 
+
+import RepositoryInjectManager
 import RIBs
 import UIKit
 
@@ -21,8 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let launchRouter = RootBuilder(dependency: AppComponent()).build()
-        
         self.launchRouter = launchRouter
+        
+        _ = RepositoryInjectManager.shared
         
         if let window {
             launchRouter.launch(from: window)

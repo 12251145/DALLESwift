@@ -5,6 +5,9 @@
       location = "group:Application/Application.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:RepositoryInjectManager/RepositoryInjectManager.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Features/Features.xcodeproj">
    </FileRef>
    <FileRef

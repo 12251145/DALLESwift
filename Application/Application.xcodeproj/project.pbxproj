@@ -35,6 +35,7 @@
 		6AD5516229C739990035A8C5 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5515E29C739990035A8C5 /* RootBuilder.swift */; };
 		6AD5516329C739990035A8C5 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5515F29C739990035A8C5 /* RootInteractor.swift */; };
 		6AD5516529C739BD0035A8C5 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5516429C739BD0035A8C5 /* AppComponent.swift */; };
+		6AD5518229C74C650035A8C5 /* RepositoryInjectManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,7 @@
 		6AD5515E29C739990035A8C5 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		6AD5515F29C739990035A8C5 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		6AD5516429C739BD0035A8C5 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RepositoryInjectManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				6AD5514E29C7379A0035A8C5 /* Util.framework in Frameworks */,
 				6AD5514229C737660035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
 				6AD5514B29C737870035A8C5 /* ThirdPartyLibraryManager.framework in Frameworks */,
+				6AD5518229C74C650035A8C5 /* RepositoryInjectManager.framework in Frameworks */,
 				6AD5515129C737AD0035A8C5 /* DesignSystem.framework in Frameworks */,
 				6AD5514829C7377F0035A8C5 /* RxPackage.framework in Frameworks */,
 				6AD5514529C737760035A8C5 /* RESTAPI.framework in Frameworks */,
@@ -140,6 +143,7 @@
 		6AD5513329C7344A0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */,
 				6AD5515629C737C40035A8C5 /* CoreKit.framework */,
 				6AD5515329C737B60035A8C5 /* DALLEAPI.framework */,
 				6AD5515029C737AD0035A8C5 /* DesignSystem.framework */,
