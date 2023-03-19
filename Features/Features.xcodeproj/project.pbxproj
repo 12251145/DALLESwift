@@ -7,68 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD5508529C6C9700035A8C5 /* FeatureDALLERepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD5508429C6C9700035A8C5 /* FeatureDALLERepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD5508D29C6C9790035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5508C29C6C9790035A8C5 /* RxPackage.framework */; };
-		6AD5509129C6C9840035A8C5 /* FeatureDALLEDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */; };
-		6AD5509529C6CA160035A8C5 /* DALLERepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5509429C6CA160035A8C5 /* DALLERepositoryImpl.swift */; };
-		6AD550F729C7064C0035A8C5 /* CoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550F629C7064C0035A8C5 /* CoreKit.framework */; };
+		6AD5510829C7340D0035A8C5 /* Features.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD5510729C7340D0035A8C5 /* Features.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD5511029C7341D0035A8C5 /* FeatureDALLERepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6AD5508129C6C9700035A8C5 /* FeatureDALLERepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureDALLERepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD5508429C6C9700035A8C5 /* FeatureDALLERepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDALLERepository.h; sourceTree = "<group>"; };
-		6AD5508C29C6C9790035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLEDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD5509429C6CA160035A8C5 /* DALLERepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLERepositoryImpl.swift; sourceTree = "<group>"; };
-		6AD550F629C7064C0035A8C5 /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5510429C7340D0035A8C5 /* Features.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Features.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5510729C7340D0035A8C5 /* Features.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Features.h; sourceTree = "<group>"; };
+		6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLERepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD5507E29C6C9700035A8C5 /* Frameworks */ = {
+		6AD5510129C7340D0035A8C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD5509129C6C9840035A8C5 /* FeatureDALLEDomain.framework in Frameworks */,
-				6AD5508D29C6C9790035A8C5 /* RxPackage.framework in Frameworks */,
-				6AD550F729C7064C0035A8C5 /* CoreKit.framework in Frameworks */,
+				6AD5511029C7341D0035A8C5 /* FeatureDALLERepository.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD5507729C6C9700035A8C5 = {
+		6AD550FA29C7340D0035A8C5 = {
 			isa = PBXGroup;
 			children = (
-				6AD5508329C6C9700035A8C5 /* FeatureDALLERepository */,
-				6AD5508229C6C9700035A8C5 /* Products */,
-				6AD5508B29C6C9790035A8C5 /* Frameworks */,
+				6AD5510629C7340D0035A8C5 /* Features */,
+				6AD5510529C7340D0035A8C5 /* Products */,
+				6AD5510E29C7341C0035A8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD5508229C6C9700035A8C5 /* Products */ = {
+		6AD5510529C7340D0035A8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD5508129C6C9700035A8C5 /* FeatureDALLERepository.framework */,
+				6AD5510429C7340D0035A8C5 /* Features.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD5508329C6C9700035A8C5 /* FeatureDALLERepository */ = {
+		6AD5510629C7340D0035A8C5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				6AD5508429C6C9700035A8C5 /* FeatureDALLERepository.h */,
-				6AD5509429C6CA160035A8C5 /* DALLERepositoryImpl.swift */,
+				6AD5510729C7340D0035A8C5 /* Features.h */,
 			);
-			path = FeatureDALLERepository;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		6AD5508B29C6C9790035A8C5 /* Frameworks */ = {
+		6AD5510E29C7341C0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6AD550F629C7064C0035A8C5 /* CoreKit.framework */,
-				6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */,
-				6AD5508C29C6C9790035A8C5 /* RxPackage.framework */,
+				6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -76,51 +65,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD5507C29C6C9700035A8C5 /* Headers */ = {
+		6AD550FF29C7340D0035A8C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD5508529C6C9700035A8C5 /* FeatureDALLERepository.h in Headers */,
+				6AD5510829C7340D0035A8C5 /* Features.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD5508029C6C9700035A8C5 /* FeatureDALLERepository */ = {
+		6AD5510329C7340D0035A8C5 /* Features */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD5508829C6C9710035A8C5 /* Build configuration list for PBXNativeTarget "FeatureDALLERepository" */;
+			buildConfigurationList = 6AD5510B29C7340D0035A8C5 /* Build configuration list for PBXNativeTarget "Features" */;
 			buildPhases = (
-				6AD5507C29C6C9700035A8C5 /* Headers */,
-				6AD5507D29C6C9700035A8C5 /* Sources */,
-				6AD5507E29C6C9700035A8C5 /* Frameworks */,
-				6AD5507F29C6C9700035A8C5 /* Resources */,
+				6AD550FF29C7340D0035A8C5 /* Headers */,
+				6AD5510029C7340D0035A8C5 /* Sources */,
+				6AD5510129C7340D0035A8C5 /* Frameworks */,
+				6AD5510229C7340D0035A8C5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FeatureDALLERepository;
-			productName = FeatureDALLERepository;
-			productReference = 6AD5508129C6C9700035A8C5 /* FeatureDALLERepository.framework */;
+			name = Features;
+			productName = Features;
+			productReference = 6AD5510429C7340D0035A8C5 /* Features.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD5507829C6C9700035A8C5 /* Project object */ = {
+		6AD550FB29C7340D0035A8C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD5508029C6C9700035A8C5 = {
+					6AD5510329C7340D0035A8C5 = {
 						CreatedOnToolsVersion = 14.2;
-						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD5507B29C6C9700035A8C5 /* Build configuration list for PBXProject "FeatureDALLERepository" */;
+			buildConfigurationList = 6AD550FE29C7340D0035A8C5 /* Build configuration list for PBXProject "Features" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,18 +116,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD5507729C6C9700035A8C5;
-			productRefGroup = 6AD5508229C6C9700035A8C5 /* Products */;
+			mainGroup = 6AD550FA29C7340D0035A8C5;
+			productRefGroup = 6AD5510529C7340D0035A8C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD5508029C6C9700035A8C5 /* FeatureDALLERepository */,
+				6AD5510329C7340D0035A8C5 /* Features */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD5507F29C6C9700035A8C5 /* Resources */ = {
+		6AD5510229C7340D0035A8C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -149,18 +137,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD5507D29C6C9700035A8C5 /* Sources */ = {
+		6AD5510029C7340D0035A8C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD5509529C6CA160035A8C5 /* DALLERepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD5508629C6C9710035A8C5 /* Debug */ = {
+		6AD5510929C7340D0035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		6AD5508729C6C9710035A8C5 /* Release */ = {
+		6AD5510A29C7340D0035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,10 +267,9 @@
 			};
 			name = Release;
 		};
-		6AD5508929C6C9710035A8C5 /* Debug */ = {
+		6AD5510C29C7340D0035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -299,22 +285,19 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.FeatureDALLERepository;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.Features;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6AD5508A29C6C9710035A8C5 /* Release */ = {
+		6AD5510D29C7340D0035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -330,9 +313,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.FeatureDALLERepository;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.Features;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -344,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD5507B29C6C9700035A8C5 /* Build configuration list for PBXProject "FeatureDALLERepository" */ = {
+		6AD550FE29C7340D0035A8C5 /* Build configuration list for PBXProject "Features" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD5508629C6C9710035A8C5 /* Debug */,
-				6AD5508729C6C9710035A8C5 /* Release */,
+				6AD5510929C7340D0035A8C5 /* Debug */,
+				6AD5510A29C7340D0035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD5508829C6C9710035A8C5 /* Build configuration list for PBXNativeTarget "FeatureDALLERepository" */ = {
+		6AD5510B29C7340D0035A8C5 /* Build configuration list for PBXNativeTarget "Features" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD5508929C6C9710035A8C5 /* Debug */,
-				6AD5508A29C6C9710035A8C5 /* Release */,
+				6AD5510C29C7340D0035A8C5 /* Debug */,
+				6AD5510D29C7340D0035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6AD5507829C6C9700035A8C5 /* Project object */;
+	rootObject = 6AD550FB29C7340D0035A8C5 /* Project object */;
 }
