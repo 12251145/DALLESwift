@@ -14,6 +14,12 @@
       location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:CoreKit/CoreKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RESTAPI/RESTAPI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RxPackage/RxPackage.xcodeproj">
    </FileRef>
    <FileRef
