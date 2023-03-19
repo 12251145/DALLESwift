@@ -1,6 +1,6 @@
 //
 //  DALLERepository.swift
-//  BaseDependencyDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/19.
 //
@@ -8,5 +8,5 @@
 import UIKit
 
 public protocol DALLERepository {
-    func requestGenerateImage() async -> UIImage?
+    func requestGenerateImage() async throws -> UIImage?
 }

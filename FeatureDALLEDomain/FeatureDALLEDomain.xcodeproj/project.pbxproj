@@ -22,6 +22,8 @@
 		6AD5501229C5FD8E0035A8C5 /* ImageResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */; };
 		6AD5501429C5FD9B0035A8C5 /* ImageResultStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */; };
 		6AD5506A29C69C4C0035A8C5 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506929C69C4C0035A8C5 /* BaseDependencyDomain.framework */; };
+		6AD5509829C6CAAC0035A8C5 /* DALLERepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5509729C6CAAC0035A8C5 /* DALLERepository.swift */; };
+		6AD5509A29C6CABE0035A8C5 /* RequestGenerateImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5509929C6CABE0035A8C5 /* RequestGenerateImageUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		6AD5503F29C60EFC0035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5504229C60F040035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5506929C69C4C0035A8C5 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5509729C6CAAC0035A8C5 /* DALLERepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLERepository.swift; sourceTree = "<group>"; };
+		6AD5509929C6CABE0035A8C5 /* RequestGenerateImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGenerateImageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */,
+				6AD5509629C6CAA10035A8C5 /* UseCase */,
 				6AD5500129C5FB6F0035A8C5 /* DALLEGenerate */,
 				6AD5500229C5FB8A0035A8C5 /* ImageResult */,
 			);
@@ -124,6 +129,15 @@
 				6AD5500629C5FBAA0035A8C5 /* ImageResultInteractor.swift */,
 			);
 			path = ImageResult;
+			sourceTree = "<group>";
+		};
+		6AD5509629C6CAA10035A8C5 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6AD5509729C6CAAC0035A8C5 /* DALLERepository.swift */,
+				6AD5509929C6CABE0035A8C5 /* RequestGenerateImageUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,11 +221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD5509A29C6CABE0035A8C5 /* RequestGenerateImageUseCase.swift in Sources */,
 				6AD5500729C5FBAA0035A8C5 /* ImageResultRouter.swift in Sources */,
 				6AD5500A29C5FBAA0035A8C5 /* ImageResultInteractor.swift in Sources */,
 				6AD54E2229C2F32E0035A8C5 /* FeatureDALLEPresenter.swift in Sources */,
 				6AD54E2A29C2F35F0035A8C5 /* FeatureDALLEInteractor.swift in Sources */,
 				6AD5500929C5FBAA0035A8C5 /* ImageResultBuilder.swift in Sources */,
+				6AD5509829C6CAAC0035A8C5 /* DALLERepository.swift in Sources */,
 				6AD5501229C5FD8E0035A8C5 /* ImageResultMapper.swift in Sources */,
 				6AD54E2029C2F2880035A8C5 /* FeatureDALLEMapper.swift in Sources */,
 				6AD54E2729C2F35F0035A8C5 /* FeatureDALLERouter.swift in Sources */,

@@ -1,6 +1,6 @@
 //
 //  RequestGenerateImageUseCase.swift
-//  BaseDependencyDomain
+//  FeatureDALLEDomain
 //
 //  Created by Hoen on 2023/03/19.
 //
@@ -10,6 +10,7 @@ import RxSwift
 import Swinject
 import ThirdPartyLibraryManager
 import UIKit
+
 
 protocol RequestGenerateImageUseCase {
     func execute() async -> UIImage?
@@ -28,6 +29,6 @@ struct RequestGenerateImageUseCaseImpl: RequestGenerateImageUseCase {
     }
     
     func execute() async -> UIImage? {
-        return await dallERepository.requestGenerateImage()
+        return try? await dallERepository.requestGenerateImage()
     }
 }
