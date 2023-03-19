@@ -21,6 +21,7 @@
 		6AD5501029C5FD810035A8C5 /* ImageResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5500F29C5FD810035A8C5 /* ImageResultPresenter.swift */; };
 		6AD5501229C5FD8E0035A8C5 /* ImageResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */; };
 		6AD5501429C5FD9B0035A8C5 /* ImageResultStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */; };
+		6AD5506A29C69C4C0035A8C5 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506929C69C4C0035A8C5 /* BaseDependencyDomain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,10 @@
 		6AD5500F29C5FD810035A8C5 /* ImageResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultPresenter.swift; sourceTree = "<group>"; };
 		6AD5501129C5FD8E0035A8C5 /* ImageResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultMapper.swift; sourceTree = "<group>"; };
 		6AD5501329C5FD9B0035A8C5 /* ImageResultStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultStateAction.swift; sourceTree = "<group>"; };
+		6AD5503B29C60EF40035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5503F29C60EFC0035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5504229C60F040035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5506929C69C4C0035A8C5 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD5506A29C69C4C0035A8C5 /* BaseDependencyDomain.framework in Frameworks */,
 				6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +90,10 @@
 		6AD54E1529C2F0310035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD5506929C69C4C0035A8C5 /* BaseDependencyDomain.framework */,
+				6AD5504229C60F040035A8C5 /* Util.framework */,
+				6AD5503F29C60EFC0035A8C5 /* DesignSystem.framework */,
+				6AD5503B29C60EF40035A8C5 /* RxPackage.framework */,
 				6AD54FFD29C5F9870035A8C5 /* ImageResultDomain.framework */,
 				6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */,
 			);
@@ -155,6 +165,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					6AD54E0A29C2F0280035A8C5 = {

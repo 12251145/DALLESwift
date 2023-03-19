@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BaseDependencyDomain/BaseDependencyDomain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
    </FileRef>
    <FileRef

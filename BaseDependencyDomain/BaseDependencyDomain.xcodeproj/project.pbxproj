@@ -7,105 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD54FEF29C5A4810035A8C5 /* ThirdPartyLibraryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54FEE29C5A4810035A8C5 /* ThirdPartyLibraryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD54FFC29C5F5730035A8C5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54FFB29C5F5730035A8C5 /* Swinject */; };
-		6AD5507629C6B29A0035A8C5 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5507529C6B29A0035A8C5 /* DIContainer.swift */; };
+		6AD5505E29C69C2B0035A8C5 /* BaseDependencyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD5506629C69C340035A8C5 /* ThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506529C69C340035A8C5 /* ThirdPartyLibraryManager.framework */; };
+		6AD5506E29C69C8B0035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506D29C69C8B0035A8C5 /* RxPackage.framework */; };
+		6AD5507229C6A0FC0035A8C5 /* RequestGenerateImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5507129C6A0FC0035A8C5 /* RequestGenerateImageUseCase.swift */; };
+		6AD5507429C6A2200035A8C5 /* DALLERepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5507329C6A2200035A8C5 /* DALLERepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6AD54FEB29C5A4810035A8C5 /* ThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD54FEE29C5A4810035A8C5 /* ThirdPartyLibraryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdPartyLibraryManager.h; sourceTree = "<group>"; };
-		6AD5507529C6B29A0035A8C5 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		6AD5505A29C69C2B0035A8C5 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDependencyDomain.h; sourceTree = "<group>"; };
+		6AD5506529C69C340035A8C5 /* ThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5506D29C69C8B0035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD5507129C6A0FC0035A8C5 /* RequestGenerateImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGenerateImageUseCase.swift; sourceTree = "<group>"; };
+		6AD5507329C6A2200035A8C5 /* DALLERepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLERepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD54FE829C5A4810035A8C5 /* Frameworks */ = {
+		6AD5505729C69C2B0035A8C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54FFC29C5F5730035A8C5 /* Swinject in Frameworks */,
+				6AD5506629C69C340035A8C5 /* ThirdPartyLibraryManager.framework in Frameworks */,
+				6AD5506E29C69C8B0035A8C5 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD54FE129C5A4810035A8C5 = {
+		6AD5505029C69C2B0035A8C5 = {
 			isa = PBXGroup;
 			children = (
-				6AD54FED29C5A4810035A8C5 /* ThirdPartyLibraryManager */,
-				6AD54FEC29C5A4810035A8C5 /* Products */,
+				6AD5505C29C69C2B0035A8C5 /* BaseDependencyDomain */,
+				6AD5505B29C69C2B0035A8C5 /* Products */,
+				6AD5506429C69C340035A8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD54FEC29C5A4810035A8C5 /* Products */ = {
+		6AD5505B29C69C2B0035A8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54FEB29C5A4810035A8C5 /* ThirdPartyLibraryManager.framework */,
+				6AD5505A29C69C2B0035A8C5 /* BaseDependencyDomain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD54FED29C5A4810035A8C5 /* ThirdPartyLibraryManager */ = {
+		6AD5505C29C69C2B0035A8C5 /* BaseDependencyDomain */ = {
 			isa = PBXGroup;
 			children = (
-				6AD54FEE29C5A4810035A8C5 /* ThirdPartyLibraryManager.h */,
-				6AD5507529C6B29A0035A8C5 /* DIContainer.swift */,
+				6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */,
+				6AD5507329C6A2200035A8C5 /* DALLERepository.swift */,
+				6AD5507129C6A0FC0035A8C5 /* RequestGenerateImageUseCase.swift */,
 			);
-			path = ThirdPartyLibraryManager;
+			path = BaseDependencyDomain;
+			sourceTree = "<group>";
+		};
+		6AD5506429C69C340035A8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD5506D29C69C8B0035A8C5 /* RxPackage.framework */,
+				6AD5506529C69C340035A8C5 /* ThirdPartyLibraryManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD54FE629C5A4810035A8C5 /* Headers */ = {
+		6AD5505529C69C2B0035A8C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD54FEF29C5A4810035A8C5 /* ThirdPartyLibraryManager.h in Headers */,
+				6AD5505E29C69C2B0035A8C5 /* BaseDependencyDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD54FEA29C5A4810035A8C5 /* ThirdPartyLibraryManager */ = {
+		6AD5505929C69C2B0035A8C5 /* BaseDependencyDomain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD54FF229C5A4810035A8C5 /* Build configuration list for PBXNativeTarget "ThirdPartyLibraryManager" */;
+			buildConfigurationList = 6AD5506129C69C2B0035A8C5 /* Build configuration list for PBXNativeTarget "BaseDependencyDomain" */;
 			buildPhases = (
-				6AD54FE629C5A4810035A8C5 /* Headers */,
-				6AD54FE729C5A4810035A8C5 /* Sources */,
-				6AD54FE829C5A4810035A8C5 /* Frameworks */,
-				6AD54FE929C5A4810035A8C5 /* Resources */,
+				6AD5505529C69C2B0035A8C5 /* Headers */,
+				6AD5505629C69C2B0035A8C5 /* Sources */,
+				6AD5505729C69C2B0035A8C5 /* Frameworks */,
+				6AD5505829C69C2B0035A8C5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ThirdPartyLibraryManager;
-			packageProductDependencies = (
-				6AD54FFB29C5F5730035A8C5 /* Swinject */,
-			);
-			productName = ThirdPartyLibraryManager;
-			productReference = 6AD54FEB29C5A4810035A8C5 /* ThirdPartyLibraryManager.framework */;
+			name = BaseDependencyDomain;
+			productName = BaseDependencyDomain;
+			productReference = 6AD5505A29C69C2B0035A8C5 /* BaseDependencyDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD54FE229C5A4810035A8C5 /* Project object */ = {
+		6AD5505129C69C2B0035A8C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD54FEA29C5A4810035A8C5 = {
+					6AD5505929C69C2B0035A8C5 = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD54FE529C5A4810035A8C5 /* Build configuration list for PBXProject "ThirdPartyLibraryManager" */;
+			buildConfigurationList = 6AD5505429C69C2B0035A8C5 /* Build configuration list for PBXProject "BaseDependencyDomain" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,21 +127,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD54FE129C5A4810035A8C5;
-			packageReferences = (
-				6AD54FFA29C5F5730035A8C5 /* XCRemoteSwiftPackageReference "Swinject" */,
-			);
-			productRefGroup = 6AD54FEC29C5A4810035A8C5 /* Products */;
+			mainGroup = 6AD5505029C69C2B0035A8C5;
+			productRefGroup = 6AD5505B29C69C2B0035A8C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD54FEA29C5A4810035A8C5 /* ThirdPartyLibraryManager */,
+				6AD5505929C69C2B0035A8C5 /* BaseDependencyDomain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD54FE929C5A4810035A8C5 /* Resources */ = {
+		6AD5505829C69C2B0035A8C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,18 +148,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD54FE729C5A4810035A8C5 /* Sources */ = {
+		6AD5505629C69C2B0035A8C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD5507629C6B29A0035A8C5 /* DIContainer.swift in Sources */,
+				6AD5507429C6A2200035A8C5 /* DALLERepository.swift in Sources */,
+				6AD5507229C6A0FC0035A8C5 /* RequestGenerateImageUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD54FF029C5A4810035A8C5 /* Debug */ = {
+		6AD5505F29C69C2B0035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,7 +223,7 @@
 			};
 			name = Debug;
 		};
-		6AD54FF129C5A4810035A8C5 /* Release */ = {
+		6AD5506029C69C2B0035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +280,7 @@
 			};
 			name = Release;
 		};
-		6AD54FF329C5A4810035A8C5 /* Debug */ = {
+		6AD5506229C69C2B0035A8C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -287,8 +299,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ThirdPartyLibraryManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.BaseDependencyDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -298,7 +311,7 @@
 			};
 			name = Debug;
 		};
-		6AD54FF429C5A4810035A8C5 /* Release */ = {
+		6AD5506329C69C2B0035A8C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -317,8 +330,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ThirdPartyLibraryManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.BaseDependencyDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -330,44 +344,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD54FE529C5A4810035A8C5 /* Build configuration list for PBXProject "ThirdPartyLibraryManager" */ = {
+		6AD5505429C69C2B0035A8C5 /* Build configuration list for PBXProject "BaseDependencyDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54FF029C5A4810035A8C5 /* Debug */,
-				6AD54FF129C5A4810035A8C5 /* Release */,
+				6AD5505F29C69C2B0035A8C5 /* Debug */,
+				6AD5506029C69C2B0035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD54FF229C5A4810035A8C5 /* Build configuration list for PBXNativeTarget "ThirdPartyLibraryManager" */ = {
+		6AD5506129C69C2B0035A8C5 /* Build configuration list for PBXNativeTarget "BaseDependencyDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD54FF329C5A4810035A8C5 /* Debug */,
-				6AD54FF429C5A4810035A8C5 /* Release */,
+				6AD5506229C69C2B0035A8C5 /* Debug */,
+				6AD5506329C69C2B0035A8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6AD54FFA29C5F5730035A8C5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6AD54FFB29C5F5730035A8C5 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AD54FFA29C5F5730035A8C5 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6AD54FE229C5A4810035A8C5 /* Project object */;
+	rootObject = 6AD5505129C69C2B0035A8C5 /* Project object */;
 }
