@@ -7,12 +7,12 @@
 
 import RIBs
 
-protocol ImageResultInteractable: Interactable {
+public protocol ImageResultInteractable: Interactable {
     var router: ImageResultRouting? { get set }
     var listener: ImageResultListener? { get set }
 }
 
-protocol ImageResultViewControllable: ViewControllable {
+public protocol ImageResultViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 

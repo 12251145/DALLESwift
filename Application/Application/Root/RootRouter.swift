@@ -5,9 +5,11 @@
 //  Created by Hoen on 2023/03/19.
 //
 
+import FeatureDALLEDomain
 import RIBs
+import UIKit
 
-protocol RootInteractable: Interactable {
+protocol RootInteractable: Interactable, FeatureDALLEListener {
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
@@ -18,9 +20,28 @@ protocol RootViewControllable: ViewControllable {
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
 
+    private let dallEBuilder: FeatureDALLEBuilder
+    
     // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: RootInteractable, viewController: RootViewControllable) {
+    init(dallEBuilder: FeatureDALLEBuilder, interactor: RootInteractable, viewController: RootViewControllable) {
+        self.dallEBuilder = dallEBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+    
+    override func didLoad() {
+        super.didLoad()
+        
+        attachDALLE()
+    }
+    
+    func attachDALLE() {
+        let dallE = dallEBuilder.build(withListener: interactor)
+        attachChild(dallE)
+        
+        let dallEVC = dallE.viewControllable.uiviewController
+        dallEVC.modalPresentationStyle = .fullScreen
+        
+        viewControllable.uiviewController.present(dallEVC, animated: false)
     }
 }

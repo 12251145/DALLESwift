@@ -9,16 +9,16 @@ import RIBs
 import RxRelay
 import RxSwift
 
-protocol ImageResultRouting: ViewableRouting {
+public protocol ImageResultRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol ImageResultPresentable: Presentable {
+public protocol ImageResultPresentable: Presentable {
     var listener: ImageResultPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol ImageResultListener: AnyObject {
+public protocol ImageResultListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 

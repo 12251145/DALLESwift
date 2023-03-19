@@ -7,12 +7,12 @@
 
 import RIBs
 
-protocol FeatureDALLEInteractable: Interactable, ImageResultListener {
+public protocol FeatureDALLEInteractable: Interactable, ImageResultListener {
     var router: FeatureDALLERouting? { get set }
     var listener: FeatureDALLEListener? { get set }
 }
 
-protocol FeatureDALLEViewControllable: ViewControllable {
+public protocol FeatureDALLEViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 

@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/19.
 //
 
+import FeatureDALLEDomain
 import RIBs
 
 protocol RootDependency: Dependency {
@@ -12,7 +13,7 @@ protocol RootDependency: Dependency {
     // created by this RIB.
 }
 
-final class RootComponent: Component<RootDependency> {
+final class RootComponent: Component<RootDependency>, FeatureDALLEDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -30,10 +31,12 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
     }
 
     func build() -> LaunchRouting {
-        let _ = RootComponent(dependency: dependency)
+        let component = RootComponent(dependency: dependency)
         let viewController = RootViewController()
         let interactor = RootInteractor(presenter: viewController)
         
-        return RootRouter(interactor: interactor, viewController: viewController)
+        let dallEBuilder = FeatureDALLEBuilder(dependency: component)
+        
+        return RootRouter(dallEBuilder: dallEBuilder, interactor: interactor, viewController: viewController)
     }
 }

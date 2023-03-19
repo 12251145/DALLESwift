@@ -8,7 +8,7 @@
 import RIBs
 
 
-protocol ImageResultDependency: Dependency {
+public protocol ImageResultDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
 }
@@ -20,17 +20,17 @@ final class ImageResultComponent: Component<ImageResultDependency> {
 
 // MARK: - Builder
 
-protocol ImageResultBuildable: Buildable {
+public protocol ImageResultBuildable: Buildable {
     func build(withListener listener: ImageResultListener) -> ImageResultRouting
 }
 
-final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResultBuildable {
+public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResultBuildable {
 
     override init(dependency: ImageResultDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: ImageResultListener) -> ImageResultRouting {
+    public func build(withListener listener: ImageResultListener) -> ImageResultRouting {
         let component = ImageResultComponent(dependency: dependency)
         let viewController = ImageResultPresenter()
         let interactor = ImageResultInteractor(

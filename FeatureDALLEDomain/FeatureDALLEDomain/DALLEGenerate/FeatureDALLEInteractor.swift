@@ -10,17 +10,17 @@ import RxRelay
 import RxSwift
 import Util
 
-protocol FeatureDALLERouting: ViewableRouting {
+public protocol FeatureDALLERouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func routeToImageResult()
 }
 
-protocol FeatureDALLEPresentable: Presentable {
+public protocol FeatureDALLEPresentable: Presentable {
     var listener: FeatureDALLEPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol FeatureDALLEListener: AnyObject {
+public protocol FeatureDALLEListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 

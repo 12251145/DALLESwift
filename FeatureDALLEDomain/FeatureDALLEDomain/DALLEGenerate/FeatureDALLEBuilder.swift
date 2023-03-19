@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol FeatureDALLEDependency: Dependency {
+public protocol FeatureDALLEDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
 }
@@ -19,17 +19,17 @@ final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResul
 
 // MARK: - Builder
 
-protocol FeatureDALLEBuildable: Buildable {
+public protocol FeatureDALLEBuildable: Buildable {
     func build(withListener listener: FeatureDALLEListener) -> FeatureDALLERouting
 }
 
-final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, FeatureDALLEBuildable {
+public final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, FeatureDALLEBuildable {
 
-    override init(dependency: FeatureDALLEDependency) {
+    public override init(dependency: FeatureDALLEDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: FeatureDALLEListener) -> FeatureDALLERouting {
+    public func build(withListener listener: FeatureDALLEListener) -> FeatureDALLERouting {
         let component = FeatureDALLEComponent(dependency: dependency)
         let viewController = FeatureDALLEPresenter()
         let interactor = FeatureDALLEInteractor(presenter: viewController)
