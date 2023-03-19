@@ -33,7 +33,10 @@ final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResultBuild
     func build(withListener listener: ImageResultListener) -> ImageResultRouting {
         let component = ImageResultComponent(dependency: dependency)
         let viewController = ImageResultPresenter()
-        let interactor = ImageResultInteractor(presenter: viewController)
+        let interactor = ImageResultInteractor(
+            generateImageUseCase: RequestGenerateImageUseCaseImpl(),
+            presenter: viewController
+        )
         interactor.listener = listener
         return ImageResultRouter(interactor: interactor, viewController: viewController)
     }

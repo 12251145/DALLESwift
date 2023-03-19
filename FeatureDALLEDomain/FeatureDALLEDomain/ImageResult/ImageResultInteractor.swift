@@ -31,10 +31,13 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
     
     private let stateRelay: BehaviorRelay<ImageResultPresentationState>
     let state: Observable<ImageResultPresentationState>
+    
+    private let generateImageUseCase: RequestGenerateImageUseCase
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: ImageResultPresentable) {
+    init(generateImageUseCase: RequestGenerateImageUseCase, presenter: ImageResultPresentable) {
+        self.generateImageUseCase = generateImageUseCase
         self.stateRelay = .init(value: .init())
         self.state = stateRelay.asObservable()
         super.init(presenter: presenter)
@@ -43,11 +46,28 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        
+        bindAction()
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func bindAction() {
+        action
+            .subscribe(onNext: { action in
+                switch action {
+                case .viewDidLoad:
+                    Task {
+                        let image = await self.generateImageUseCase.execute()
+                        var newState = self.stateRelay.value
+                        newState.image = image
+                        self.stateRelay.accept(newState)
+                    }
+                }
+            })
+            .disposeOnDeactivate(interactor: self)
     }
 }
