@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPNetworkError: Error {
+public enum HTTPNetworkError: Error {
     case invalidURL
     case invalidResponse
 }

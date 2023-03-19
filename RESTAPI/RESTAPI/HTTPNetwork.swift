@@ -7,14 +7,18 @@
 
 import Foundation
 
-public class HTTPNetwork {
+public protocol HTTPNetworkProtocol {
+    func request<T: Decodable>(endPoint: EndPoint) async throws -> T
+}
+
+public final class HTTPNetwork: HTTPNetworkProtocol {
     private let session: URLSession
     
     public init(session: URLSession) {
         self.session = session
     }
     
-    func request<T: Decodable>(endPoint: EndPoint) async throws -> T {
+    public func request<T: Decodable>(endPoint: EndPoint) async throws -> T {
         guard var baseComponents = URLComponents(string: endPoint.url) else {
             throw HTTPNetworkError.invalidURL
         }
@@ -31,7 +35,7 @@ public class HTTPNetwork {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = endPoint.method
+        request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.headers
         
         if let requestBody = endPoint.requestBody {

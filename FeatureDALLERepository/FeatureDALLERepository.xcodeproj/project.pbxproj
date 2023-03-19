@@ -11,7 +11,23 @@
 		6AD5508D29C6C9790035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5508C29C6C9790035A8C5 /* RxPackage.framework */; };
 		6AD5509129C6C9840035A8C5 /* FeatureDALLEDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */; };
 		6AD5509529C6CA160035A8C5 /* DALLERepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5509429C6CA160035A8C5 /* DALLERepositoryImpl.swift */; };
+		6AD550F729C7064C0035A8C5 /* CoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550F629C7064C0035A8C5 /* CoreKit.framework */; };
+		6AD550F829C7064C0035A8C5 /* CoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550F629C7064C0035A8C5 /* CoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6AD550F929C7064D0035A8C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6AD550F829C7064C0035A8C5 /* CoreKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6AD5508129C6C9700035A8C5 /* FeatureDALLERepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureDALLERepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +35,7 @@
 		6AD5508C29C6C9790035A8C5 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLEDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5509429C6CA160035A8C5 /* DALLERepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLERepositoryImpl.swift; sourceTree = "<group>"; };
+		6AD550F629C7064C0035A8C5 /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +45,7 @@
 			files = (
 				6AD5509129C6C9840035A8C5 /* FeatureDALLEDomain.framework in Frameworks */,
 				6AD5508D29C6C9790035A8C5 /* RxPackage.framework in Frameworks */,
+				6AD550F729C7064C0035A8C5 /* CoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +81,7 @@
 		6AD5508B29C6C9790035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD550F629C7064C0035A8C5 /* CoreKit.framework */,
 				6AD5509029C6C9840035A8C5 /* FeatureDALLEDomain.framework */,
 				6AD5508C29C6C9790035A8C5 /* RxPackage.framework */,
 			);
@@ -91,6 +110,7 @@
 				6AD5507D29C6C9700035A8C5 /* Sources */,
 				6AD5507E29C6C9700035A8C5 /* Frameworks */,
 				6AD5507F29C6C9700035A8C5 /* Resources */,
+				6AD550F929C7064D0035A8C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

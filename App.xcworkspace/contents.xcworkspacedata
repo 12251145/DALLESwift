@@ -17,6 +17,9 @@
       location = "group:CoreKit/CoreKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:DALLEAPI/DALLEAPI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RESTAPI/RESTAPI.xcodeproj">
    </FileRef>
    <FileRef

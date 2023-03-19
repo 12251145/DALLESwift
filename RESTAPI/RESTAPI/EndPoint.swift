@@ -7,11 +7,27 @@
 
 import Foundation
 
-struct EndPoint {
-    var method: String
+public struct EndPoint {
+    var method: HTTPMethod
     var url: String
-    var pathComponents: [String]? = nil
-    var queryItems: [URLQueryItem]? = nil
-    var headers: [String: String]? = nil
-    var requestBody: [String: Any]? = nil
+    var pathComponents: [String]?
+    var queryItems: [URLQueryItem]?
+    var headers: [String: String]?
+    var requestBody: [String: Any]?
+    
+    public init(
+        method: HTTPMethod,
+        url: String,
+        pathComponents: [String]? = nil,
+        queryItems: [URLQueryItem]? = nil,
+        headers: [String : String]? = nil,
+        requestBody: [String : Any]? = nil) {
+            
+            self.method = method
+            self.url = url
+            self.pathComponents = pathComponents
+            self.queryItems = queryItems
+            self.headers = headers
+            self.requestBody = requestBody
+        }
 }

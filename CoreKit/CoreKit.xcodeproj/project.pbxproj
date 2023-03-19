@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6AD550A929C6D24D0035A8C5 /* CoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD550A829C6D24D0035A8C5 /* CoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD550F029C701D40035A8C5 /* RESTAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550EF29C701D40035A8C5 /* RESTAPI.framework */; };
+		6AD550F429C701D90035A8C5 /* DALLEAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550F329C701D90035A8C5 /* DALLEAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6AD550A529C6D24D0035A8C5 /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD550A829C6D24D0035A8C5 /* CoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreKit.h; sourceTree = "<group>"; };
+		6AD550EF29C701D40035A8C5 /* RESTAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RESTAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD550F329C701D90035A8C5 /* DALLEAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DALLEAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +24,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD550F429C701D90035A8C5 /* DALLEAPI.framework in Frameworks */,
+				6AD550F029C701D40035A8C5 /* RESTAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,6 +37,7 @@
 			children = (
 				6AD550A729C6D24D0035A8C5 /* CoreKit */,
 				6AD550A629C6D24D0035A8C5 /* Products */,
+				6AD550EE29C701D40035A8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +55,15 @@
 				6AD550A829C6D24D0035A8C5 /* CoreKit.h */,
 			);
 			path = CoreKit;
+			sourceTree = "<group>";
+		};
+		6AD550EE29C701D40035A8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD550F329C701D90035A8C5 /* DALLEAPI.framework */,
+				6AD550EF29C701D40035A8C5 /* RESTAPI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
