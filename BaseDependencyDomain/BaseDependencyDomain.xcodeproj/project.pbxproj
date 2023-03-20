@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A6AF92D29C8A5E200B44FE8 /* NavigateViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF92C29C8A5E200B44FE8 /* NavigateViewControllable.swift */; };
 		6AD5505E29C69C2B0035A8C5 /* BaseDependencyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD5506629C69C340035A8C5 /* ThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506529C69C340035A8C5 /* ThirdPartyLibraryManager.framework */; };
 		6AD5506E29C69C8B0035A8C5 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5506D29C69C8B0035A8C5 /* RxPackage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A6AF92C29C8A5E200B44FE8 /* NavigateViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateViewControllable.swift; sourceTree = "<group>"; };
 		6AD5505A29C69C2B0035A8C5 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDependencyDomain.h; sourceTree = "<group>"; };
 		6AD5506529C69C340035A8C5 /* ThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD5505D29C69C2B0035A8C5 /* BaseDependencyDomain.h */,
+				6A6AF92C29C8A5E200B44FE8 /* NavigateViewControllable.swift */,
 			);
 			path = BaseDependencyDomain;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6AF92D29C8A5E200B44FE8 /* NavigateViewControllable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

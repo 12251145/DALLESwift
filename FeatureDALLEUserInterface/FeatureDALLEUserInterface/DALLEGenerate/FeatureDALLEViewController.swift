@@ -43,6 +43,9 @@ public final class FeatureDALLEViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        let titleLabel = NavigationTitleLabel(title: "DALL ・ E")
+        self.navigationItem.titleView = titleLabel
+        
         bindAction()
         bindState()
     }

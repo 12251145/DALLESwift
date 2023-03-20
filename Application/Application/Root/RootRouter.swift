@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/19.
 //
 
+import BaseDependencyDomain
 import FeatureDALLEDomain
 import RIBs
 import UIKit
@@ -14,7 +15,7 @@ protocol RootInteractable: Interactable, FeatureDALLEListener {
     var listener: RootListener? { get set }
 }
 
-protocol RootViewControllable: ViewControllable {
+protocol RootViewControllable: NavigateViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
@@ -36,12 +37,11 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
     
     func attachDALLE() {
+        
         let dallE = dallEBuilder.build(withListener: interactor)
         attachChild(dallE)
-        
-        let dallEVC = dallE.viewControllable.uiviewController
-        dallEVC.modalPresentationStyle = .fullScreen
-        
-        viewControllable.uiviewController.present(dallEVC, animated: false)
+        let dallEVC = dallE.viewControllable
+
+        viewController.presentNavigationViewController(root: dallEVC, modalPresentationStyle: .fullScreen)
     }
 }
