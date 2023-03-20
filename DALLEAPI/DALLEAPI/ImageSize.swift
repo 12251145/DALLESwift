@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ImageSize {
+public enum ImageSize {
     case low
     case mid
     case high

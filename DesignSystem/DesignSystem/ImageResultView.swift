@@ -35,6 +35,6 @@ final public class ImageResultView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView.pin.hCenter().vCenter(-5%).width(90%).height(500)
+        imageView.pin.hCenter().vCenter(-10%).width(200).height(200)
     }
 }

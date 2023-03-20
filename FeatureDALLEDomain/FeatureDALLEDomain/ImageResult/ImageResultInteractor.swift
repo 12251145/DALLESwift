@@ -61,10 +61,14 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
                 switch action {
                 case .viewDidLoad:
                     Task {
-                        let image = await self.generateImageUseCase.execute()
-                        var newState = self.stateRelay.value
-                        newState.image = image
-                        self.stateRelay.accept(newState)
+                        do {
+                            let image = try await self.generateImageUseCase.execute()
+                            var newState = self.stateRelay.value
+                            newState.image = image
+                            self.stateRelay.accept(newState)
+                        } catch {
+                            print(error)
+                        }
                     }
                 }
             })

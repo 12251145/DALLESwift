@@ -12,10 +12,10 @@ public struct DALLECreateImageRequest {
     private var n: Int
     private var size: ImageSize
     private var apiKey: String
-    private(set) var pathComponents = ["v1", "images", "generatioins"]
+    private(set) var pathComponents = ["v1", "images", "generations"]
     private(set) var headers: [String: String]
     
-    init(prompt: String, n: Int, size: ImageSize, apiKey: String) {
+    public init(prompt: String, n: Int, size: ImageSize, apiKey: String) {
         self.prompt = prompt
         self.n = n
         self.size = size

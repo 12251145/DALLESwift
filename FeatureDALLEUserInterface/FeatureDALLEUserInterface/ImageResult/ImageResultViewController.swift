@@ -43,5 +43,19 @@ public final class ImageResultViewController: UIViewController {
         view.backgroundColor = .white
         
         self.isModalInPresentation = true
+        
+        bindAction()
+        bindState()
+    }
+    
+    func bindAction() {
+        listener?.action(.viewDidLoad)
+    }
+    
+    func bindState() {
+        listener?.presentableState
+            .map(\.image)
+            .bind(to: imageResultView.imageView.rx.image)
+            .disposed(by: disposeBag)
     }
 }

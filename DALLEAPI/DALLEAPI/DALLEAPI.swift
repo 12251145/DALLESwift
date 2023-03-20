@@ -11,7 +11,7 @@ public final class DALLEAPI {
     private let baseURL = "https://api.openai.com"
     private let httpNetwork: HTTPNetworkProtocol
     
-    init(httpNetwork: HTTPNetworkProtocol) {
+    public init(httpNetwork: HTTPNetworkProtocol) {
         self.httpNetwork = httpNetwork
     }
     

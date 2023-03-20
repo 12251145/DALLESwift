@@ -25,7 +25,7 @@ public final class HTTPNetwork: HTTPNetworkProtocol {
         
         if let pathComponents = endPoint.pathComponents {
             baseComponents.path = (baseComponents.path as NSString)
-                .appendingPathComponent(pathComponents.joined(separator: "/"))
+                .appendingPathComponent("/" + pathComponents.joined(separator: "/"))
         }
         
         baseComponents.queryItems = endPoint.queryItems
@@ -37,6 +37,7 @@ public final class HTTPNetwork: HTTPNetworkProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.headers
+        request.timeoutInterval = .infinity
         
         if let requestBody = endPoint.requestBody {
             do {
