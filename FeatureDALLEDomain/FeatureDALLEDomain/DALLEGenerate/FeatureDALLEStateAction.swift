@@ -15,9 +15,14 @@ public enum PresentationAction {
 
 public struct PresentationState {
     var generateButtonEnabled: Bool
+    var keyBoardHeight: CGFloat
         
-    public init(generateButtonEnabled: Bool) {
-        self.generateButtonEnabled = generateButtonEnabled
+    public init(
+        generateButtonEnabled: Bool,
+        keyBoardHeight: CGFloat) {
+        
+            self.generateButtonEnabled = generateButtonEnabled
+            self.keyBoardHeight = keyBoardHeight
     }
 }
 

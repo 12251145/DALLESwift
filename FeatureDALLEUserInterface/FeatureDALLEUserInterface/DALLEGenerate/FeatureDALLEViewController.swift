@@ -18,9 +18,14 @@ public enum FeatureDALLEPresentableAction {
 
 public struct FeatureDALLEPresentableState {
     var generateButtonEnabled: Bool
+    var keyBoardHeight: CGFloat
         
-    public init(generateButtonEnabled: Bool) {
-        self.generateButtonEnabled = generateButtonEnabled
+    public init(
+        generateButtonEnabled: Bool,
+        keyBoardHeight: CGFloat) {
+        
+            self.generateButtonEnabled = generateButtonEnabled
+            self.keyBoardHeight = keyBoardHeight
     }
 }
 
@@ -69,6 +74,14 @@ public final class FeatureDALLEViewController: UIViewController {
             .map(\.generateButtonEnabled)
             .distinctUntilChanged()
             .bind(to: generateView.generateButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .map(\.keyBoardHeight)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] height in
+                
+            })
             .disposed(by: disposeBag)
     }
 }

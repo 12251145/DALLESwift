@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A6AF93229C8B2DB00B44FE8 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6AF93129C8B2DB00B44FE8 /* RxKeyboard */; };
 		6AD54DC729C2BD560035A8C5 /* RxPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54DC629C2BD560035A8C5 /* RxPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54DCF29C2BDA70035A8C5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54DCE29C2BDA70035A8C5 /* RxCocoa */; };
 		6AD54DD129C2BDA70035A8C5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54DD029C2BDA70035A8C5 /* RxRelay */; };
@@ -28,6 +29,7 @@
 				6AD54DD329C2BDA70035A8C5 /* RxSwift in Frameworks */,
 				6AD54DD129C2BDA70035A8C5 /* RxRelay in Frameworks */,
 				6AD54DCF29C2BDA70035A8C5 /* RxCocoa in Frameworks */,
+				6A6AF93229C8B2DB00B44FE8 /* RxKeyboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,7 @@
 				6AD54DD029C2BDA70035A8C5 /* RxRelay */,
 				6AD54DD229C2BDA70035A8C5 /* RxSwift */,
 				6AD54E2C29C2F39B0035A8C5 /* RIBs */,
+				6A6AF93129C8B2DB00B44FE8 /* RxKeyboard */,
 			);
 			productName = RxPackage;
 			productReference = 6AD54DC329C2BD560035A8C5 /* RxPackage.framework */;
@@ -122,6 +125,7 @@
 			packageReferences = (
 				6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				6AD54E2B29C2F39A0035A8C5 /* XCRemoteSwiftPackageReference "RIBs" */,
+				6A6AF93029C8B2DB00B44FE8 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
 			);
 			productRefGroup = 6AD54DC429C2BD560035A8C5 /* Products */;
 			projectDirPath = "";
@@ -353,6 +357,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6A6AF93029C8B2DB00B44FE8 /* XCRemoteSwiftPackageReference "RxKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxKeyboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -372,6 +384,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6A6AF93129C8B2DB00B44FE8 /* RxKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A6AF93029C8B2DB00B44FE8 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
+		};
 		6AD54DCE29C2BDA70035A8C5 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6AD54DCD29C2BDA70035A8C5 /* XCRemoteSwiftPackageReference "RxSwift" */;

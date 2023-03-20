@@ -20,6 +20,6 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
 
 extension PresentationState {
     var toMapper: FeatureDALLEUserInterface.FeatureDALLEPresentableState {
-        return .init(generateButtonEnabled: generateButtonEnabled)
+        return .init(generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight)
     }
 }

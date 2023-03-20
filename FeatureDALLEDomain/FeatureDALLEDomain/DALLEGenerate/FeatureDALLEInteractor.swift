@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import RxKeyboard
 import RxRelay
 import RxSwift
 import Util
@@ -37,7 +38,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: FeatureDALLEPresentable) {
-        self.stateRelay = .init(value: .init(generateButtonEnabled: false))
+        self.stateRelay = .init(value: .init(generateButtonEnabled: false, keyBoardHeight: 0))
         self.state = stateRelay.asObservable()
         super.init(presenter: presenter)
         presenter.listener = self
@@ -47,6 +48,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
         super.didBecomeActive()
             
         bindAction()
+        observeKeyboard()
     }
 
     override func willResignActive() {
@@ -72,6 +74,19 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 }
             })
             .disposeOnDeactivate(interactor: self)
+    }
+    
+    func observeKeyboard() {
+        RxKeyboard.instance.frame
+            .map { $0.height }
+            .drive(onNext: { [weak self] height in
+                if var newState = self?.stateRelay.value {
+                    newState.keyBoardHeight = height
+                    self?.stateRelay.accept(newState)
+                }
+            })
+            .disposeOnDeactivate(interactor: self)
+            
     }
     
     func stringIsNotNilAndEmpty(_ string: String?) -> Bool {
