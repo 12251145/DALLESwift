@@ -14,6 +14,12 @@ final public class DALLEGenerateView: UIView {
     public private(set) var promptView = PromptView()
     public private(set) var generateButton = CapsuleButton("GENERATE")
     
+    private var keyboardHeight: CGFloat = 0 {
+        didSet {
+            layout()
+        }
+    }
+    
     public init() {
         super.init(frame: .zero)
         
@@ -28,9 +34,7 @@ final public class DALLEGenerateView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
-        scrollView.pin.all()
-        generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
+        layout()
     }        
     
     private func configureUI() {
@@ -38,5 +42,23 @@ final public class DALLEGenerateView: UIView {
         addSubview(generateButton)
         
         scrollView.append(promptView, 90%, 250)
+    }
+    
+    private func layout() {
+        if keyboardHeight == 0 {
+            generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
+            scrollView.pin.above(of: generateButton).left().right().top(pin.safeArea.top)
+            scrollView.updateHeight(promptView, 250)
+            
+        } else {
+            generateButton.pin.hCenter().bottom(keyboardHeight + 16).width(80%).height(50)
+            scrollView.pin.above(of: generateButton).left().right().top(pin.safeArea.top)
+            scrollView.updateHeight(promptView, 200)
+        }
+        
+    }
+    
+    public func adjustUIWithKeyboardHeight(_ height: CGFloat) {
+        keyboardHeight = height
     }
 }

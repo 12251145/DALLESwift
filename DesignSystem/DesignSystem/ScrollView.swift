@@ -44,6 +44,11 @@ public final class ScrollView: UIView {
         super.init(frame: .zero)
         self.addSubview(scrollView)
         self.scrollView.showsVerticalScrollIndicator = false
+        self.scrollView.contentInset.top = 1
+        
+        self.layer.masksToBounds = false
+        self.scrollView.layer.masksToBounds = false
+        
     }
     
     required init?(coder: NSCoder) {
@@ -52,7 +57,7 @@ public final class ScrollView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-                
+        
         layout()
     }
     
@@ -62,7 +67,7 @@ public final class ScrollView: UIView {
         
         var top: CGFloat = 0
         let scrollViewHeight = scrollView.bounds.size.height
-        
+                
         scrollView.subviews.forEach { subview in
             if let index = contentsDict[subview] {
                 let height = contents[index].height
@@ -79,21 +84,30 @@ public final class ScrollView: UIView {
         
         top -= top == 0 ? 0 : spacing
         scrollView.contentSize.height = max(scrollViewHeight, top)
+        
+        scrollView.layoutIfNeeded()
     }
     
     public func append(_ view: UIView, _ width: CGFloat, _ height: CGFloat) {
         scrollView.addSubview(view)
         contents.append(ContentInfo(view: view, wCGFloat: width, height: height))
         contentsDict[view] = contents.count - 1
-        
-        setNeedsLayout()
     }
     
     public func append(_ view: UIView, _ width: Percent, _ height: CGFloat) {
         scrollView.addSubview(view)
         contents.append(ContentInfo(view: view, wPercent: width, height: height))
         contentsDict[view] = contents.count - 1
+    }
+    
+    public func updateHeight(_ view: UIView, _ height: CGFloat) {
+        guard let index = contentsDict[view] else { return }
         
-        setNeedsLayout()
+        var info = contents[index]
+        info.height = height
+        
+        contents[index] = info
+        
+        layout()
     }
 }

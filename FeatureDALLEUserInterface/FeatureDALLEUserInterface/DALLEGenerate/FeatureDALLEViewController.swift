@@ -80,7 +80,7 @@ public final class FeatureDALLEViewController: UIViewController {
             .map(\.keyBoardHeight)
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] height in
-                
+                self?.generateView.adjustUIWithKeyboardHeight(height)
             })
             .disposed(by: disposeBag)
     }
