@@ -10,6 +10,7 @@ import UIKit
 
 final public class DALLEGenerateView: UIView {
     
+    private var scrollView = ScrollView()
     public private(set) var promptView = PromptView()
     public private(set) var generateButton = CapsuleButton("GENERATE")
     
@@ -17,8 +18,8 @@ final public class DALLEGenerateView: UIView {
         super.init(frame: .zero)
         
         backgroundColor = .white
-        addSubview(generateButton)
-        addSubview(promptView)
+        
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -28,7 +29,14 @@ final public class DALLEGenerateView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        promptView.pin.hCenter().top(pin.safeArea.top + 20).width(90%).height(250)
+        scrollView.pin.all()
         generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
+    }        
+    
+    private func configureUI() {
+        addSubview(scrollView)
+        addSubview(generateButton)
+        
+        scrollView.append(promptView, 90%, 250)
     }
 }
