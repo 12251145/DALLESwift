@@ -47,12 +47,12 @@ final public class DALLEGenerateView: UIView {
     private func layout() {
         if keyboardHeight == 0 {
             generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
-            scrollView.pin.above(of: generateButton).left().right().top(pin.safeArea.top)
+            scrollView.pin.above(of: generateButton).left().right().top()
             scrollView.updateHeight(promptView, 250)
             
         } else {
             generateButton.pin.hCenter().bottom(keyboardHeight + 16).width(80%).height(50)
-            scrollView.pin.above(of: generateButton).left().right().top(pin.safeArea.top)
+            scrollView.pin.above(of: generateButton).left().right().top()
             scrollView.updateHeight(promptView, 200)
         }
         

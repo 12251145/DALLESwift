@@ -10,6 +10,7 @@ import PinLayout
 import RxCocoa
 import RxSwift
 import UIKit
+import Util
 
 public enum FeatureDALLEPresentableAction {
     case promtInput(string: String?)
@@ -53,6 +54,7 @@ public final class FeatureDALLEViewController: UIViewController {
         
         bindAction()
         bindState()
+        setupHideKeyboardOnTap()
     }
     
     func bindAction() {

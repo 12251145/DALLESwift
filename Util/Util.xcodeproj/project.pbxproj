@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A6AF93629CA99AD00B44FE8 /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF93529CA99AD00B44FE8 /* UIViewController+hideKeyboard.swift */; };
 		6AD54E8329C453B40035A8C5 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54E8229C453B40035A8C5 /* Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54E8A29C453E70035A8C5 /* String?+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E8929C453E70035A8C5 /* String?+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A6AF93529CA99AD00B44FE8 /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
 		6AD54E7F29C453B40035A8C5 /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54E8229C453B40035A8C5 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		6AD54E8929C453E70035A8C5 /* String?+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?+Validation.swift"; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD54E8929C453E70035A8C5 /* String?+Validation.swift */,
+				6A6AF93529CA99AD00B44FE8 /* UIViewController+hideKeyboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD54E8A29C453E70035A8C5 /* String?+Validation.swift in Sources */,
+				6A6AF93629CA99AD00B44FE8 /* UIViewController+hideKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

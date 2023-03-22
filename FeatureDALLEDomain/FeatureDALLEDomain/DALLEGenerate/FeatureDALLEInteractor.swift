@@ -77,8 +77,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     }
     
     func observeKeyboard() {
-        RxKeyboard.instance.frame
-            .map { $0.height }
+        RxKeyboard.instance.visibleHeight            
             .drive(onNext: { [weak self] height in
                 if var newState = self?.stateRelay.value {
                     newState.keyBoardHeight = height
