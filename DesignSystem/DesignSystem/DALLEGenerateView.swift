@@ -12,6 +12,7 @@ final public class DALLEGenerateView: UIView {
     
     private var scrollView = ScrollView()
     public private(set) var promptView = PromptView()
+    public private(set) var nStepper = NStepper(low: 1, high: 10)
     public private(set) var generateButton = CapsuleButton("GENERATE")
     
     private var keyboardHeight: CGFloat = 0 {
@@ -41,7 +42,9 @@ final public class DALLEGenerateView: UIView {
         addSubview(scrollView)
         addSubview(generateButton)
         
+        scrollView.spacing = 20
         scrollView.append(promptView, 90%, 250)
+        scrollView.append(nStepper, 85%, 50)
     }
     
     private func layout() {

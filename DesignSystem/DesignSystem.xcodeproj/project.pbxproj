@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A6AF92F29C8ABB700B44FE8 /* NavigationTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF92E29C8ABB700B44FE8 /* NavigationTitleLabel.swift */; };
 		6A6AF93429C95D3C00B44FE8 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF93329C95D3C00B44FE8 /* ScrollView.swift */; };
+		6A6AF93829CAB03B00B44FE8 /* NStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF93729CAB03B00B44FE8 /* NStepper.swift */; };
 		6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54D9229C2AB300035A8C5 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54D9A29C2AB630035A8C5 /* PinLayout */; };
 		6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		6A6AF92E29C8ABB700B44FE8 /* NavigationTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleLabel.swift; sourceTree = "<group>"; };
 		6A6AF93329C95D3C00B44FE8 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		6A6AF93729CAB03B00B44FE8 /* NStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NStepper.swift; sourceTree = "<group>"; };
 		6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54D9229C2AB300035A8C5 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				6AD54F9229C5449F0035A8C5 /* ImageResultView.swift */,
 				6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */,
 				6A6AF93329C95D3C00B44FE8 /* ScrollView.swift */,
+				6A6AF93729CAB03B00B44FE8 /* NStepper.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				6AD54E0029C2D59D0035A8C5 /* UIView+addShadow.swift in Sources */,
 				6A6AF93429C95D3C00B44FE8 /* ScrollView.swift in Sources */,
+				6A6AF93829CAB03B00B44FE8 /* NStepper.swift in Sources */,
 				6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */,
 				6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */,
 				6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */,
