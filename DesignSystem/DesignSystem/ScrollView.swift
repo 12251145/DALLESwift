@@ -29,7 +29,8 @@ public final class ScrollView: UIView {
         }
     }
 
-    let scrollView = UIScrollView()
+    private let scrollView = UIScrollView()
+    public var footLight = FootLightView()
     
     public var spacing: CGFloat = 0 {
         didSet {
@@ -49,6 +50,7 @@ public final class ScrollView: UIView {
     public init() {
         super.init(frame: .zero)
         self.addSubview(scrollView)
+        self.addSubview(footLight)
         self.scrollView.showsVerticalScrollIndicator = false
     }
     
@@ -59,7 +61,7 @@ public final class ScrollView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        layout()
+        layoutAll()
     }
     
     private func layout() {
@@ -110,6 +112,13 @@ public final class ScrollView: UIView {
         
         contents[index] = info
         
+        layoutAll()
+    }
+}
+
+extension ScrollView: FootLightable {
+    
+    public func layoutOthers() {
         layout()
     }
 }

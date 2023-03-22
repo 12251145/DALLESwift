@@ -61,7 +61,7 @@ final public class DALLEGenerateView: UIView {
             scrollView.updateHeight(promptView, 170)
             
         } else {
-            generateButton.pin.hCenter().bottom(keyboardHeight + 16).width(80%).height(50)
+            generateButton.pin.hCenter().bottom(keyboardHeight + 10).width(80%).height(50)
             scrollView.pin.above(of: generateButton).left().right().top()
             scrollView.updateHeight(promptView, 150)
         }
