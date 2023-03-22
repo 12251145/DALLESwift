@@ -44,6 +44,7 @@ public final class ScrollView: UIView {
         super.init(frame: .zero)
         self.addSubview(scrollView)
         self.scrollView.showsVerticalScrollIndicator = false
+        self.scrollView.delaysContentTouches = false
         
         self.layer.masksToBounds = false
         self.scrollView.layer.masksToBounds = false

@@ -13,6 +13,7 @@ final public class DALLEGenerateView: UIView {
     private var scrollView = ScrollView()
     public private(set) var promptView = PromptView()
     public private(set) var nStepper = NStepper(low: 1, high: 10)
+    public private(set) var showPhotoPickerButton = DottedBorderButton(title: "Image to edit", image: UIImage(systemName: "photo"))
     public private(set) var generateButton = CapsuleButton("GENERATE")
     
     private var keyboardHeight: CGFloat = 0 {
@@ -42,21 +43,22 @@ final public class DALLEGenerateView: UIView {
         addSubview(scrollView)
         addSubview(generateButton)
         
-        scrollView.spacing = 20
-        scrollView.append(promptView, 90%, 250)
+        scrollView.spacing = 30
+        scrollView.append(promptView, 90%, 170)
         scrollView.append(nStepper, 85%, 50)
+        scrollView.append(showPhotoPickerButton, 90%, 130)
     }
     
     private func layout() {
         if keyboardHeight == 0 {
             generateButton.pin.hCenter().bottom(pin.safeArea.bottom + 12).width(80%).height(50)
             scrollView.pin.above(of: generateButton).left().right().top()
-            scrollView.updateHeight(promptView, 250)
+            scrollView.updateHeight(promptView, 170)
             
         } else {
             generateButton.pin.hCenter().bottom(keyboardHeight + 16).width(80%).height(50)
             scrollView.pin.above(of: generateButton).left().right().top()
-            scrollView.updateHeight(promptView, 200)
+            scrollView.updateHeight(promptView, 150)
         }
         
     }
