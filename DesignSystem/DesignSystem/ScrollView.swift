@@ -37,6 +37,12 @@ public final class ScrollView: UIView {
         }
     }
     
+    public var contentInset: UIEdgeInsets? = nil {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
     private var contents: [ContentInfo] = []
     private var contentsDict: [UIView: Int] = [:]
 
@@ -44,11 +50,6 @@ public final class ScrollView: UIView {
         super.init(frame: .zero)
         self.addSubview(scrollView)
         self.scrollView.showsVerticalScrollIndicator = false
-        self.scrollView.delaysContentTouches = false
-        
-        self.layer.masksToBounds = false
-        self.scrollView.layer.masksToBounds = false
-        
     }
     
     required init?(coder: NSCoder) {
@@ -84,6 +85,7 @@ public final class ScrollView: UIView {
         
         top -= top == 0 ? 0 : spacing
         scrollView.contentSize.height = max(scrollViewHeight, top)
+        scrollView.contentInset = contentInset ?? .zero
         
         scrollView.layoutIfNeeded()
     }

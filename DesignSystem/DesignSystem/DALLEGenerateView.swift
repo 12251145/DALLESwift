@@ -43,7 +43,12 @@ final public class DALLEGenerateView: UIView {
         addSubview(scrollView)
         addSubview(generateButton)
         
+        var contentInset = UIEdgeInsets.zero
+        contentInset.top = 20
+        contentInset.bottom = 40
+        
         scrollView.spacing = 30
+        scrollView.contentInset = contentInset
         scrollView.append(promptView, 90%, 170)
         scrollView.append(nStepper, 85%, 50)
         scrollView.append(showPhotoPickerButton, 90%, 130)
