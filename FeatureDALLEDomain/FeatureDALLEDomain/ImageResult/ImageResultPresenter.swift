@@ -5,7 +5,7 @@
 //  Created by Hoen on 2023/03/18.
 //
 
-import FeatureDALLEUserInterface
+import ImageResultUserInterface
 import RIBs
 import RxRelay
 import RxSwift
@@ -28,9 +28,9 @@ public final class ImageResultPresenter: ImageResultPresentable, ImageResultView
     init() {}
 }
 
-private final class ImageResultPresentableListenerMapper: FeatureDALLEUserInterface.ImageResultPresentableListener, ImageResultPresentableListener {
+private final class ImageResultPresentableListenerMapper: ImageResultUserInterface.ImageResultPresentableListener, ImageResultPresentableListener {
     
-    var presentableState: Observable<FeatureDALLEUserInterface.ImageResultPresentableState>
+    var presentableState: Observable<ImageResultUserInterface.ImageResultPresentableState>
     
     var action: PublishRelay<ImageResultPresentationAction>
     var state: Observable<ImageResultPresentationState>
@@ -41,7 +41,7 @@ private final class ImageResultPresentableListenerMapper: FeatureDALLEUserInterf
         self.presentableState = interactor.state.map(\.toMapper)
     }
     
-    func action(_ userAction: FeatureDALLEUserInterface.ImageResultPresentableAction) {
+    func action(_ userAction: ImageResultUserInterface.ImageResultPresentableAction) {
         self.action.accept(userAction.toMapper)
     }
 }

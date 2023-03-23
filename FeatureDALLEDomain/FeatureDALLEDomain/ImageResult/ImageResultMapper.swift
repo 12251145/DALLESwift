@@ -5,9 +5,9 @@
 //  Created by Hoen on 2023/03/18.
 //
 
-import FeatureDALLEUserInterface
+import ImageResultUserInterface
 
-extension FeatureDALLEUserInterface.ImageResultPresentableAction {
+extension ImageResultUserInterface.ImageResultPresentableAction {
     var toMapper: ImageResultPresentationAction {
         switch self {
         case .viewDidLoad:
@@ -17,7 +17,7 @@ extension FeatureDALLEUserInterface.ImageResultPresentableAction {
 }
 
 extension ImageResultPresentationState {
-    var toMapper: FeatureDALLEUserInterface.ImageResultPresentableState {
+    var toMapper: ImageResultUserInterface.ImageResultPresentableState {
         return .init(image: image)
     }
 }
