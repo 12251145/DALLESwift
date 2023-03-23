@@ -32,8 +32,8 @@ private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterfa
     
     var presentableState: Observable<PhotoPickerUserInterface.PhotoPickerPresentableState>
     
-    var action: PublishRelay<PresentationAction>
-    var state: Observable<PresentationState>
+    var action: PublishRelay<PhotoPickerPresentationAction>
+    var state: Observable<PhotoPickerPresentationState>
     
     init(interactor: PhotoPickerPresentableListener) {
         self.action = interactor.action

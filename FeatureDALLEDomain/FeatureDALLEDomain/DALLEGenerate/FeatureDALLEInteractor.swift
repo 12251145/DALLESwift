@@ -14,6 +14,7 @@ import Util
 public protocol FeatureDALLERouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func routeToImageResult()
+    func routeToPhotoPicker()
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
@@ -71,13 +72,15 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     
                 case .generateButtonTap:
                     self?.router?.routeToImageResult()
+                case .imageToEditButtonTap:
+                    self?.router?.routeToPhotoPicker()
                 }
             })
-            .disposeOnDeactivate(interactor: self)
+            .disposeOnDeactivate(interactor: self)                
     }
     
     func observeKeyboard() {
-        RxKeyboard.instance.visibleHeight            
+        RxKeyboard.instance.visibleHeight
             .drive(onNext: { [weak self] height in
                 if var newState = self?.stateRelay.value {
                     newState.keyBoardHeight = height
@@ -86,13 +89,5 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             })
             .disposeOnDeactivate(interactor: self)
             
-    }
-    
-    func stringIsNotNilAndEmpty(_ string: String?) -> Bool {
-        if let string {
-            return !string.isEmpty
-        } else {
-            return false
-        }
     }
 }

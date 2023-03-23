@@ -18,8 +18,20 @@ public final class PhotoPickerView: UIView {
         direction: .vertical
     )
     
+    public init() {
+        super.init(frame: .zero)
+        
+        addSubview(collectionView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
+        backgroundColor = .white
         
         layout()
     }

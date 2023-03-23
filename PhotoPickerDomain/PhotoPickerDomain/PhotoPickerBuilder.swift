@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/23.
 //
 
+import PhotoPickerUserInterface
 import RIBs
 
 public protocol PhotoPickerDependency: Dependency {
@@ -25,13 +26,13 @@ public protocol PhotoPickerBuildable: Buildable {
 
 public final class PhotoPickerBuilder: Builder<PhotoPickerDependency>, PhotoPickerBuildable {
 
-    override init(dependency: PhotoPickerDependency) {
+    public override init(dependency: PhotoPickerDependency) {
         super.init(dependency: dependency)
     }
 
     public func build(withListener listener: PhotoPickerListener) -> PhotoPickerRouting {
         let component = PhotoPickerComponent(dependency: dependency)
-        let viewController = PhotoPickerViewController()
+        let viewController = PhotoPickerPresenter()
         let interactor = PhotoPickerInteractor(presenter: viewController)
         interactor.listener = listener
         return PhotoPickerRouter(interactor: interactor, viewController: viewController)

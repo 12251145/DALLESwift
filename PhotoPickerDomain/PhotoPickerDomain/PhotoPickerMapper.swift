@@ -10,15 +10,18 @@ import PhotoPickerUserInterface
 extension PhotoPickerUserInterface.PhotoPickerPresentableAction {
     
     // TODO: Convert UserInterfaceAction -> DomainAction
-//    var toMapper: PhotoPickerPresentableAction {
-//
-//    }
+    var toMapper: PhotoPickerPresentationAction {
+        switch self {
+        case .viewDidLoad:
+            return .viewDidLoad
+        }
+    }
 }
 
 extension PhotoPickerPresentationState {
     
     // TODO: Return DomainState
-//    var toMapper: PhotoPickerUserInterface.PhotoPickerPresentableState {
-//
-//    }
+    var toMapper: PhotoPickerUserInterface.PhotoPickerPresentableState {
+        return .init()
+    }
 }

@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/16.
 //
 
+import PhotoPickerDomain
 import RIBs
 
 public protocol FeatureDALLEDependency: Dependency {
@@ -12,7 +13,7 @@ public protocol FeatureDALLEDependency: Dependency {
     // created by this RIB.
 }
 
-final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResultDependency {
+final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResultDependency, PhotoPickerDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -36,7 +37,8 @@ public final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, Feature
         interactor.listener = listener
         
         let imageResultBuilder = ImageResultBuilder(dependency: component)
+        let photoPickerBuilder = PhotoPickerBuilder(dependency: component)
         
-        return FeatureDALLERouter(imageResultBuilder: imageResultBuilder, interactor: interactor, viewController: viewController)
+        return FeatureDALLERouter(imageResultBuilder: imageResultBuilder, photoPickerBuilder: photoPickerBuilder, interactor: interactor, viewController: viewController)
     }
 }

@@ -10,11 +10,11 @@ import RxSwift
 import UIKit
 
 public enum PhotoPickerPresentationAction {
-
+    case viewDidLoad
 }
 
 public struct PhotoPickerPresentationState {
-
+    public init() { }
 }
 
 public protocol PhotoPickerPresentableListener: AnyObject {

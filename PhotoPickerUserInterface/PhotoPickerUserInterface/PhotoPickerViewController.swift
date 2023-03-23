@@ -10,11 +10,11 @@ import RxSwift
 import UIKit
 
 public enum PhotoPickerPresentableAction {
-    // TODO: Define Action
+    case viewDidLoad
 }
 
 public struct PhotoPickerPresentableState {
-    // TODO: Define State
+    public init() { }
 }
 
 public protocol PhotoPickerPresentableListener: AnyObject {
@@ -32,6 +32,8 @@ public final class PhotoPickerViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.isModalInPresentation = true
         
         cellRegister()
         setDataSource()

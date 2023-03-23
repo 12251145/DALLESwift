@@ -11,6 +11,7 @@ import RxSwift
 public enum PresentationAction {
     case promtInput(string: String?)
     case generateButtonTap
+    case imageToEditButtonTap
 }
 
 public struct PresentationState {
