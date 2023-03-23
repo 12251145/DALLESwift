@@ -20,10 +20,16 @@
       location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PhotoPickerDomain/PhotoPickerDomain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:CoreKit/CoreKit.xcodeproj">

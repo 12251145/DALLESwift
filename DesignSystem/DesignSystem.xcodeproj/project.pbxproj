@@ -13,6 +13,9 @@
 		6A6AF94029CAFB7A00B44FE8 /* DottedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF93F29CAFB7A00B44FE8 /* DottedBorderButton.swift */; };
 		6A6AF94229CB240300B44FE8 /* FootLightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF94129CB240300B44FE8 /* FootLightable.swift */; };
 		6A6AF94429CB364C00B44FE8 /* FootLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF94329CB364C00B44FE8 /* FootLightView.swift */; };
+		6A6AF9DB29CC61DC00B44FE8 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9DA29CC61DC00B44FE8 /* GridView.swift */; };
+		6A6AF9DD29CC711400B44FE8 /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9DC29CC711400B44FE8 /* AlbumPhotoCell.swift */; };
+		6A6AF9DF29CC78E700B44FE8 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9DE29CC78E700B44FE8 /* PhotoPickerView.swift */; };
 		6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54D9229C2AB300035A8C5 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54D9A29C2AB630035A8C5 /* PinLayout */; };
 		6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */; };
@@ -30,6 +33,9 @@
 		6A6AF93F29CAFB7A00B44FE8 /* DottedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedBorderButton.swift; sourceTree = "<group>"; };
 		6A6AF94129CB240300B44FE8 /* FootLightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootLightable.swift; sourceTree = "<group>"; };
 		6A6AF94329CB364C00B44FE8 /* FootLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootLightView.swift; sourceTree = "<group>"; };
+		6A6AF9DA29CC61DC00B44FE8 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		6A6AF9DC29CC711400B44FE8 /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
+		6A6AF9DE29CC78E700B44FE8 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
 		6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54D9229C2AB300035A8C5 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -74,17 +80,20 @@
 			isa = PBXGroup;
 			children = (
 				6AD54D9229C2AB300035A8C5 /* DesignSystem.h */,
+				6A6AF9DA29CC61DC00B44FE8 /* GridView.swift */,
 				6A6AF94329CB364C00B44FE8 /* FootLightView.swift */,
 				6A6AF94129CB240300B44FE8 /* FootLightable.swift */,
 				6A6AF92E29C8ABB700B44FE8 /* NavigationTitleLabel.swift */,
 				6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */,
 				6AD54DFD29C2D0050035A8C5 /* PromptView.swift */,
 				6A6AF93F29CAFB7A00B44FE8 /* DottedBorderButton.swift */,
+				6A6AF9DE29CC78E700B44FE8 /* PhotoPickerView.swift */,
 				6AD54DD729C2CA810035A8C5 /* DALLEGenerateView.swift */,
 				6AD54F9229C5449F0035A8C5 /* ImageResultView.swift */,
 				6AD54DFF29C2D59D0035A8C5 /* UIView+addShadow.swift */,
 				6A6AF93329C95D3C00B44FE8 /* ScrollView.swift */,
 				6A6AF93729CAB03B00B44FE8 /* NStepper.swift */,
+				6A6AF9DC29CC711400B44FE8 /* AlbumPhotoCell.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -188,11 +197,14 @@
 				6A6AF93829CAB03B00B44FE8 /* NStepper.swift in Sources */,
 				6AD54DFE29C2D0050035A8C5 /* PromptView.swift in Sources */,
 				6A6AF94229CB240300B44FE8 /* FootLightable.swift in Sources */,
+				6A6AF9DF29CC78E700B44FE8 /* PhotoPickerView.swift in Sources */,
 				6AD54DD829C2CA820035A8C5 /* DALLEGenerateView.swift in Sources */,
 				6A6AF94429CB364C00B44FE8 /* FootLightView.swift in Sources */,
 				6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */,
+				6A6AF9DD29CC711400B44FE8 /* AlbumPhotoCell.swift in Sources */,
 				6AD54F9329C5449F0035A8C5 /* ImageResultView.swift in Sources */,
 				6A6AF92F29C8ABB700B44FE8 /* NavigationTitleLabel.swift in Sources */,
+				6A6AF9DB29CC61DC00B44FE8 /* GridView.swift in Sources */,
 				6A6AF94029CAFB7A00B44FE8 /* DottedBorderButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
