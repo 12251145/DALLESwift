@@ -32,12 +32,15 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
     
     private let stateRelay: BehaviorRelay<PhotoPickerPresentationState>
     let state: Observable<PhotoPickerPresentationState>
+    
+    private let requestPhotoImageUseCase: RequestPhotoImageUseCase
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: PhotoPickerPresentable) {
+    init(requestPhotoImageUseCase: RequestPhotoImageUseCase, presenter: PhotoPickerPresentable) {
         self.stateRelay = .init(value: .init())
         self.state = stateRelay.asObservable()
+        self.requestPhotoImageUseCase = requestPhotoImageUseCase
         super.init(presenter: presenter)
         presenter.listener = self
     }

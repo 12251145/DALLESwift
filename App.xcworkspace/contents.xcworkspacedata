@@ -11,6 +11,9 @@
       location = "group:Features/Features.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PhotoRepository/PhotoRepository.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FeatureDALLERepository/FeatureDALLERepository.xcodeproj">
    </FileRef>
    <FileRef
@@ -33,6 +36,9 @@
    </FileRef>
    <FileRef
       location = "group:CoreKit/CoreKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PhotoManager/PhotoManager.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:DALLEAPI/DALLEAPI.xcodeproj">

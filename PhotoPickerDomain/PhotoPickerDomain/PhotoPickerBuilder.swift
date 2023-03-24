@@ -33,7 +33,7 @@ public final class PhotoPickerBuilder: Builder<PhotoPickerDependency>, PhotoPick
     public func build(withListener listener: PhotoPickerListener) -> PhotoPickerRouting {
         let component = PhotoPickerComponent(dependency: dependency)
         let viewController = PhotoPickerPresenter()
-        let interactor = PhotoPickerInteractor(presenter: viewController)
+        let interactor = PhotoPickerInteractor(requestPhotoImageUseCase: RequestPhotoImageUseCaseImpl(), presenter: viewController)
         interactor.listener = listener
         return PhotoPickerRouter(interactor: interactor, viewController: viewController)
     }

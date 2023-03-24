@@ -17,6 +17,8 @@
 		6A6AFA3029CD9AF800B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */; };
 		6A6AFA3429CD9B0400B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */; };
 		6A6AFA3729CD9B1C00B44FE8 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */; };
+		6AD305EB29CDE95D00C3531F /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305EA29CDE95D00C3531F /* PhotoRepository.swift */; };
+		6AD305EE29CDEA5600C3531F /* RequestPhotoImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305ED29CDEA5600C3531F /* RequestPhotoImageUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD305EA29CDE95D00C3531F /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
+		6AD305ED29CDEA5600C3531F /* RequestPhotoImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPhotoImageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		6A6AF9E629CD4F8100B44FE8 = {
 			isa = PBXGroup;
 			children = (
+				6AD305E929CDE95100C3531F /* Repository */,
+				6AD305EC29CDEA3600C3531F /* UseCase */,
 				6A6AF9F229CD4F8200B44FE8 /* PhotoPickerDomain */,
 				6A6AF9F129CD4F8200B44FE8 /* Products */,
 				6A6AFA2E29CD9AF800B44FE8 /* Frameworks */,
@@ -86,6 +92,22 @@
 				6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AD305E929CDE95100C3531F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6AD305EA29CDE95D00C3531F /* PhotoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		6AD305EC29CDEA3600C3531F /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6AD305ED29CDEA5600C3531F /* RequestPhotoImageUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD305EE29CDEA5600C3531F /* RequestPhotoImageUseCase.swift in Sources */,
+				6AD305EB29CDE95D00C3531F /* PhotoRepository.swift in Sources */,
 				6A6AFA1B29CD4FEC00B44FE8 /* PhotoPickerStateAction.swift in Sources */,
 				6A6AFA1629CD4FEB00B44FE8 /* PhotoPickerMapper.swift in Sources */,
 				6A6AFA1829CD4FEC00B44FE8 /* PhotoPickerRouter.swift in Sources */,

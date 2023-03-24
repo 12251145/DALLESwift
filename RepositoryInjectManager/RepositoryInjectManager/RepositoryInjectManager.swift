@@ -9,6 +9,9 @@
 import DALLEAPI
 import FeatureDALLEDomain
 import FeatureDALLERepository
+import PhotoPickerDomain
+import PhotoRepository
+import PhotoManager
 import RESTAPI
 import ThirdPartyLibraryManager
 
@@ -22,6 +25,11 @@ public final class RepositoryInjectManager {
             let dallEApi = DALLEAPI(httpNetwork: network)
             
             return DALLERepositoryImpl(dallEApi: dallEApi)
+        }
+        
+        DIContainer.shared.register(PhotoRepository.self) { _ in
+            
+            return PhotoRepositoryImpl(photoManager: PhotoManager.shared)
         }
     }
 }

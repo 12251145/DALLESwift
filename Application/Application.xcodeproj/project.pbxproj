@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6A6AFA2129CD503600B44FE8 /* PhotoPickerDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2029CD503500B44FE8 /* PhotoPickerDomain.framework */; };
 		6A6AFA2429CD504200B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2329CD504200B44FE8 /* PhotoPickerUserInterface.framework */; };
+		6AD305F029CDEB1F00C3531F /* PhotoRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305EF29CDEB1F00C3531F /* PhotoRepository.framework */; };
+		6AD305F329CDEB3100C3531F /* PhotoManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305F229CDEB3100C3531F /* PhotoManager.framework */; };
 		6AD5512029C7343A0035A8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5511F29C7343A0035A8C5 /* AppDelegate.swift */; };
 		6AD5512229C7343A0035A8C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5512129C7343A0035A8C5 /* SceneDelegate.swift */; };
 		6AD5512729C7343A0035A8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD5512529C7343A0035A8C5 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		6A6AFA2029CD503500B44FE8 /* PhotoPickerDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA2329CD504200B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD305EF29CDEB1F00C3531F /* PhotoRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD305F229CDEB3100C3531F /* PhotoManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5511C29C7343A0035A8C5 /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5511F29C7343A0035A8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD5512129C7343A0035A8C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD305F329CDEB3100C3531F /* PhotoManager.framework in Frameworks */,
 				6AD5513F29C7375A0035A8C5 /* BaseDependencyDomain.framework in Frameworks */,
 				6AD5515429C737B60035A8C5 /* DALLEAPI.framework in Frameworks */,
 				6AD5515729C737C40035A8C5 /* CoreKit.framework in Frameworks */,
@@ -109,6 +114,7 @@
 				6AD5514829C7377F0035A8C5 /* RxPackage.framework in Frameworks */,
 				6AD5514529C737760035A8C5 /* RESTAPI.framework in Frameworks */,
 				6A6AFA2129CD503600B44FE8 /* PhotoPickerDomain.framework in Frameworks */,
+				6AD305F029CDEB1F00C3531F /* PhotoRepository.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +155,8 @@
 		6AD5513329C7344A0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD305F229CDEB3100C3531F /* PhotoManager.framework */,
+				6AD305EF29CDEB1F00C3531F /* PhotoRepository.framework */,
 				6A6AFA2329CD504200B44FE8 /* PhotoPickerUserInterface.framework */,
 				6A6AFA2029CD503500B44FE8 /* PhotoPickerDomain.framework */,
 				6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */,
