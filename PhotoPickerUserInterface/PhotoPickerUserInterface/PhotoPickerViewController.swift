@@ -6,6 +6,8 @@
 //
 
 import DesignSystem
+import Photos
+import RxRelay
 import RxSwift
 import UIKit
 
@@ -14,7 +16,12 @@ public enum PhotoPickerPresentableAction {
 }
 
 public struct PhotoPickerPresentableState {
-    public init() { }
+    
+    var assets: PHFetchResult<PHAsset>?
+    
+    public init(assets: PHFetchResult<PHAsset>? = nil) {
+        self.assets = assets
+    }
 }
 
 public protocol PhotoPickerPresentableListener: AnyObject {
@@ -25,18 +32,22 @@ public protocol PhotoPickerPresentableListener: AnyObject {
 public final class PhotoPickerViewController: UIViewController {
     public weak var listener: PhotoPickerPresentableListener?
     
-    private var photoCellRegistration: UICollectionView.CellRegistration<AlbumPhotoCell, UIImage>?
+    private var disposeBag = DisposeBag()
+    private var assets: PHFetchResult<PHAsset>?
+    private var photoCellRegistration: UICollectionView.CellRegistration<AlbumPhotoCell, PHAsset>?
     
     private let photoPickerView = PhotoPickerView()
-    private var dataSource: DataSource?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         self.isModalInPresentation = true
+        self.photoPickerView.collectionView.dataSource = self
         
         cellRegister()
-        setDataSource()
+        
+        bindAction()
+        bindState()                
     }
     
     public override func loadView() {
@@ -44,32 +55,59 @@ public final class PhotoPickerViewController: UIViewController {
     }
     
     private func cellRegister() {
-        photoCellRegistration = UICollectionView.CellRegistration<AlbumPhotoCell, UIImage> { cell, _, image in
-            cell.configure(with: image)
+        photoCellRegistration = UICollectionView.CellRegistration<AlbumPhotoCell, PHAsset> { cell, _, asset in
+            
+            cell.assetIdentifier = asset.localIdentifier
+            
+            Task { [cell] in
+                try? await Task.sleep(nanoseconds: 1000000000)
+                
+                if cell.assetIdentifier == asset.localIdentifier {
+                    print("Image configured! \(asset.localIdentifier)")
+                    cell.configure(with: UIImage(systemName: "scribble.variable")!)
+                } else {
+                    print("이미 재사용되어버림!")
+                }
+            }
         }
+    }
+    
+    private func bindAction() {
+        listener?.action(.viewDidLoad)
+    }
+    
+    private func bindState() {
+        
+        listener?.presentableState
+            .map(\.assets)
+            .subscribe(onNext: { [weak self] result in
+                self?.assets = result
+                self?.photoPickerView.reloadCollectionView()
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
 
 // MARK: - CollectionView DataSource
-private extension PhotoPickerViewController {
-    private typealias DataSource = UICollectionViewDiffableDataSource<String, String>
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<String, String>
+extension PhotoPickerViewController: UICollectionViewDataSource {
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return assets?.count ?? 0
+    }
     
-    func setDataSource() {
-        dataSource = DataSource(
-            collectionView: photoPickerView.collectionView,
-            cellProvider: { [weak self] collectionView, indexPath, itemIdentifier in
-                
-                if let cellRegistration = self?.photoCellRegistration {
-                    return collectionView.dequeueConfiguredReusableCell(
-                        using: cellRegistration,
-                        for: indexPath,
-                        item: UIImage(systemName: "pencil")
-                    )
-                } else {
-                    fatalError("CellProvider should return cell.")
-                }
-            }
-        )
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cellRegistration = photoCellRegistration {
+            
+            let item = assets?[indexPath.item]
+            
+            return collectionView.dequeueConfiguredReusableCell(
+                using: cellRegistration,
+                for: indexPath,
+                item: item
+            )
+        } else {
+            fatalError("CellProvider should return cell.")
+        }
     }
 }

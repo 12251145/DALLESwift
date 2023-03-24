@@ -34,6 +34,10 @@ public final class PhotoPickerView: UIView {
         backgroundColor = .white
         
         layout()
+    }        
+    
+    public func reloadCollectionView() {
+        collectionView.reloadData()
     }
     
     private func layout() {

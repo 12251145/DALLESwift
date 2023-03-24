@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/24.
 //
 
+import Photos
 import RxRelay
 import RxSwift
 import UIKit
@@ -14,7 +15,12 @@ public enum PhotoPickerPresentationAction {
 }
 
 public struct PhotoPickerPresentationState {
-    public init() { }
+    
+    var assets: PHFetchResult<PHAsset>?
+    
+    public init(assets: PHFetchResult<PHAsset>? = nil) {
+        self.assets = assets
+    }
 }
 
 public protocol PhotoPickerPresentableListener: AnyObject {

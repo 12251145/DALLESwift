@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/24.
 //
 
+import Photos
 import RIBs
 import RxRelay
 import RxSwift
@@ -43,11 +44,50 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+            
+        bindAction()
     }
 
     override func willResignActive() {
         super.willResignActive()
-        // TODO: Pause any business logic.
+    }
+    
+    private func bindAction() {
+        action
+            .subscribe(onNext: { [weak self] action in
+                switch action {
+                case .viewDidLoad:
+                    self?.requestAuthorization(completion: { status in
+                        
+                        switch status {
+                        case .notDetermined, .restricted, .denied:
+                            break
+                        case .limited, .authorized:
+                            if var newState = self?.stateRelay.value {
+                                newState.assets = PHAsset.fetchAssets(with: .image, options: .none)
+                                self?.stateRelay.accept(newState)                                
+                            }
+                        @unknown default:
+                            fatalError("Unknow authorizationstatus")
+                        }
+                    })
+                }
+            })
+            .disposeOnDeactivate(interactor: self)
+    }
+    
+    private func requestAuthorization(completion: @escaping (PHAuthorizationStatus) -> Void) {
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        
+        switch status {
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
+                DispatchQueue.main.async {
+                    completion(newStatus)
+                }
+            }
+        default:
+            completion(status)
+        }
     }
 }
