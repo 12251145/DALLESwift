@@ -7,64 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A6AF9B629CC59D800B44FE8 /* PhotoPickerUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6AF9B529CC59D800B44FE8 /* PhotoPickerUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A6AF9BE29CC59E500B44FE8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AF9BD29CC59E500B44FE8 /* DesignSystem.framework */; };
-		6A6AF9C229CC59EE00B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AF9C129CC59EE00B44FE8 /* RxPackage.framework */; };
-		6A6AF9C929CC5A7400B44FE8 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9C829CC5A7400B44FE8 /* PhotoPickerViewController.swift */; };
+		6A6AFA0829CD4FA500B44FE8 /* PhotoPickerUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6AFA0729CD4FA500B44FE8 /* PhotoPickerUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A6AFA0F29CD4FC600B44FE8 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */; };
+		6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */; };
+		6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A6AF9B229CC59D800B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AF9B529CC59D800B44FE8 /* PhotoPickerUserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPickerUserInterface.h; sourceTree = "<group>"; };
-		6A6AF9BD29CC59E500B44FE8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AF9C129CC59EE00B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AF9C829CC5A7400B44FE8 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		6A6AFA0429CD4FA500B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6AFA0729CD4FA500B44FE8 /* PhotoPickerUserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPickerUserInterface.h; sourceTree = "<group>"; };
+		6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6A6AF9AF29CC59D800B44FE8 /* Frameworks */ = {
+		6A6AFA0129CD4FA500B44FE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AF9BE29CC59E500B44FE8 /* DesignSystem.framework in Frameworks */,
-				6A6AF9C229CC59EE00B44FE8 /* RxPackage.framework in Frameworks */,
+				6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */,
+				6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A6AF9A829CC59D800B44FE8 = {
+		6A6AF9FA29CD4FA500B44FE8 = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9B429CC59D800B44FE8 /* PhotoPickerUserInterface */,
-				6A6AF9B329CC59D800B44FE8 /* Products */,
-				6A6AF9BC29CC59E500B44FE8 /* Frameworks */,
+				6A6AFA0629CD4FA500B44FE8 /* PhotoPickerUserInterface */,
+				6A6AFA0529CD4FA500B44FE8 /* Products */,
+				6A6AFA2629CD505500B44FE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6A6AF9B329CC59D800B44FE8 /* Products */ = {
+		6A6AFA0529CD4FA500B44FE8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9B229CC59D800B44FE8 /* PhotoPickerUserInterface.framework */,
+				6A6AFA0429CD4FA500B44FE8 /* PhotoPickerUserInterface.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6A6AF9B429CC59D800B44FE8 /* PhotoPickerUserInterface */ = {
+		6A6AFA0629CD4FA500B44FE8 /* PhotoPickerUserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9B529CC59D800B44FE8 /* PhotoPickerUserInterface.h */,
-				6A6AF9C829CC5A7400B44FE8 /* PhotoPickerViewController.swift */,
+				6A6AFA0729CD4FA500B44FE8 /* PhotoPickerUserInterface.h */,
+				6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */,
 			);
 			path = PhotoPickerUserInterface;
 			sourceTree = "<group>";
 		};
-		6A6AF9BC29CC59E500B44FE8 /* Frameworks */ = {
+		6A6AFA2629CD505500B44FE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9C129CC59EE00B44FE8 /* RxPackage.framework */,
-				6A6AF9BD29CC59E500B44FE8 /* DesignSystem.framework */,
+				6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */,
+				6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,25 +72,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6A6AF9AD29CC59D800B44FE8 /* Headers */ = {
+		6A6AF9FF29CD4FA500B44FE8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AF9B629CC59D800B44FE8 /* PhotoPickerUserInterface.h in Headers */,
+				6A6AFA0829CD4FA500B44FE8 /* PhotoPickerUserInterface.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6A6AF9B129CC59D800B44FE8 /* PhotoPickerUserInterface */ = {
+		6A6AFA0329CD4FA500B44FE8 /* PhotoPickerUserInterface */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6AF9B929CC59D800B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerUserInterface" */;
+			buildConfigurationList = 6A6AFA0B29CD4FA500B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerUserInterface" */;
 			buildPhases = (
-				6A6AF9AD29CC59D800B44FE8 /* Headers */,
-				6A6AF9AE29CC59D800B44FE8 /* Sources */,
-				6A6AF9AF29CC59D800B44FE8 /* Frameworks */,
-				6A6AF9B029CC59D800B44FE8 /* Resources */,
+				6A6AF9FF29CD4FA500B44FE8 /* Headers */,
+				6A6AFA0029CD4FA500B44FE8 /* Sources */,
+				6A6AFA0129CD4FA500B44FE8 /* Frameworks */,
+				6A6AFA0229CD4FA500B44FE8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,24 +98,24 @@
 			);
 			name = PhotoPickerUserInterface;
 			productName = PhotoPickerUserInterface;
-			productReference = 6A6AF9B229CC59D800B44FE8 /* PhotoPickerUserInterface.framework */;
+			productReference = 6A6AFA0429CD4FA500B44FE8 /* PhotoPickerUserInterface.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6A6AF9A929CC59D800B44FE8 /* Project object */ = {
+		6A6AF9FB29CD4FA500B44FE8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6A6AF9B129CC59D800B44FE8 = {
+					6A6AFA0329CD4FA500B44FE8 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 6A6AF9AC29CC59D800B44FE8 /* Build configuration list for PBXProject "PhotoPickerUserInterface" */;
+			buildConfigurationList = 6A6AF9FE29CD4FA500B44FE8 /* Build configuration list for PBXProject "PhotoPickerUserInterface" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,18 +123,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6A6AF9A829CC59D800B44FE8;
-			productRefGroup = 6A6AF9B329CC59D800B44FE8 /* Products */;
+			mainGroup = 6A6AF9FA29CD4FA500B44FE8;
+			productRefGroup = 6A6AFA0529CD4FA500B44FE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A6AF9B129CC59D800B44FE8 /* PhotoPickerUserInterface */,
+				6A6AFA0329CD4FA500B44FE8 /* PhotoPickerUserInterface */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6A6AF9B029CC59D800B44FE8 /* Resources */ = {
+		6A6AFA0229CD4FA500B44FE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,18 +144,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6A6AF9AE29CC59D800B44FE8 /* Sources */ = {
+		6A6AFA0029CD4FA500B44FE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AF9C929CC5A7400B44FE8 /* PhotoPickerViewController.swift in Sources */,
+				6A6AFA0F29CD4FC600B44FE8 /* PhotoPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6A6AF9B729CC59D800B44FE8 /* Debug */ = {
+		6A6AFA0929CD4FA500B44FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		6A6AF9B829CC59D800B44FE8 /* Release */ = {
+		6A6AFA0A29CD4FA500B44FE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,7 +275,7 @@
 			};
 			name = Release;
 		};
-		6A6AF9BA29CC59D800B44FE8 /* Debug */ = {
+		6A6AFA0C29CD4FA500B44FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -293,6 +293,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoPickerUserInterface;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -303,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		6A6AF9BB29CC59D800B44FE8 /* Release */ = {
+		6A6AFA0D29CD4FA500B44FE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -321,6 +322,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoPickerUserInterface;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -334,25 +336,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A6AF9AC29CC59D800B44FE8 /* Build configuration list for PBXProject "PhotoPickerUserInterface" */ = {
+		6A6AF9FE29CD4FA500B44FE8 /* Build configuration list for PBXProject "PhotoPickerUserInterface" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A6AF9B729CC59D800B44FE8 /* Debug */,
-				6A6AF9B829CC59D800B44FE8 /* Release */,
+				6A6AFA0929CD4FA500B44FE8 /* Debug */,
+				6A6AFA0A29CD4FA500B44FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A6AF9B929CC59D800B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerUserInterface" */ = {
+		6A6AFA0B29CD4FA500B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerUserInterface" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A6AF9BA29CC59D800B44FE8 /* Debug */,
-				6A6AF9BB29CC59D800B44FE8 /* Release */,
+				6A6AFA0C29CD4FA500B44FE8 /* Debug */,
+				6A6AFA0D29CD4FA500B44FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6A6AF9A929CC59D800B44FE8 /* Project object */;
+	rootObject = 6A6AF9FB29CD4FA500B44FE8 /* Project object */;
 }

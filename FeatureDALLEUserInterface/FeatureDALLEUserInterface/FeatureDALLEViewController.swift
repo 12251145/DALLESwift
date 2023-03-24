@@ -71,7 +71,7 @@ public final class FeatureDALLEViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        generateView.showPhotoPickerButton.rx.tap
+        generateView.showPhotoPickerButton.button.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self?.listener?.action(.imageToEditButtonTap)
             })
