@@ -9,6 +9,17 @@ import PinLayout
 import UIKit
 
 public final class AlbumPhotoCell: UICollectionViewCell {
+    
+    public override var isHighlighted: Bool {
+        didSet {
+            if oldValue == false && isHighlighted {
+                animateScale(to: .init(scaleX: 0.95, y: 0.95), duration: 0.2)
+            } else if oldValue == true && !isHighlighted {
+                animateScale(to: .identity, duration: 0.2)
+            }
+        }
+    }
+    
     public var assetIdentifier: String?
     
     private var imageView: UIImageView = {
@@ -48,5 +59,14 @@ public final class AlbumPhotoCell: UICollectionViewCell {
     
     private func layout() {
         imageView.pin.all()
+    }
+}
+
+// MARK: - ScaleHighlightable
+private extension AlbumPhotoCell {
+    func animateScale(to transform: CGAffineTransform, duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.transform = transform
+        }
     }
 }

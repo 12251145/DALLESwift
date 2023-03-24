@@ -21,6 +21,7 @@ public final class PhotoPickerView: UIView {
     public init() {
         super.init(frame: .zero)
         
+        collectionView.delaysContentTouches = false
         addSubview(collectionView)
     }
     
