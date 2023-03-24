@@ -13,8 +13,8 @@ import ThirdPartyLibraryManager
 import UIKit
 
 
-protocol RequestPhotoImageUseCase {
-    func execute(asset: PHAsset?, targetSize: CGSize) async -> UIImage?
+protocol RequestPhotoImageUseCase {    
+    func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }
 
 struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
@@ -28,8 +28,8 @@ struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
         
         self.photoRepository = photoRepositoryImpl
     }
-    
-    func execute(asset: PHAsset?, targetSize: CGSize) async -> UIImage? {
-        return await photoRepository.requestImage(with: asset, targetSize: targetSize)
+
+    func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+        photoRepository.requestImage(with: asset, targetSize: targetSize, completion: completion)
     }
 }

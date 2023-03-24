@@ -17,7 +17,7 @@ public struct PhotoRepositoryImpl: PhotoRepository {
         self.photoManager = photoManager
     }
     
-    public func requestImage(with asset: PHAsset?, targetSize: CGSize) async -> UIImage? {
-        return await photoManager.requestImage(with: asset, targetSize: targetSize)
+    public func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+        photoManager.requestImage(with: asset, targetSize: targetSize, completion: completion)
     }
 }

@@ -23,16 +23,16 @@ public final class PhotoManager {
         }
     }
     
-    private func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+    public func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         guard let asset else {
             completion(nil)
             return
         }
         
-        let options = PHImageRequestOptions()
-        options.deliveryMode = .fastFormat
+        let options = PHImageRequestOptions()        
         
-        self.phImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, _ in
+        
+        self.phImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, info in
             completion(image)
         }
     }

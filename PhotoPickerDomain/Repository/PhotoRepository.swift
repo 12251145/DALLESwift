@@ -8,6 +8,6 @@
 import Photos
 import UIKit
 
-public protocol PhotoRepository {
-    func requestImage(with asset: PHAsset?, targetSize: CGSize) async -> UIImage?
+public protocol PhotoRepository {    
+    func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }

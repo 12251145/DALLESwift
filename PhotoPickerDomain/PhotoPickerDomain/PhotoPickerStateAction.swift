@@ -26,4 +26,6 @@ public struct PhotoPickerPresentationState {
 public protocol PhotoPickerPresentableListener: AnyObject {
     var action: PublishRelay<PhotoPickerPresentationAction> { get }
     var state: Observable<PhotoPickerPresentationState> { get }
+        
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }

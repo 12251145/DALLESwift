@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/24.
 //
 
+import Photos
 import PhotoPickerUserInterface
 import RIBs
 import RxRelay
@@ -30,12 +31,15 @@ public final class PhotoPickerPresenter: PhotoPickerPresentable, PhotoPickerView
 
 private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterface.PhotoPickerPresentableListener, PhotoPickerPresentableListener {
     
+    private let interactor: PhotoPickerPresentableListener
+    
     var presentableState: Observable<PhotoPickerUserInterface.PhotoPickerPresentableState>
     
     var action: PublishRelay<PhotoPickerPresentationAction>
     var state: Observable<PhotoPickerPresentationState>
     
     init(interactor: PhotoPickerPresentableListener) {
+        self.interactor = interactor
         self.action = interactor.action
         self.state = interactor.state
         self.presentableState = interactor.state.map(\.toMapper)
@@ -43,5 +47,9 @@ private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterfa
     
     func action(_ userAction: PhotoPickerUserInterface.PhotoPickerPresentableAction) {
         self.action.accept(userAction.toMapper)
+    }
+
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+        interactor.requestPhotoImage(asset: asset, targetSize: targetSize, completion: completion)
     }
 }

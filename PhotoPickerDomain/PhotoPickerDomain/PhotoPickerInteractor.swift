@@ -9,6 +9,7 @@ import Photos
 import RIBs
 import RxRelay
 import RxSwift
+import UIKit
 
 public protocol PhotoPickerRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -67,7 +68,9 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                             break
                         case .limited, .authorized:
                             if var newState = self?.stateRelay.value {
-                                newState.assets = PHAsset.fetchAssets(with: .image, options: .none)
+                                let fetchOptions = PHFetchOptions()
+                                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                                newState.assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                                 self?.stateRelay.accept(newState)                                
                             }
                         @unknown default:
@@ -92,5 +95,9 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
         default:
             completion(status)
         }
+    }
+
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+        requestPhotoImageUseCase.execute(with: asset, targetSize: targetSize, completion: completion)
     }
 }

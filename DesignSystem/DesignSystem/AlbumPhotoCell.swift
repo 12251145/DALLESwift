@@ -42,7 +42,7 @@ public final class AlbumPhotoCell: UICollectionViewCell {
         layout()
     }
     
-    public func configure(with image: UIImage) {
+    public func configure(with image: UIImage?) {
         imageView.image = image
     }
     

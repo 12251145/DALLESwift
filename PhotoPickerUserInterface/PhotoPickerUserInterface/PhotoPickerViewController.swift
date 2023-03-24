@@ -27,6 +27,8 @@ public struct PhotoPickerPresentableState {
 public protocol PhotoPickerPresentableListener: AnyObject {
     func action(_ action: PhotoPickerPresentableAction)
     var presentableState: Observable<PhotoPickerPresentableState> { get }
+        
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }
 
 public final class PhotoPickerViewController: UIViewController {
@@ -60,14 +62,12 @@ public final class PhotoPickerViewController: UIViewController {
             cell.assetIdentifier = asset.localIdentifier
             
             Task { [cell] in
-                try? await Task.sleep(nanoseconds: 1000000000)
-                
-                if cell.assetIdentifier == asset.localIdentifier {
-                    print("Image configured! \(asset.localIdentifier)")
-                    cell.configure(with: UIImage(systemName: "scribble.variable")!)
-                } else {
-                    print("이미 재사용되어버림!")
-                }
+                            
+                self.listener?.requestPhotoImage(asset: asset, targetSize: .init(width: 250, height: 250), completion: { image in
+                    if cell.assetIdentifier == asset.localIdentifier {
+                        cell.configure(with: image)
+                    }
+                })
             }
         }
     }
