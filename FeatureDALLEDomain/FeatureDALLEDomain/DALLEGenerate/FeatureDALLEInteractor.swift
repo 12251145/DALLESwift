@@ -15,6 +15,8 @@ public protocol FeatureDALLERouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func routeToImageResult()
     func routeToPhotoPicker()
+    
+    func detachPhotoPicker()
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
@@ -77,6 +79,10 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 }
             })
             .disposeOnDeactivate(interactor: self)                
+    }
+    
+    func detachPhotoPicker() {
+        router?.detachPhotoPicker()
     }
     
     func observeKeyboard() {

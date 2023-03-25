@@ -10,6 +10,7 @@ import UIKit
 
 public final class PhotoPickerView: UIView {
     
+    public let xButton = XButton(xSize: 15, effectStyle: .systemUltraThinMaterial)
     public let collectionView = GridView(
         itemSize: .init(
             widthDimension: .fractionalWidth(1 / 3),
@@ -17,7 +18,6 @@ public final class PhotoPickerView: UIView {
         ),
         direction: .vertical
     )
-    
     public let selectMorePhotoButton = RectangleButton(title: "더 많은 사진 선택", titleSize: 16)
     public let moveToSettingButton = RectangleButton(title: "권한 설정으로 이동", titleSize: 16)
     
@@ -30,6 +30,7 @@ public final class PhotoPickerView: UIView {
         addSubview(collectionView)
         addSubview(selectMorePhotoButton)
         addSubview(moveToSettingButton)
+        addSubview(xButton)
     }
     
     required init?(coder: NSCoder) {
@@ -52,5 +53,7 @@ public final class PhotoPickerView: UIView {
         moveToSettingButton.pin.left().right().bottom(pin.safeArea.bottom + 10).height(50)
         selectMorePhotoButton.pin.left().right().above(of: moveToSettingButton).height(50)
         collectionView.pin.above(of: selectMorePhotoButton).top().left().right()
+        xButton.pin.top(pin.safeArea.top + 15).right(pin.safeArea.right + 15).width(40).height(40)
+        xButton.layer.cornerRadius = xButton.bounds.size.height / 2
     }
 }

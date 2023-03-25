@@ -14,6 +14,8 @@ extension PhotoPickerUserInterface.PhotoPickerPresentableAction {
         switch self {
         case .viewDidLoad:
             return .viewDidLoad
+        case .xButtonDidTap:
+            return .xButtonDidTap
         }
     }
 }

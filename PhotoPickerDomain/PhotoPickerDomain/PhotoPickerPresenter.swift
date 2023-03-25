@@ -31,7 +31,7 @@ public final class PhotoPickerPresenter: PhotoPickerPresentable, PhotoPickerView
 
 private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterface.PhotoPickerPresentableListener, PhotoPickerPresentableListener {
     
-    private let interactor: PhotoPickerPresentableListener
+    private weak var interactor: PhotoPickerPresentableListener?
     
     var presentableState: Observable<PhotoPickerUserInterface.PhotoPickerPresentableState>
     
@@ -50,6 +50,6 @@ private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterfa
     }
 
     func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        interactor.requestPhotoImage(asset: asset, targetSize: targetSize, completion: completion)
+        interactor?.requestPhotoImage(asset: asset, targetSize: targetSize, completion: completion)
     }
 }

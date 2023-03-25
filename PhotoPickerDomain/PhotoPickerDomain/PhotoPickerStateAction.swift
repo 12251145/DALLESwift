@@ -12,6 +12,7 @@ import UIKit
 
 public enum PhotoPickerPresentationAction {
     case viewDidLoad
+    case xButtonDidTap
 }
 
 public struct PhotoPickerPresentationState {

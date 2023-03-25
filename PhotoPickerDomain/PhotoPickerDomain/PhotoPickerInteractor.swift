@@ -21,7 +21,7 @@ public protocol PhotoPickerPresentable: Presentable {
 }
 
 public protocol PhotoPickerListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func detachPhotoPicker()
 }
 
 final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>, PhotoPickerInteractable, PhotoPickerPresentableListener {
@@ -77,6 +77,8 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                             fatalError("Unknow authorizationstatus")
                         }
                     })
+                case .xButtonDidTap:
+                    self?.listener?.detachPhotoPicker()
                 }
             })
             .disposeOnDeactivate(interactor: self)

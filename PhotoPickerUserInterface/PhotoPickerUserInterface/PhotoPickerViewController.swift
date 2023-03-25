@@ -7,12 +7,14 @@
 
 import DesignSystem
 import Photos
+import RxCocoa
 import RxRelay
 import RxSwift
 import UIKit
 
 public enum PhotoPickerPresentableAction {
     case viewDidLoad
+    case xButtonDidTap
 }
 
 public struct PhotoPickerPresentableState {
@@ -57,23 +59,27 @@ public final class PhotoPickerViewController: UIViewController {
     }
     
     private func cellRegister() {
-        photoCellRegistration = UICollectionView.CellRegistration<AlbumPhotoCell, PHAsset> { cell, _, asset in
+        photoCellRegistration = UICollectionView.CellRegistration<AlbumPhotoCell, PHAsset> { [weak self] cell, _, asset in
             
             cell.assetIdentifier = asset.localIdentifier
             
-            Task { [cell] in
-                            
-                self.listener?.requestPhotoImage(asset: asset, targetSize: .init(width: 250, height: 250), completion: { image in
-                    if cell.assetIdentifier == asset.localIdentifier {
-                        cell.configure(with: image)
-                    }
-                })
-            }
+            self?.listener?.requestPhotoImage(asset: asset, targetSize: .init(width: 250, height: 250), completion: { [weak cell] image in
+                if let cell, cell.assetIdentifier == asset.localIdentifier {
+                    cell.configure(with: image)
+                }
+            })
+            
         }
     }
     
     private func bindAction() {
         listener?.action(.viewDidLoad)
+        
+        photoPickerView.xButton.button.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.listener?.action(.xButtonDidTap)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindState() {

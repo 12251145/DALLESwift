@@ -51,6 +51,13 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         let router = photoPickerBuilder.build(withListener: interactor)
         photoPickerRouter = router
         attachChild(router)
-        viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .automatic)
+        viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
+    }
+    
+    func detachPhotoPicker() {
+        guard let router = photoPickerRouter else { return }
+        router.viewControllable.uiviewController.dismiss(animated: true)
+        detachChild(router)
+        photoPickerRouter = nil
     }
 }

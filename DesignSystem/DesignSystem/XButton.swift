@@ -9,9 +9,9 @@ import PinLayout
 import UIKit
 
 public class XButton: UIView {
-    
+
     private let visualEffectView: UIVisualEffectView
-    private let button = UIButton()
+    public let button = UIButton()
     
     public init(xSize: CGFloat, effectStyle: UIBlurEffect.Style) {
         let effect = UIBlurEffect(style: effectStyle)
@@ -38,7 +38,7 @@ public class XButton: UIView {
     private func configure(_ xSize: CGFloat) {
         var config = UIButton.Configuration.plain()
         config.image = UIImage(systemName: "xmark")
-        config.preferredSymbolConfigurationForImage = .init(pointSize: 12, weight: .semibold)
+        config.preferredSymbolConfigurationForImage = .init(pointSize: xSize, weight: .semibold)
         config.baseForegroundColor = .black
         
         button.configuration = config
