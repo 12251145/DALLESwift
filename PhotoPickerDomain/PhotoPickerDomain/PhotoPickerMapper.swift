@@ -16,6 +16,8 @@ extension PhotoPickerUserInterface.PhotoPickerPresentableAction {
             return .viewDidLoad
         case .xButtonDidTap:
             return .xButtonDidTap
+        case .imageSelect(let asset):
+            return .imageSelect(asset: asset)
         }
     }
 }

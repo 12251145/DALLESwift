@@ -16,6 +16,7 @@ import UIKit
 public enum PhotoPickerPresentableAction {
     case viewDidLoad
     case xButtonDidTap
+    case imageSelect(asset: PHAsset)
 }
 
 public struct PhotoPickerPresentableState {
@@ -52,6 +53,7 @@ public final class PhotoPickerViewController: UIViewController {
         
         self.isModalInPresentation = true
         self.photoPickerView.collectionView.dataSource = self
+        self.photoPickerView.collectionView.delegate = self
         
         cellRegister()
         
@@ -119,6 +121,15 @@ public final class PhotoPickerViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+    }
+}
+
+// MARK: - CollectionView Delegate
+extension PhotoPickerViewController: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let asset = assets?[indexPath.item] {
+            listener?.action(.imageSelect(asset: asset))
+        }
     }
 }
 

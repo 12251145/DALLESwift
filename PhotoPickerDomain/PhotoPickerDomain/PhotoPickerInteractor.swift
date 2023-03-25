@@ -83,6 +83,9 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                     })
                 case .xButtonDidTap:
                     self?.listener?.detachPhotoPicker()
+                case .imageSelect:
+                    break
+                    // TODO: Asset 이미지 편집화면으로 이동
                 }
             })
             .disposeOnDeactivate(interactor: self)
