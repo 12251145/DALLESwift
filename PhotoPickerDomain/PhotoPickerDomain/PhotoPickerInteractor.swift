@@ -68,9 +68,13 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                             break
                         case .limited, .authorized:
                             if var newState = self?.stateRelay.value {
+                                
                                 let fetchOptions = PHFetchOptions()
                                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                                
                                 newState.assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                                newState.showSelectMorePhotoButton = status == .limited ? true : false
+                                
                                 self?.stateRelay.accept(newState)                                
                             }
                         @unknown default:

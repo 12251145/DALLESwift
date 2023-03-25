@@ -24,6 +24,6 @@ extension PhotoPickerPresentationState {
     
     // TODO: Return DomainState
     var toMapper: PhotoPickerUserInterface.PhotoPickerPresentableState {
-        return .init(assets: assets)
+        return .init(assets: assets, showSelectMorePhotoButton: showSelectMorePhotoButton)
     }
 }

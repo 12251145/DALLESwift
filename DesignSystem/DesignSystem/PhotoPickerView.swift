@@ -21,7 +21,10 @@ public final class PhotoPickerView: UIView {
     public let selectMorePhotoButton = RectangleButton(title: "더 많은 사진 선택", titleSize: 16)
     public let moveToSettingButton = RectangleButton(title: "권한 설정으로 이동", titleSize: 16)
     
+    private var collectionViewBottomView: UIView
+    
     public init() {
+        self.collectionViewBottomView = selectMorePhotoButton
         super.init(frame: .zero)
         
         collectionView.delaysContentTouches = false
@@ -52,8 +55,20 @@ public final class PhotoPickerView: UIView {
     private func layout() {
         moveToSettingButton.pin.left().right().bottom(pin.safeArea.bottom + 10).height(50)
         selectMorePhotoButton.pin.left().right().above(of: moveToSettingButton).height(50)
-        collectionView.pin.above(of: selectMorePhotoButton).top().left().right()
+        collectionView.pin.above(of: collectionViewBottomView).top().left().right()
         xButton.pin.top(pin.safeArea.top + 15).right(pin.safeArea.right + 15).width(40).height(40)
         xButton.layer.cornerRadius = xButton.bounds.size.height / 2
+    }
+    
+    public func setShowMorePhotoButtonVisibility(_ show: Bool) {
+        if show {
+            selectMorePhotoButton.isHidden = false
+            collectionViewBottomView = selectMorePhotoButton
+        } else {
+            selectMorePhotoButton.isHidden = true
+            collectionViewBottomView = moveToSettingButton
+        }
+        
+        setNeedsLayout()
     }
 }

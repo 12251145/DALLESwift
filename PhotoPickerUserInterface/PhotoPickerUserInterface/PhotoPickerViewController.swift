@@ -7,6 +7,7 @@
 
 import DesignSystem
 import Photos
+import PhotosUI
 import RxCocoa
 import RxRelay
 import RxSwift
@@ -20,9 +21,11 @@ public enum PhotoPickerPresentableAction {
 public struct PhotoPickerPresentableState {
     
     var assets: PHFetchResult<PHAsset>?
+    var showSelectMorePhotoButton: Bool
     
-    public init(assets: PHFetchResult<PHAsset>? = nil) {
+    public init(assets: PHFetchResult<PHAsset>? = nil, showSelectMorePhotoButton: Bool = false) {
         self.assets = assets
+        self.showSelectMorePhotoButton = showSelectMorePhotoButton
     }
 }
 
@@ -44,6 +47,8 @@ public final class PhotoPickerViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PHPhotoLibrary.shared().register(self)
         
         self.isModalInPresentation = true
         self.photoPickerView.collectionView.dataSource = self
@@ -80,6 +85,20 @@ public final class PhotoPickerViewController: UIViewController {
                 self?.listener?.action(.xButtonDidTap)
             })
             .disposed(by: disposeBag)
+        
+        photoPickerView.selectMorePhotoButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.presentLimitedLibrarySelection()
+            })
+            .disposed(by: disposeBag)
+        
+        photoPickerView.moveToSettingButton.rx.tap
+            .subscribe(onNext: { _ in
+                if let settingURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingURL)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindState() {
@@ -89,6 +108,14 @@ public final class PhotoPickerViewController: UIViewController {
             .subscribe(onNext: { [weak self] result in
                 self?.assets = result
                 self?.photoPickerView.reloadCollectionView()
+            })
+            .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .map(\.showSelectMorePhotoButton)
+            .subscribe(onNext: { [weak self] show in
+                
+                self?.photoPickerView.setShowMorePhotoButtonVisibility(show)
             })
             .disposed(by: disposeBag)
         
@@ -114,6 +141,29 @@ extension PhotoPickerViewController: UICollectionViewDataSource {
             )
         } else {
             fatalError("CellProvider should return cell.")
+        }
+    }
+}
+
+// MARK: - Present the limited-library selection user interface/
+extension PhotoPickerViewController {
+    func presentLimitedLibrarySelection() {
+        PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
+    }
+}
+
+
+// MARK: - PHPhotoLibraryChangeObserver
+extension PhotoPickerViewController: PHPhotoLibraryChangeObserver {
+    public func photoLibraryDidChange(_ changeInstance: PHChange) {
+        
+        guard let old = assets else { return }
+        
+        DispatchQueue.main.sync {
+            if let changes = changeInstance.changeDetails(for: old) {
+                assets =  changes.fetchResultAfterChanges
+                photoPickerView.collectionView.reloadData()
+            }
         }
     }
 }

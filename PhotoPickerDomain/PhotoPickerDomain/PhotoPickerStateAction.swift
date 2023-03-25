@@ -18,9 +18,11 @@ public enum PhotoPickerPresentationAction {
 public struct PhotoPickerPresentationState {
     
     var assets: PHFetchResult<PHAsset>?
+    var showSelectMorePhotoButton: Bool
     
-    public init(assets: PHFetchResult<PHAsset>? = nil) {
+    public init(assets: PHFetchResult<PHAsset>? = nil, showSelectMorePhotoButton: Bool = false) {
         self.assets = assets
+        self.showSelectMorePhotoButton = showSelectMorePhotoButton
     }
 }
 
