@@ -30,6 +30,8 @@ public final class ImageCropRotateView: UIView {
     
     private var cropSize: CGSize
     
+    private var isInitLayout: Bool = true
+    
     public init(cropSize: CGSize) {
         self.cropSize = cropSize
         super.init(frame: .zero)
@@ -54,6 +56,10 @@ public final class ImageCropRotateView: UIView {
     }
     
     private func layout() {
+        
+        guard isInitLayout else { return }
+        isInitLayout = false
+        
         scrollView.pin.all()
         blurWithClearMaskView.pin.all()
         
