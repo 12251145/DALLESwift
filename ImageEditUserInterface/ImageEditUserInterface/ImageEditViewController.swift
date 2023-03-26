@@ -25,7 +25,7 @@ public protocol ImageEditPresentableListener: AnyObject {
 public final class ImageEditViewController: UIViewController {
     public weak var listener: ImageEditPresentableListener?
     
-    private let imageCropRotateView = ImageCropRotateView()
+    private let imageCropRotateView = ImageCropRotateView(cropSize: .init(width: 320, height: 320))
     
     public override func loadView() {
         view = imageCropRotateView
@@ -33,6 +33,6 @@ public final class ImageEditViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        imageCropRotateView.image = UIImage(named: "testImage")
+        imageCropRotateView.image = UIImage(named: "testImage2")
     }
 }

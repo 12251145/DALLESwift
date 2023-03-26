@@ -21,16 +21,17 @@ public final class ImageCropRotateView: UIView {
         didSet {
             imageView.image = image
             imageView.sizeToFit()
+            fitImageViewSizeToCrop()
             imagePaddingView.frame = imageView.frame
 
             setNeedsLayout()
         }
     }
     
-    private var cropSize: CGSize = .zero
+    private var cropSize: CGSize
     
-    public init() {
-        
+    public init(cropSize: CGSize) {
+        self.cropSize = cropSize
         super.init(frame: .zero)
                 
         self.scrollView.contentInsetAdjustmentBehavior = .never
@@ -56,10 +57,7 @@ public final class ImageCropRotateView: UIView {
         scrollView.pin.all()
         blurWithClearMaskView.pin.all()
         
-        let cropSideSize = scrollView.bounds.size.width * 0.9
-        cropSize = .init(width: cropSideSize, height: cropSideSize)
-        
-        cropOverlay.pin.center().width(cropSize.width).height(cropSize.height)
+        cropOverlay.pin.hCenter().vCenter(-7%).width(cropSize.width).height(cropSize.height)
         cropFocusBorder.pin.all(-cropFocusBorder.lineWidth)
         cropFocusBorder.setNeedsDisplay()
         
@@ -72,10 +70,6 @@ public final class ImageCropRotateView: UIView {
         let contentWidth = imagePaddingView.bounds.size.width + (scrollView.bounds.size.width - cropSize.width)
         let contentHeight = imagePaddingView.bounds.size.height + (scrollView.bounds.size.height - cropSize.height)
         scrollView.contentSize = .init(width: contentWidth, height: contentHeight)
-        
-        let contentOffsetX = (imagePaddingView.bounds.size.width / 2) - ((self.bounds.size.width / 2) - cropOverlay.frame.minX)
-        let contentOffsetY = (imagePaddingView.bounds.size.height / 2) - ((self.bounds.size.height / 2) - cropOverlay.frame.minY)
-        scrollView.contentOffset = .init(x: contentOffsetX, y: contentOffsetY)
     }
     
     private func setUpScrollView() {
@@ -91,6 +85,7 @@ public final class ImageCropRotateView: UIView {
     }
     
     private func setUpImageView() {
+        imageView.contentMode = .scaleAspectFill
         imagePaddingView.addSubview(imageView)
         scrollView.addSubview(imagePaddingView)
     }
@@ -140,6 +135,23 @@ extension ImageCropRotateView: UIGestureRecognizerDelegate {
         let contentWidth = imagePaddingView.frame.size.width + (scrollView.bounds.size.width - cropSize.width)
         let contentHeight = imagePaddingView.frame.size.height + (scrollView.bounds.size.height - cropSize.height)
         
-        scrollView.contentSize = .init(width: contentWidth, height: contentHeight)        
+        // TODO: 매직넘버 0.1 수정 해야 함. 사이즈 딱 맞을 때 바운스 안되는 문제 때문에 있는 것임.
+        scrollView.contentSize = .init(width: contentWidth + 0.1, height: contentHeight + 0.1)
+    }
+}
+
+// MARK: - Private functions
+private extension ImageCropRotateView {
+    func fitImageViewSizeToCrop() {
+        let imageViewWidth = imageView.frame.size.width
+        let imageViewHeight = imageView.frame.size.height
+        let smallSide = imageViewWidth < imageViewHeight ? imageViewWidth : imageViewHeight
+        let ratio = cropSize.width / smallSide
+        
+        let fitWidth = ratio * imageViewWidth
+        let fitHeight = ratio * imageViewHeight
+        
+        // TODO: 매직넘버 0.1 수정 해야 함. 사이즈 딱 맞을 때 바운스 안되는 문제 때문에 있는 것임.
+        imageView.frame = .init(x: 0, y: 0, width: fitWidth + 0.1, height: fitHeight + 0.1)
     }
 }
