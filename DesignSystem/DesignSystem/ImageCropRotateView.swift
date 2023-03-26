@@ -12,8 +12,10 @@ public final class ImageCropRotateView: UIView {
     private let scrollView = UIScrollView()
     private let imageView = UIImageView()
     private let imagePaddingView = UIView()
-    private let cropOverlay = UIView()
     private let blurWithClearMaskView = BlurWithClearMaskView(blurEffect: .systemUltraThinMaterialDark)
+    private let cropOverlay = UIView()
+    
+    private let cropFocusBorder = CropAreaFocusBorder(lineWidth: 2)
     
     public var image: UIImage? {
         didSet {
@@ -36,8 +38,8 @@ public final class ImageCropRotateView: UIView {
         
         setUpScrollView()
         setUpImageView()
-        setUpCropOverlay()
         setUpBlurMask()
+        setUpCropOverlay()
     }
     
     required init?(coder: NSCoder) {
@@ -54,10 +56,12 @@ public final class ImageCropRotateView: UIView {
         scrollView.pin.all()
         blurWithClearMaskView.pin.all()
         
-        let cropSideSize = scrollView.bounds.size.width * 0.95
+        let cropSideSize = scrollView.bounds.size.width * 0.9
         cropSize = .init(width: cropSideSize, height: cropSideSize)
         
         cropOverlay.pin.center().width(cropSize.width).height(cropSize.height)
+        cropFocusBorder.pin.all(-cropFocusBorder.lineWidth)
+        cropFocusBorder.setNeedsDisplay()
         
         blurWithClearMaskView.clearArea = cropOverlay.frame
         
@@ -93,8 +97,11 @@ public final class ImageCropRotateView: UIView {
 
     private func setUpCropOverlay() {
         cropOverlay.isUserInteractionEnabled = false
-        cropOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        cropOverlay.clipsToBounds = true
+        cropOverlay.layer.addSublayer(cropFocusBorder)
+        cropOverlay.layer.borderColor = UIColor.white.cgColor
+        cropOverlay.layer.borderWidth = 1
+        cropFocusBorder.contentsScale = UIScreen.main.scale
+        
         addSubview(cropOverlay)
     }
     
