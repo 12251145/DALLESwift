@@ -19,6 +19,7 @@
 		6A6AF9E529CD3A2C00B44FE8 /* XButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9E429CD3A2B00B44FE8 /* XButton.swift */; };
 		6AD305FC29CE823F00C3531F /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305FB29CE823E00C3531F /* RectangleButton.swift */; };
 		6AD3063D29CEFF2D00C3531F /* ImageCropRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3063C29CEFF2D00C3531F /* ImageCropRotateView.swift */; };
+		6AD3066629CFD5AB00C3531F /* BlurWithClearMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3066529CFD5AB00C3531F /* BlurWithClearMaskView.swift */; };
 		6AD54D9329C2AB300035A8C5 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54D9229C2AB300035A8C5 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 6AD54D9A29C2AB630035A8C5 /* PinLayout */; };
 		6AD54D9D29C2ABD60035A8C5 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */; };
@@ -42,6 +43,7 @@
 		6A6AF9E429CD3A2B00B44FE8 /* XButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XButton.swift; sourceTree = "<group>"; };
 		6AD305FB29CE823E00C3531F /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
 		6AD3063C29CEFF2D00C3531F /* ImageCropRotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropRotateView.swift; sourceTree = "<group>"; };
+		6AD3066529CFD5AB00C3531F /* BlurWithClearMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurWithClearMaskView.swift; sourceTree = "<group>"; };
 		6AD54D8F29C2AB300035A8C5 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD54D9229C2AB300035A8C5 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		6AD54D9C29C2ABD60035A8C5 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				6A6AF9DC29CC711400B44FE8 /* AlbumPhotoCell.swift */,
 				6A6AF9E429CD3A2B00B44FE8 /* XButton.swift */,
 				6AD3063C29CEFF2D00C3531F /* ImageCropRotateView.swift */,
+				6AD3066529CFD5AB00C3531F /* BlurWithClearMaskView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				6AD54F9329C5449F0035A8C5 /* ImageResultView.swift in Sources */,
 				6A6AF92F29C8ABB700B44FE8 /* NavigationTitleLabel.swift in Sources */,
 				6AD3063D29CEFF2D00C3531F /* ImageCropRotateView.swift in Sources */,
+				6AD3066629CFD5AB00C3531F /* BlurWithClearMaskView.swift in Sources */,
 				6A6AF9DB29CC61DC00B44FE8 /* GridView.swift in Sources */,
 				6A6AF94029CAFB7A00B44FE8 /* ImageSelectButton.swift in Sources */,
 			);

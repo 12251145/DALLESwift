@@ -9,10 +9,11 @@ import PinLayout
 import UIKit
 
 public final class ImageCropRotateView: UIView {
-    private let scrollView: UIScrollView
-    private let imageView: UIImageView
-    private let imagePaddingView: UIView
-    private let cropOverlay: UIView
+    private let scrollView = UIScrollView()
+    private let imageView = UIImageView()
+    private let imagePaddingView = UIView()
+    private let cropOverlay = UIView()
+    private let blurWithClearMaskView = BlurWithClearMaskView(blurEffect: .systemUltraThinMaterialDark)
     
     public var image: UIImage? {
         didSet {
@@ -24,24 +25,19 @@ public final class ImageCropRotateView: UIView {
         }
     }
     
-    var cropSize: CGSize
+    private var cropSize: CGSize = .zero
     
-    public init(cropSize: CGSize) {
-        self.scrollView = UIScrollView()
-        self.imageView = UIImageView()
-        self.imagePaddingView = UIView()
-        self.cropOverlay = UIView()
-        self.cropSize = cropSize
+    public init() {
         
-        self.scrollView.contentInsetAdjustmentBehavior = .never
-                
         super.init(frame: .zero)
-        
-        self.backgroundColor = .white
+                
+        self.scrollView.contentInsetAdjustmentBehavior = .never
+        self.backgroundColor = .black
         
         setUpScrollView()
-        setupImageView()
+        setUpImageView()
         setUpCropOverlay()
+        setUpBlurMask()
     }
     
     required init?(coder: NSCoder) {
@@ -56,7 +52,14 @@ public final class ImageCropRotateView: UIView {
     
     private func layout() {
         scrollView.pin.all()
+        blurWithClearMaskView.pin.all()
+        
+        let cropSideSize = scrollView.bounds.size.width * 0.95
+        cropSize = .init(width: cropSideSize, height: cropSideSize)
+        
         cropOverlay.pin.center().width(cropSize.width).height(cropSize.height)
+        
+        blurWithClearMaskView.clearArea = cropOverlay.frame
         
         let topMargin = cropOverlay.frame.minY
         let leftMargin = cropOverlay.frame.minX
@@ -83,7 +86,7 @@ public final class ImageCropRotateView: UIView {
         addSubview(scrollView)
     }
     
-    private func setupImageView() {
+    private func setUpImageView() {
         imagePaddingView.addSubview(imageView)
         scrollView.addSubview(imagePaddingView)
     }
@@ -93,6 +96,11 @@ public final class ImageCropRotateView: UIView {
         cropOverlay.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         cropOverlay.clipsToBounds = true
         addSubview(cropOverlay)
+    }
+    
+    private func setUpBlurMask() {
+        blurWithClearMaskView.isUserInteractionEnabled = false
+        addSubview(blurWithClearMaskView)
     }
 }
 
