@@ -10,7 +10,7 @@ import UIKit
 
 public final class PhotoPickerView: UIView {
     
-    public let xButton = XButton(xSize: 15, effectStyle: .systemUltraThinMaterial)
+    public let xButton = XButton(xSize: 15, xColor: .black, effectStyle: .systemUltraThinMaterial)
     public let collectionView = GridView(
         itemSize: .init(
             widthDimension: .fractionalWidth(1 / 3),

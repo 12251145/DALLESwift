@@ -18,7 +18,7 @@ public final class ImageSelectButton: UIView {
     public private(set) var button = UIButton()
     private let imageView = UIImageView()
     private let borderLayer = CAShapeLayer()
-    private let xButton = XButton(xSize: 12, effectStyle: .regular)
+    private let xButton = XButton(xSize: 12, xColor: .black, effectStyle: .regular)
     
     public var backgroundImage: UIImage? {
         didSet {

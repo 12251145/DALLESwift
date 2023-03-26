@@ -14,9 +14,11 @@ public final class ImageCropRotateView: UIView {
     private let imagePaddingView = UIView()
     private let blurWithClearMaskView = BlurWithClearMaskView(blurEffect: .systemUltraThinMaterialDark)
     private let cropOverlay = UIView()
-    
     private let cropFocusBorder = CropAreaFocusBorder(lineWidth: 2)
-    
+    private let doneButton = CapsuleButton(title: "Done", backgroundColor: .white, foregroundColor: .black, fontWeight: .semibold)
+    private let xButton = XButton(xSize: 15, xColor: .white, backgroundColor: .black)
+    private let titleLabel = NavigationTitleLabel(title: "Image Crop")
+
     public var image: UIImage? {
         didSet {
             imageView.image = image
@@ -43,6 +45,9 @@ public final class ImageCropRotateView: UIView {
         setUpImageView()
         setUpBlurMask()
         setUpCropOverlay()
+        setUpdoneButton()
+        setUpXButton()
+        setUpTitleLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -76,6 +81,13 @@ public final class ImageCropRotateView: UIView {
         let contentWidth = imagePaddingView.bounds.size.width + (scrollView.bounds.size.width - cropSize.width)
         let contentHeight = imagePaddingView.bounds.size.height + (scrollView.bounds.size.height - cropSize.height)
         scrollView.contentSize = .init(width: contentWidth, height: contentHeight)
+        
+        doneButton.pin.hCenter().bottom(pin.safeArea.bottom).width(100).height(40).marginBottom(70)
+        xButton.pin.top(pin.safeArea.top).right(20).marginTop(20).width(40).height(40)
+        xButton.layer.cornerRadius = xButton.bounds.size.height / 2
+        
+        titleLabel.pin.hCenter().before(of: xButton, aligned: .center).width(100).height(50)
+        
     }
     
     private func setUpScrollView() {
@@ -109,6 +121,19 @@ public final class ImageCropRotateView: UIView {
     private func setUpBlurMask() {
         blurWithClearMaskView.isUserInteractionEnabled = false
         addSubview(blurWithClearMaskView)
+    }
+    
+    private func setUpdoneButton() {
+        addSubview(doneButton)
+    }
+    
+    private func setUpXButton() {
+        addSubview(xButton)
+    }
+    
+    private func setUpTitleLabel() {
+        titleLabel.textColor = .white
+        addSubview(titleLabel)
     }
 }
 

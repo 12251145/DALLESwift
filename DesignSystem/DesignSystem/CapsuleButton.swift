@@ -9,11 +9,11 @@ import UIKit
 
 public class CapsuleButton: UIButton {
     
-    public init(_ title: String,
-         _ backgroundColor: UIColor = .black,
-         _ foregroundColor: UIColor = .white,
-         _ titleSize: CGFloat = 18,
-         _ fontWeight: UIFont.Weight = .medium) {
+    public init(title: String,
+         backgroundColor: UIColor = .black,
+         foregroundColor: UIColor = .white,
+         titleSize: CGFloat = 18,
+         fontWeight: UIFont.Weight = .medium) {
         
         super.init(frame: .zero)
         configure(title, backgroundColor, foregroundColor, titleSize, fontWeight)

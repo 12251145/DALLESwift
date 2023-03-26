@@ -10,19 +10,26 @@ import UIKit
 
 public class XButton: UIView {
 
-    private let visualEffectView: UIVisualEffectView
+    private var xColor: UIColor
+    private var buttonColor: UIColor?
+    private var visualEffectView: UIVisualEffectView?
     public let button = UIButton()
     
-    public init(xSize: CGFloat, effectStyle: UIBlurEffect.Style) {
+    public init(xSize: CGFloat, xColor: UIColor, effectStyle: UIBlurEffect.Style) {
+        self.xColor = xColor
+        super.init(frame: .zero)
+                
         let effect = UIBlurEffect(style: effectStyle)
         self.visualEffectView = .init(effect: effect)
-        super.init(frame: .zero)
-            
-        self.clipsToBounds = true
         
-        addSubview(visualEffectView)
-        addSubview(button)
-                
+        configure(xSize)
+    }
+    
+    public init(xSize: CGFloat, xColor: UIColor, backgroundColor: UIColor) {
+        self.xColor = xColor
+        super.init(frame: .zero)
+        buttonColor = backgroundColor
+        
         configure(xSize)
     }
     
@@ -36,16 +43,31 @@ public class XButton: UIView {
     }
     
     private func configure(_ xSize: CGFloat) {
+        
+        self.clipsToBounds = true
+        
         var config = UIButton.Configuration.plain()
         config.image = UIImage(systemName: "xmark")
         config.preferredSymbolConfigurationForImage = .init(pointSize: xSize, weight: .semibold)
-        config.baseForegroundColor = .black
+        config.baseForegroundColor = xColor
+
+        if let visualEffectView {
+            addSubview(visualEffectView)
+        }
+        
+        if let buttonColor {
+            backgroundColor = buttonColor
+        }
         
         button.configuration = config
+        
+        addSubview(button)
     }
     
     private func layout() {
-        visualEffectView.pin.all()
+        if let visualEffectView {
+            visualEffectView.pin.all()
+        }
         button.pin.all()
     }
 }
