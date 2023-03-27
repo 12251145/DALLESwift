@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/27.
 //
 
+import Photos
 import RIBs
 
 public protocol ImageEditDependency: Dependency {
@@ -20,7 +21,7 @@ final class ImageEditComponent: Component<ImageEditDependency> {
 // MARK: - Builder
 
 public protocol ImageEditBuildable: Buildable {
-    func build(withListener listener: ImageEditListener) -> ImageEditRouting
+    func build(withListener listener: ImageEditListener, asset: PHAsset) -> ImageEditRouting
 }
 
 public final class ImageEditBuilder: Builder<ImageEditDependency>, ImageEditBuildable {
@@ -29,11 +30,13 @@ public final class ImageEditBuilder: Builder<ImageEditDependency>, ImageEditBuil
         super.init(dependency: dependency)
     }
 
-    public func build(withListener listener: ImageEditListener) -> ImageEditRouting {
-        let component = ImageEditComponent(dependency: dependency)
-        let viewController = ImageEditPresenter()
-        let interactor = ImageEditInteractor(presenter: viewController)
-        interactor.listener = listener
-        return ImageEditRouter(interactor: interactor, viewController: viewController)
-    }
+    public func build(
+        withListener listener: ImageEditListener,
+        asset: PHAsset) -> ImageEditRouting {
+            let component = ImageEditComponent(dependency: dependency)
+            let viewController = ImageEditPresenter()
+            let interactor = ImageEditInteractor(presenter: viewController, asset: asset)
+            interactor.listener = listener
+            return ImageEditRouter(interactor: interactor, viewController: viewController)
+        }
 }

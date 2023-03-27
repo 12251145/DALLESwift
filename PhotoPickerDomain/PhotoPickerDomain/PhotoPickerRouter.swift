@@ -35,7 +35,7 @@ final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPick
         }
     
     func routeToImageEdit(asset: PHAsset) {
-        let router = imageEditBuilder.build(withListener: interactor)
+        let router = imageEditBuilder.build(withListener: interactor, asset: asset)
         imageEditRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)

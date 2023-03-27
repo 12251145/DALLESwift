@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/27.
 //
 
+import Photos
 import RIBs
 import RxRelay
 import RxSwift
@@ -31,15 +32,20 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
     
     private let stateRelay: BehaviorRelay<ImageEditPresentationState>
     let state: Observable<ImageEditPresentationState>
+    
+    private let asset: PHAsset
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: ImageEditPresentable) {
-        self.stateRelay = .init(value: .init())
-        self.state = stateRelay.asObservable()
-        super.init(presenter: presenter)
-        presenter.listener = self
-    }
+    init(
+        presenter: ImageEditPresentable,
+        asset: PHAsset) {
+            self.stateRelay = .init(value: .init())
+            self.state = stateRelay.asObservable()
+            self.asset = asset
+            super.init(presenter: presenter)
+            presenter.listener = self
+        }
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -57,7 +63,8 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
             .subscribe(onNext: { [weak self] action in
                 switch action {
                 case .viewDidLoad:
-                    print("vd")
+                    print(self?.asset)
+                    // TODO: Image request -> State 전달
                 case .doneButtonDidTap:
                     print("db")
                 case .xButtonDidTap:
