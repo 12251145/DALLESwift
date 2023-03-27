@@ -34,6 +34,7 @@ public final class ImageCropRotateView: UIView {
     
     private var cropSize: CGSize
     
+    // MARK: - Flag
     private var isImageLayouted: Bool = false
     
     public init(cropSize: CGSize) {
@@ -173,9 +174,9 @@ extension ImageCropRotateView: UIGestureRecognizerDelegate {
     }
 }
 
-// MARK: - Private functions
-private extension ImageCropRotateView {
-    func fitImageViewSizeToCrop() {
+// MARK: - View Logics
+extension ImageCropRotateView {
+    private func fitImageViewSizeToCrop() {
         let imageViewWidth = imageView.frame.size.width
         let imageViewHeight = imageView.frame.size.height
         let smallSide = imageViewWidth < imageViewHeight ? imageViewWidth : imageViewHeight
@@ -186,5 +187,25 @@ private extension ImageCropRotateView {
         
         // TODO: 매직넘버 0.1 수정 해야 함. 사이즈 딱 맞을 때 바운스 안되는 문제 때문에 있는 것임.
         imageView.frame = .init(x: 0, y: 0, width: fitWidth + 0.1, height: fitHeight + 0.1)
+    }
+    
+    public func cropRect() -> CGRect {
+        
+        guard let image else { return .zero }
+        
+        let contentOffset = scrollView.contentOffset
+        let imageWidth = image.size.width
+        let imageHeight = image.size.height
+        let scale = imageWidth / imagePaddingView.frame.size.width
+        
+        var x1 = min(max(0, contentOffset.x * scale), imageWidth)
+        let y1 = min(max(0, contentOffset.y * scale), imageHeight)
+        let x2 = max(min(imageWidth, x1 + (cropSize.width * scale)), 0)
+        let y2 = max(min(imageHeight, y1 + (cropSize.height * scale)), 0)
+
+        let sideSize = max(0, x2 - x1)
+        let rect = CGRect(origin: .init(x: x1, y: y1), size: .init(width: sideSize, height: sideSize))
+        
+        return rect
     }
 }

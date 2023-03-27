@@ -52,6 +52,7 @@ public final class ImageEditViewController: UIViewController {
         
         imageCropRotateView.doneButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
+                let croppedRect = self?.imageCropRotateView.cropRect()
                 self?.listener?.action(.doneButtonDidTap)
             })
             .disposed(by: disposeBag)

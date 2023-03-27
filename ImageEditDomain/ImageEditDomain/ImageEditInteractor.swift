@@ -86,10 +86,8 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
                                     }                                
                             }
                     }
-                    
-                    // TODO: Image request -> State 전달
                 case .doneButtonDidTap:
-                    print("db")
+                    break
                 case .xButtonDidTap:
                     self?.listener?.detachImageEdit()
                 }
