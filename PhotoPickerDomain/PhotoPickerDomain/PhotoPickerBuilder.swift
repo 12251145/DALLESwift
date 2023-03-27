@@ -5,7 +5,7 @@
 //  Created by Hoen on 2023/03/24.
 //
 
-import PhotoPickerUserInterface
+import ImageEditDomain
 import RIBs
 
 public protocol PhotoPickerDependency: Dependency {
@@ -13,7 +13,7 @@ public protocol PhotoPickerDependency: Dependency {
     // created by this RIB.
 }
 
-final class PhotoPickerComponent: Component<PhotoPickerDependency> {
+final class PhotoPickerComponent: Component<PhotoPickerDependency>, ImageEditDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -34,7 +34,13 @@ public final class PhotoPickerBuilder: Builder<PhotoPickerDependency>, PhotoPick
         let component = PhotoPickerComponent(dependency: dependency)
         let viewController = PhotoPickerPresenter()
         let interactor = PhotoPickerInteractor(requestPhotoImageUseCase: RequestPhotoImageUseCaseImpl(), presenter: viewController)
+        let imageEditBuilder = ImageEditBuilder(dependency: component)
         interactor.listener = listener
-        return PhotoPickerRouter(interactor: interactor, viewController: viewController)
+        
+        return PhotoPickerRouter(
+            imageEditBuilder: imageEditBuilder,
+            interactor: interactor,
+            viewController: viewController
+        )
     }
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6ACE53C229D1434500DC547D /* ImageEditMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53BC29D1434400DC547D /* ImageEditMapper.swift */; };
+		6ACE53C329D1434500DC547D /* ImageEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53BD29D1434400DC547D /* ImageEditPresenter.swift */; };
+		6ACE53C429D1434500DC547D /* ImageEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53BE29D1434400DC547D /* ImageEditRouter.swift */; };
+		6ACE53C529D1434500DC547D /* ImageEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53BF29D1434400DC547D /* ImageEditBuilder.swift */; };
+		6ACE53C629D1434500DC547D /* ImageEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53C029D1434400DC547D /* ImageEditInteractor.swift */; };
+		6ACE53C729D1434500DC547D /* ImageEditStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE53C129D1434400DC547D /* ImageEditStateAction.swift */; };
 		6AD3060B29CEFBB800C3531F /* ImageEditDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD3060A29CEFBB800C3531F /* ImageEditDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD3062F29CEFC0B00C3531F /* ImageEditUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD3062E29CEFC0B00C3531F /* ImageEditUserInterface.framework */; };
 		6AD3063329CEFC1500C3531F /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD3063229CEFC1500C3531F /* BaseDependencyDomain.framework */; };
@@ -14,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ACE53BC29D1434400DC547D /* ImageEditMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditMapper.swift; sourceTree = "<group>"; };
+		6ACE53BD29D1434400DC547D /* ImageEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditPresenter.swift; sourceTree = "<group>"; };
+		6ACE53BE29D1434400DC547D /* ImageEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditRouter.swift; sourceTree = "<group>"; };
+		6ACE53BF29D1434400DC547D /* ImageEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditBuilder.swift; sourceTree = "<group>"; };
+		6ACE53C029D1434400DC547D /* ImageEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditInteractor.swift; sourceTree = "<group>"; };
+		6ACE53C129D1434400DC547D /* ImageEditStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditStateAction.swift; sourceTree = "<group>"; };
 		6AD3060729CEFBB800C3531F /* ImageEditDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageEditDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD3060A29CEFBB800C3531F /* ImageEditDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageEditDomain.h; sourceTree = "<group>"; };
 		6AD3062E29CEFC0B00C3531F /* ImageEditUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageEditUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +68,12 @@
 			isa = PBXGroup;
 			children = (
 				6AD3060A29CEFBB800C3531F /* ImageEditDomain.h */,
+				6ACE53BC29D1434400DC547D /* ImageEditMapper.swift */,
+				6ACE53BD29D1434400DC547D /* ImageEditPresenter.swift */,
+				6ACE53BE29D1434400DC547D /* ImageEditRouter.swift */,
+				6ACE53BF29D1434400DC547D /* ImageEditBuilder.swift */,
+				6ACE53C029D1434400DC547D /* ImageEditInteractor.swift */,
+				6ACE53C129D1434400DC547D /* ImageEditStateAction.swift */,
 			);
 			path = ImageEditDomain;
 			sourceTree = "<group>";
@@ -149,6 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACE53C629D1434500DC547D /* ImageEditInteractor.swift in Sources */,
+				6ACE53C729D1434500DC547D /* ImageEditStateAction.swift in Sources */,
+				6ACE53C429D1434500DC547D /* ImageEditRouter.swift in Sources */,
+				6ACE53C529D1434500DC547D /* ImageEditBuilder.swift in Sources */,
+				6ACE53C329D1434500DC547D /* ImageEditPresenter.swift in Sources */,
+				6ACE53C229D1434500DC547D /* ImageEditMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +317,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ImageEditDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -321,6 +346,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.ImageEditDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

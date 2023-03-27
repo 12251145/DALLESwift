@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 public protocol PhotoPickerRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToImageEdit(asset: PHAsset)
 }
 
 public protocol PhotoPickerPresentable: Presentable {
@@ -83,9 +83,8 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                     })
                 case .xButtonDidTap:
                     self?.listener?.detachPhotoPicker()
-                case .imageSelect:
-                    break
-                    // TODO: Asset 이미지 편집화면으로 이동
+                case .imageSelect(let asset):
+                    self?.router?.routeToImageEdit(asset: asset)
                 }
             })
             .disposeOnDeactivate(interactor: self)

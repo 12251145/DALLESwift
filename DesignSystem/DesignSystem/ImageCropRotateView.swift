@@ -15,8 +15,8 @@ public final class ImageCropRotateView: UIView {
     private let blurWithClearMaskView = BlurWithClearMaskView(blurEffect: .systemUltraThinMaterialDark)
     private let cropOverlay = UIView()
     private let cropFocusBorder = CropAreaFocusBorder(lineWidth: 2)
-    private let doneButton = CapsuleButton(title: "Done", backgroundColor: .white, foregroundColor: .black, fontWeight: .semibold)
-    private let xButton = XButton(xSize: 15, xColor: .white, backgroundColor: .black)
+    public let doneButton = CapsuleButton(title: "Done", backgroundColor: .white, foregroundColor: .black, fontWeight: .semibold)
+    public let xButton = XButton(xSize: 15, xColor: .white, backgroundColor: .black)
     private let titleLabel = NavigationTitleLabel(title: "Image Crop")
 
     public var image: UIImage? {
@@ -86,7 +86,7 @@ public final class ImageCropRotateView: UIView {
         xButton.pin.top(pin.safeArea.top).right(20).marginTop(20).width(40).height(40)
         xButton.layer.cornerRadius = xButton.bounds.size.height / 2
         
-        titleLabel.pin.hCenter().before(of: xButton, aligned: .center).width(100).height(50)
+        titleLabel.pin.hCenter().top(pin.safeArea.top).width(100).height(40).marginTop(20)
         
     }
     

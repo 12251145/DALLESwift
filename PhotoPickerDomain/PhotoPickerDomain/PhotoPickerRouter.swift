@@ -5,22 +5,39 @@
 //  Created by Hoen on 2023/03/24.
 //
 
+import BaseDependencyDomain
+import ImageEditDomain
+import Photos
 import RIBs
 
-public protocol PhotoPickerInteractable: Interactable {
+public protocol PhotoPickerInteractable: Interactable, ImageEditListener {
     var router: PhotoPickerRouting? { get set }
     var listener: PhotoPickerListener? { get set }
 }
 
-public protocol PhotoPickerViewControllable: ViewControllable {
+public protocol PhotoPickerViewControllable: NavigateViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
 final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPickerViewControllable>, PhotoPickerRouting {
 
+    private let imageEditBuilder: ImageEditBuildable
+    private var imageEditRouter: ImageEditRouting?
+
     // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: PhotoPickerInteractable, viewController: PhotoPickerViewControllable) {
-        super.init(interactor: interactor, viewController: viewController)
-        interactor.router = self
+    init(
+        imageEditBuilder: ImageEditBuildable,
+        interactor: PhotoPickerInteractable,
+        viewController: PhotoPickerViewControllable) {
+            self.imageEditBuilder = imageEditBuilder
+            super.init(interactor: interactor, viewController: viewController)
+            interactor.router = self
+        }
+    
+    func routeToImageEdit(asset: PHAsset) {
+        let router = imageEditBuilder.build(withListener: interactor)
+        imageEditRouter = router
+        attachChild(router)
+        viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
     }
 }

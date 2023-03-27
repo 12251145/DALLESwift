@@ -6,11 +6,14 @@
 //
 
 import DesignSystem
+import RxCocoa
 import RxSwift
 import UIKit
 
 public enum ImageEditPresentableAction {
     case viewDidLoad
+    case doneButtonDidTap
+    case xButtonDidTap
 }
 
 public struct ImageEditPresentableState {
@@ -24,6 +27,7 @@ public protocol ImageEditPresentableListener: AnyObject {
 
 public final class ImageEditViewController: UIViewController {
     public weak var listener: ImageEditPresentableListener?
+    private var disposeBag = DisposeBag()
     
     private let imageCropRotateView = ImageCropRotateView(cropSize: .init(width: 320, height: 320))
     
@@ -33,6 +37,25 @@ public final class ImageEditViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        imageCropRotateView.image = UIImage(named: "testImage2")
+        imageCropRotateView.image = UIImage(systemName: "pencil")
+        
+        bindAction()
+    }
+    
+    func bindAction() {
+        listener?.action(.viewDidLoad)
+        
+        imageCropRotateView.doneButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.listener?.action(.doneButtonDidTap)
+            })
+            .disposed(by: disposeBag)
+        
+        imageCropRotateView.xButton.button.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.listener?.action(.xButtonDidTap)
+            })
+            .disposed(by: disposeBag)
+            
     }
 }

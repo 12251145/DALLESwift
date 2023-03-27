@@ -17,6 +17,7 @@
 		6A6AFA3029CD9AF800B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */; };
 		6A6AFA3429CD9B0400B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */; };
 		6A6AFA3729CD9B1C00B44FE8 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */; };
+		6ACE53C929D1440A00DC547D /* ImageEditDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE53C829D1440A00DC547D /* ImageEditDomain.framework */; };
 		6AD305EB29CDE95D00C3531F /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305EA29CDE95D00C3531F /* PhotoRepository.swift */; };
 		6AD305EE29CDEA5600C3531F /* RequestPhotoImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305ED29CDEA5600C3531F /* RequestPhotoImageUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACE53C829D1440A00DC547D /* ImageEditDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageEditDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD305EA29CDE95D00C3531F /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		6AD305ED29CDEA5600C3531F /* RequestPhotoImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPhotoImageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +46,7 @@
 			files = (
 				6A6AFA3729CD9B1C00B44FE8 /* BaseDependencyDomain.framework in Frameworks */,
 				6A6AFA3429CD9B0400B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */,
+				6ACE53C929D1440A00DC547D /* ImageEditDomain.framework in Frameworks */,
 				6A6AFA3029CD9AF800B44FE8 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		6A6AFA2E29CD9AF800B44FE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ACE53C829D1440A00DC547D /* ImageEditDomain.framework */,
 				6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */,
 				6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */,
 				6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */,
