@@ -23,6 +23,7 @@ public final class PhotoManager {
         }
     }
     
+    // TODO: 용량이 너무 클시 못가져오는 문제 해결해야 함.
     public func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         guard let asset else {
             completion(nil)
@@ -32,7 +33,7 @@ public final class PhotoManager {
         let options = PHImageRequestOptions()        
         
         
-        self.phImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, info in
+        self.phImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, info in            
             completion(image)
         }
     }

@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/27.
 //
 
+import BaseDependencyDomain
 import Photos
 import RIBs
 
@@ -35,7 +36,11 @@ public final class ImageEditBuilder: Builder<ImageEditDependency>, ImageEditBuil
         asset: PHAsset) -> ImageEditRouting {
             let component = ImageEditComponent(dependency: dependency)
             let viewController = ImageEditPresenter()
-            let interactor = ImageEditInteractor(presenter: viewController, asset: asset)
+            let interactor = ImageEditInteractor(
+                requestPhotoImageUseCase: RequestPhotoImageUseCaseImpl(),
+                presenter: viewController,
+                asset: asset
+            )
             interactor.listener = listener
             return ImageEditRouter(interactor: interactor, viewController: viewController)
         }

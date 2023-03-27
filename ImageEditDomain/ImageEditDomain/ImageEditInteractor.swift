@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/27.
 //
 
+import BaseDependencyDomain
 import Photos
 import RIBs
 import RxRelay
@@ -33,16 +34,20 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
     private let stateRelay: BehaviorRelay<ImageEditPresentationState>
     let state: Observable<ImageEditPresentationState>
     
+    private let requestPhotoImageUseCase: RequestPhotoImageUseCase
+    
     private let asset: PHAsset
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     init(
+        requestPhotoImageUseCase: RequestPhotoImageUseCase,
         presenter: ImageEditPresentable,
         asset: PHAsset) {
             self.stateRelay = .init(value: .init())
             self.state = stateRelay.asObservable()
             self.asset = asset
+            self.requestPhotoImageUseCase = requestPhotoImageUseCase
             super.init(presenter: presenter)
             presenter.listener = self
         }
@@ -63,7 +68,25 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
             .subscribe(onNext: { [weak self] action in
                 switch action {
                 case .viewDidLoad:
-                    print(self?.asset)
+                    guard let asset = self?.asset else { return }
+                    
+                    let targetWidth = asset.pixelWidth
+                    let targetHeight = asset.pixelHeight
+                    
+                    DispatchQueue.global().async {
+                        self?.requestPhotoImageUseCase.execute(
+                            with: asset,
+                            targetSize: .init(
+                                width: targetWidth,
+                                height: targetHeight)) { [weak self] image in
+                                    
+                                    if var newState = self?.stateRelay.value {
+                                        newState.image = image
+                                        self?.stateRelay.accept(newState)
+                                    }                                
+                            }
+                    }
+                    
                     // TODO: Image request -> State 전달
                 case .doneButtonDidTap:
                     print("db")

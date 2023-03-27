@@ -16,7 +16,11 @@ public enum ImageEditPresentationAction {
 }
 
 public struct ImageEditPresentationState {
-    public init() { }
+    var image: UIImage?
+    
+    public init(image: UIImage? = nil) {
+        self.image = image
+    }
 }
 
 public protocol ImageEditPresentableListener: AnyObject {

@@ -7,6 +7,7 @@
 
 import DesignSystem
 import RxCocoa
+import RxRelay
 import RxSwift
 import UIKit
 
@@ -17,7 +18,11 @@ public enum ImageEditPresentableAction {
 }
 
 public struct ImageEditPresentableState {
-    public init() { }
+    var image: UIImage?
+    
+    public init(image: UIImage? = nil) {
+        self.image = image
+    }
 }
 
 public protocol ImageEditPresentableListener: AnyObject {
@@ -37,9 +42,9 @@ public final class ImageEditViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        imageCropRotateView.image = UIImage(systemName: "pencil")
         
         bindAction()
+        bindState()
     }
     
     func bindAction() {
@@ -57,5 +62,14 @@ public final class ImageEditViewController: UIViewController {
             })
             .disposed(by: disposeBag)
             
+    }
+    
+    func bindState() {
+        listener?.presentableState
+            .compactMap(\.image)
+            .subscribe(onNext: { [weak self] image in
+                self?.imageCropRotateView.image = image
+            })
+            .disposed(by: disposeBag)
     }
 }

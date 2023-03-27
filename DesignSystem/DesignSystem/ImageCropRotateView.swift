@@ -21,18 +21,20 @@ public final class ImageCropRotateView: UIView {
 
     public var image: UIImage? {
         didSet {
+            guard let image else { return }
             imageView.image = image
             imageView.sizeToFit()
             fitImageViewSizeToCrop()
             imagePaddingView.frame = imageView.frame
 
+            isImageLayouted = false
             setNeedsLayout()
         }
     }
     
     private var cropSize: CGSize
     
-    private var isInitLayout: Bool = true
+    private var isImageLayouted: Bool = false
     
     public init(cropSize: CGSize) {
         self.cropSize = cropSize
@@ -62,8 +64,8 @@ public final class ImageCropRotateView: UIView {
     
     private func layout() {
         
-        guard isInitLayout else { return }
-        isInitLayout = false
+        guard isImageLayouted == false else { return }
+        isImageLayouted = true
         
         scrollView.pin.all()
         blurWithClearMaskView.pin.all()

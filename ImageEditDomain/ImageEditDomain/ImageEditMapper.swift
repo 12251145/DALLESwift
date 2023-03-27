@@ -27,6 +27,6 @@ extension ImageEditPresentationState {
     // TODO: Return DomainState
     var toMapper: ImageEditUserInterface.ImageEditPresentableState {
 
-        return .init()
+        return .init(image: image)
     }
 }

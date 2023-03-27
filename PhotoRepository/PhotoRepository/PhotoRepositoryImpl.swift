@@ -5,9 +5,9 @@
 //  Created by Hoen on 2023/03/24.
 //
 
+import BaseDependencyDomain
 import Photos
 import PhotoManager
-import PhotoPickerDomain
 import UIKit
 
 public struct PhotoRepositoryImpl: PhotoRepository {

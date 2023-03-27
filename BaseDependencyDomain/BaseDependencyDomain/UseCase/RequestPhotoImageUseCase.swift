@@ -1,8 +1,8 @@
 //
 //  RequestPhotoImageUseCase.swift
-//  PhotoPickerDomain
+//  BaseDependencyDomain
 //
-//  Created by Hoen on 2023/03/24.
+//  Created by Hoen on 2023/03/27.
 //
 
 import Foundation
@@ -13,11 +13,11 @@ import ThirdPartyLibraryManager
 import UIKit
 
 
-protocol RequestPhotoImageUseCase {    
+public protocol RequestPhotoImageUseCase {
     func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }
 
-struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
+public struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
     private let photoRepository: PhotoRepository
     
     public init() {
@@ -29,7 +29,7 @@ struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
         self.photoRepository = photoRepositoryImpl
     }
 
-    func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+    public func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         photoRepository.requestImage(with: asset, targetSize: targetSize, completion: completion)
     }
 }

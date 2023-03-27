@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6ACE53D729D1771C00DC547D /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE53D629D1771C00DC547D /* BaseDependencyDomain.framework */; };
 		6AD305D629CDE89A00C3531F /* PhotoRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD305D529CDE89A00C3531F /* PhotoRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD305DE29CDE8B300C3531F /* CoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305DD29CDE8B300C3531F /* CoreKit.framework */; };
 		6AD305E229CDE8B700C3531F /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305E129CDE8B700C3531F /* RxPackage.framework */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ACE53D229D1761300DC547D /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACE53D629D1771C00DC547D /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD305D229CDE89A00C3531F /* PhotoRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD305D529CDE89A00C3531F /* PhotoRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoRepository.h; sourceTree = "<group>"; };
 		6AD305DD29CDE8B300C3531F /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACE53D729D1771C00DC547D /* BaseDependencyDomain.framework in Frameworks */,
 				6AD305DE29CDE8B300C3531F /* CoreKit.framework in Frameworks */,
 				6AD305E529CDE8BF00C3531F /* PhotoPickerDomain.framework in Frameworks */,
 				6AD305E229CDE8B700C3531F /* RxPackage.framework in Frameworks */,
@@ -66,6 +70,8 @@
 		6AD305DC29CDE8B300C3531F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ACE53D629D1771C00DC547D /* BaseDependencyDomain.framework */,
+				6ACE53D229D1761300DC547D /* BaseDependencyDomain.framework */,
 				6AD305E429CDE8BF00C3531F /* PhotoPickerDomain.framework */,
 				6AD305E129CDE8B700C3531F /* RxPackage.framework */,
 				6AD305DD29CDE8B300C3531F /* CoreKit.framework */,

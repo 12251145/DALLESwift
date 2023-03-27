@@ -6,6 +6,7 @@
 //
 
 
+import BaseDependencyDomain
 import DALLEAPI
 import FeatureDALLEDomain
 import FeatureDALLERepository

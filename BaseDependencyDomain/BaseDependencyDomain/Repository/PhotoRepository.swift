@@ -1,13 +1,13 @@
 //
 //  PhotoRepository.swift
-//  PhotoPickerDomain
+//  BaseDependencyDomain
 //
-//  Created by Hoen on 2023/03/24.
+//  Created by Hoen on 2023/03/27.
 //
 
 import Photos
 import UIKit
 
-public protocol PhotoRepository {    
+public protocol PhotoRepository {
     func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
 }
