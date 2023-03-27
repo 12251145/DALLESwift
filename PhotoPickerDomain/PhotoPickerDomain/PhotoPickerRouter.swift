@@ -40,4 +40,11 @@ final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPick
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
     }
+    
+    func detachImageEdit() {
+        guard let router = imageEditRouter else { return }
+        router.viewControllable.uiviewController.dismiss(animated: true)
+        detachChild(router)
+        imageEditRouter = nil
+    }
 }

@@ -19,7 +19,7 @@ public protocol ImageEditPresentable: Presentable {
 }
 
 public protocol ImageEditListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func detachImageEdit()
 }
 
 final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, ImageEditInteractable, ImageEditPresentableListener {
@@ -43,7 +43,8 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        
+        bindAction()
     }
 
     override func willResignActive() {
@@ -56,11 +57,11 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
             .subscribe(onNext: { [weak self] action in
                 switch action {
                 case .viewDidLoad:
-                    break
+                    print("vd")
                 case .doneButtonDidTap:
-                    break
+                    print("db")
                 case .xButtonDidTap:
-                    break
+                    self?.listener?.detachImageEdit()
                 }
             })
             .disposeOnDeactivate(interactor: self)

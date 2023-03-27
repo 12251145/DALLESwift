@@ -13,6 +13,7 @@ import UIKit
 
 public protocol PhotoPickerRouting: ViewableRouting {
     func routeToImageEdit(asset: PHAsset)
+    func detachImageEdit()
 }
 
 public protocol PhotoPickerPresentable: Presentable {
@@ -107,5 +108,9 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
 
     func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         requestPhotoImageUseCase.execute(with: asset, targetSize: targetSize, completion: completion)
+    }
+    
+    func detachImageEdit() {
+        router?.detachImageEdit()
     }
 }
