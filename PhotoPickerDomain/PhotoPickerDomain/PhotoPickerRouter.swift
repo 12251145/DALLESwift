@@ -35,6 +35,7 @@ final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPick
         }
     
     func routeToImageEdit(asset: PHAsset) {
+        guard imageEditRouter == nil else { return }
         let router = imageEditBuilder.build(withListener: interactor, asset: asset)
         imageEditRouter = router
         attachChild(router)
