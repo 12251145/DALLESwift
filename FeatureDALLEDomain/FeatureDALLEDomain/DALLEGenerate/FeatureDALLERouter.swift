@@ -6,6 +6,7 @@
 //
 
 import BaseDependencyDomain
+import Photos
 import PhotoPickerDomain
 import RIBs
 
@@ -59,5 +60,9 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         router.viewControllable.uiviewController.dismiss(animated: true)
         detachChild(router)
         photoPickerRouter = nil
+    }
+    
+    func completeImagePick(asset: PHAsset, rect: CGRect) {
+        detachPhotoPicker()
     }
 }

@@ -15,6 +15,7 @@ import UIKit
 public protocol PhotoPickerRouting: ViewableRouting {
     func routeToImageEdit(asset: PHAsset)
     func detachImageEdit()
+    func doneImageEdit(asset: PHAsset, rect: CGRect)
 }
 
 public protocol PhotoPickerPresentable: Presentable {
@@ -24,6 +25,7 @@ public protocol PhotoPickerPresentable: Presentable {
 
 public protocol PhotoPickerListener: AnyObject {
     func detachPhotoPicker()
+    func completeImagePick(asset: PHAsset, rect: CGRect)
 }
 
 final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>, PhotoPickerInteractable, PhotoPickerPresentableListener {
@@ -113,5 +115,13 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
     
     func detachImageEdit() {
         router?.detachImageEdit()
+    }
+    
+    func doneImageEdit(asset: PHAsset, rect: CGRect) {
+        router?.doneImageEdit(asset: asset, rect: rect)
+    }
+    
+    func completeImagePick(asset: PHAsset, rect: CGRect) {
+        listener?.completeImagePick(asset: asset, rect: rect)
     }
 }

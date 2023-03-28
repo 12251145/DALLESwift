@@ -13,7 +13,7 @@ import UIKit
 
 public enum ImageEditPresentableAction {
     case viewDidLoad
-    case doneButtonDidTap
+    case doneButtonDidTap(rect: CGRect)
     case xButtonDidTap
 }
 
@@ -51,9 +51,10 @@ public final class ImageEditViewController: UIViewController {
         listener?.action(.viewDidLoad)
         
         imageCropRotateView.doneButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in
-                let croppedRect = self?.imageCropRotateView.cropRect()
-                self?.listener?.action(.doneButtonDidTap)
+            .subscribe(onNext: { [weak self] _ in                
+                if let croppedRect = self?.imageCropRotateView.cropRect() {
+                    self?.listener?.action(.doneButtonDidTap(rect: croppedRect))
+                }
             })
             .disposed(by: disposeBag)
         

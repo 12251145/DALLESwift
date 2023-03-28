@@ -14,8 +14,8 @@ extension ImageEditUserInterface.ImageEditPresentableAction {
         switch self {
         case .viewDidLoad:
             return .viewDidLoad
-        case .doneButtonDidTap:
-            return .doneButtonDidTap
+        case .doneButtonDidTap(let rect):
+            return .doneButtonDidTap(rect: rect)
         case .xButtonDidTap:
             return .xButtonDidTap
         }

@@ -11,7 +11,7 @@ import UIKit
 
 public enum ImageEditPresentationAction {
     case viewDidLoad
-    case doneButtonDidTap
+    case doneButtonDidTap(rect: CGRect)
     case xButtonDidTap
 }
 

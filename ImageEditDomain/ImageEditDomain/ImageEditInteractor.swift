@@ -22,6 +22,7 @@ public protocol ImageEditPresentable: Presentable {
 
 public protocol ImageEditListener: AnyObject {
     func detachImageEdit()
+    func doneImageEdit(asset: PHAsset, rect: CGRect)
 }
 
 final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, ImageEditInteractable, ImageEditPresentableListener {
@@ -86,8 +87,10 @@ final class ImageEditInteractor: PresentableInteractor<ImageEditPresentable>, Im
                                     }                                
                             }
                     }
-                case .doneButtonDidTap:
-                    break
+                case .doneButtonDidTap(let rect):
+                    if let asset = self?.asset {
+                        self?.listener?.doneImageEdit(asset: asset, rect: rect)
+                    }
                 case .xButtonDidTap:
                     self?.listener?.detachImageEdit()
                 }

@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/16.
 //
 
+import Photos
 import RIBs
 import RxKeyboard
 import RxRelay
@@ -17,6 +18,7 @@ public protocol FeatureDALLERouting: ViewableRouting {
     func routeToPhotoPicker()
     
     func detachPhotoPicker()
+    func completeImagePick(asset: PHAsset, rect: CGRect)
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
@@ -94,6 +96,9 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 }
             })
             .disposeOnDeactivate(interactor: self)
-            
+    }
+    
+    func completeImagePick(asset: PHAsset, rect: CGRect) {        
+        router?.completeImagePick(asset: asset, rect: rect)
     }
 }

@@ -13,6 +13,8 @@ import RIBs
 public protocol PhotoPickerInteractable: Interactable, ImageEditListener {
     var router: PhotoPickerRouting? { get set }
     var listener: PhotoPickerListener? { get set }
+    
+    func completeImagePick(asset: PHAsset, rect: CGRect)
 }
 
 public protocol PhotoPickerViewControllable: NavigateViewControllable {
@@ -47,5 +49,16 @@ final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPick
         router.viewControllable.uiviewController.dismiss(animated: true)
         detachChild(router)
         imageEditRouter = nil
+    }
+    
+    func doneImageEdit(asset: PHAsset, rect: CGRect) {
+        
+        guard let router = imageEditRouter else { return }                
+        
+        router.viewControllable.uiviewController.dismiss(animated: true) { [weak self] in
+            self?.interactor.completeImagePick(asset: asset, rect: rect)
+            self?.detachChild(router)
+            self?.imageEditRouter = nil
+        }
     }
 }
