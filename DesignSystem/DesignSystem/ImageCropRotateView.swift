@@ -18,6 +18,7 @@ public final class ImageCropRotateView: UIView {
     public let doneButton = CapsuleButton(title: "Done", backgroundColor: .white, foregroundColor: .black, fontWeight: .semibold)
     public let xButton = XButton(xSize: 15, xColor: .white, backgroundColor: .black)
     private let titleLabel = NavigationTitleLabel(title: "Image Crop")
+    private let rotateButton = SFSymbolButton(symbolName: "rotate.left.fill", size: 18, color: .white)
 
     public var image: UIImage? {
         didSet {
@@ -51,6 +52,7 @@ public final class ImageCropRotateView: UIView {
         setUpdoneButton()
         setUpXButton()
         setUpTitleLabel()
+        setUpRotateButton()
     }
     
     required init?(coder: NSCoder) {
@@ -88,9 +90,8 @@ public final class ImageCropRotateView: UIView {
         doneButton.pin.hCenter().bottom(pin.safeArea.bottom).width(100).height(40).marginBottom(70)
         xButton.pin.top(pin.safeArea.top).right(20).marginTop(20).width(40).height(40)
         xButton.layer.cornerRadius = xButton.bounds.size.height / 2
-        
         titleLabel.pin.hCenter().top(pin.safeArea.top).width(100).height(40).marginTop(20)
-        
+        rotateButton.pin.below(of: cropOverlay, aligned: .left).width(40).height(40).marginTop(20)
     }
     
     private func setUpScrollView() {
@@ -138,6 +139,10 @@ public final class ImageCropRotateView: UIView {
         titleLabel.textColor = .white
         addSubview(titleLabel)
     }
+    
+    private func setUpRotateButton() {
+        addSubview(rotateButton)
+    }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -168,9 +173,8 @@ extension ImageCropRotateView: UIGestureRecognizerDelegate {
         
         let contentWidth = imagePaddingView.frame.size.width + (scrollView.bounds.size.width - cropSize.width)
         let contentHeight = imagePaddingView.frame.size.height + (scrollView.bounds.size.height - cropSize.height)
-        
-        // TODO: 매직넘버 0.1 수정 해야 함. 사이즈 딱 맞을 때 바운스 안되는 문제 때문에 있는 것임.
-        scrollView.contentSize = .init(width: contentWidth + 0.1, height: contentHeight + 0.1)
+
+        scrollView.contentSize = .init(width: contentWidth, height: contentHeight)
     }
 }
 
@@ -184,9 +188,8 @@ extension ImageCropRotateView {
         
         let fitWidth = ratio * imageViewWidth
         let fitHeight = ratio * imageViewHeight
-        
-        // TODO: 매직넘버 0.1 수정 해야 함. 사이즈 딱 맞을 때 바운스 안되는 문제 때문에 있는 것임.
-        imageView.frame = .init(x: 0, y: 0, width: fitWidth + 0.1, height: fitHeight + 0.1)
+
+        imageView.frame = .init(x: 0, y: 0, width: fitWidth, height: fitHeight)
     }
     
     public func cropRect() -> CGRect {

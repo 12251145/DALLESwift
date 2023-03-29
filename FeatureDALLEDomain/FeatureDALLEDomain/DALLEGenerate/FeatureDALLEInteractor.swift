@@ -98,7 +98,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             .disposeOnDeactivate(interactor: self)
     }
     
-    func completeImagePick(asset: PHAsset, rect: CGRect) {        
+    func completeImagePick(asset: PHAsset, rect: CGRect) {
         router?.completeImagePick(asset: asset, rect: rect)
     }
 }

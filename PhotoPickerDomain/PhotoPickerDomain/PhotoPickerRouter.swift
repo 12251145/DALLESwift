@@ -53,12 +53,13 @@ final class PhotoPickerRouter: ViewableRouter<PhotoPickerInteractable, PhotoPick
     
     func doneImageEdit(asset: PHAsset, rect: CGRect) {
         
-        guard let router = imageEditRouter else { return }                
-        
+        guard let router = imageEditRouter else { return }
+                        
         router.viewControllable.uiviewController.dismiss(animated: true) { [weak self] in
             self?.interactor.completeImagePick(asset: asset, rect: rect)
-            self?.detachChild(router)
-            self?.imageEditRouter = nil
         }
+        
+        detachChild(router)
+        imageEditRouter = nil
     }
 }
