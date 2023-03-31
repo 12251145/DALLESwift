@@ -13,7 +13,7 @@ final public class DALLEGenerateView: UIView {
     private var scrollView = ScrollView()
     public private(set) var promptView = PromptView()
     public private(set) var nStepper = NStepper(low: 1, high: 10)
-    public private(set) var showPhotoPickerButton = ImageSelectButton(title: "Image to edit", guideImage: UIImage(systemName: "photo"))
+    public private(set) var showPhotoPickerButton = ImageSelectButton(title: "Image to edit or variation", guideImage: UIImage(systemName: "photo"))
     public private(set) var generateButton = CapsuleButton(title: "GENERATE")
     
     private var keyboardHeight: CGFloat = 0 {

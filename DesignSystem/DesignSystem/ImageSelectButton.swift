@@ -48,6 +48,13 @@ public final class ImageSelectButton: UIView {
         addSubview(button)
         addSubview(xButton)
         
+        xButton.button.addAction(
+            .init(handler: { [weak self] _ in
+                self?.backgroundImage = nil
+            }),
+            for: .touchUpInside
+        )
+        
         configure()
         
     }

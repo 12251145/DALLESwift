@@ -14,8 +14,8 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
             return .promtInput(string: string)
         case .generateButtonTap:
             return .generateButtonTap
-        case .imageToEditButtonTap:
-            return .imageToEditButtonTap
+        case .imageButtonTap:
+            return .imageButtonTap
         }
     }
 }

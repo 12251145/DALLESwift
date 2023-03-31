@@ -76,7 +76,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     
                 case .generateButtonTap:
                     self?.router?.routeToImageResult()
-                case .imageToEditButtonTap:
+                case .imageButtonTap:
                     self?.router?.routeToPhotoPicker()
                 }
             })

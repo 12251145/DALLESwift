@@ -12,7 +12,7 @@ import UIKit
 public enum PresentationAction {
     case promtInput(string: String?)
     case generateButtonTap
-    case imageToEditButtonTap
+    case imageButtonTap
 }
 
 public struct PresentationState {

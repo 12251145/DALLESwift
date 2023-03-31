@@ -15,7 +15,7 @@ import Util
 public enum FeatureDALLEPresentableAction {
     case promtInput(string: String?)
     case generateButtonTap
-    case imageToEditButtonTap
+    case imageButtonTap
 }
 
 public struct FeatureDALLEPresentableState {
@@ -76,7 +76,7 @@ public final class FeatureDALLEViewController: UIViewController {
         
         generateView.showPhotoPickerButton.button.rx.tap
             .subscribe(onNext: { [weak self] _ in
-                self?.listener?.action(.imageToEditButtonTap)
+                self?.listener?.action(.imageButtonTap)
             })
             .disposed(by: disposeBag)
     }
