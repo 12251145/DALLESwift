@@ -17,8 +17,7 @@ public protocol FeatureDALLERouting: ViewableRouting {
     func routeToImageResult()
     func routeToPhotoPicker()
     
-    func detachPhotoPicker()
-    func completeImagePick(asset: PHAsset, rect: CGRect)
+    func detachPhotoPicker()    
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
@@ -96,9 +95,5 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 }
             })
             .disposeOnDeactivate(interactor: self)
-    }
-    
-    func completeImagePick(asset: PHAsset, rect: CGRect) {
-        router?.completeImagePick(asset: asset, rect: rect)
     }
 }

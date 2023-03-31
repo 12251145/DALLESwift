@@ -14,7 +14,7 @@ import UIKit
 
 
 public protocol RequestPhotoImageUseCase {
-    func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
+    func execute(with asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void)
 }
 
 public struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
@@ -29,7 +29,7 @@ public struct RequestPhotoImageUseCaseImpl: RequestPhotoImageUseCase {
         self.photoRepository = photoRepositoryImpl
     }
 
-    public func execute(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        photoRepository.requestImage(with: asset, targetSize: targetSize, completion: completion)
+    public func execute(with asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool = true, completion: @escaping (UIImage?) -> Void) {
+        photoRepository.requestImage(with: asset, targetSize: targetSize, fetchDegradedAlso: fetchDegradedAlso, completion: completion)
     }
 }

@@ -61,8 +61,4 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         detachChild(router)
         photoPickerRouter = nil
     }
-    
-    func completeImagePick(asset: PHAsset, rect: CGRect) {
-        detachPhotoPicker()
-    }
 }

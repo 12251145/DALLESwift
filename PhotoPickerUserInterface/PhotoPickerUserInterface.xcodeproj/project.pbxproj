@@ -11,6 +11,7 @@
 		6A6AFA0F29CD4FC600B44FE8 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */; };
 		6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */; };
 		6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */; };
+		6A78EB6029D6798000994F8B /* UIThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EB5F29D6798000994F8B /* UIThirdPartyLibraryManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78EB5F29D6798000994F8B /* UIThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */,
+				6A78EB6029D6798000994F8B /* UIThirdPartyLibraryManager.framework in Frameworks */,
 				6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +66,7 @@
 		6A6AFA2629CD505500B44FE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A78EB5F29D6798000994F8B /* UIThirdPartyLibraryManager.framework */,
 				6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */,
 				6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */,
 			);

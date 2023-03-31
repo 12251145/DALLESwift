@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import Mantis
 import Photos
 import PhotosUI
 import RxCocoa
@@ -16,7 +17,6 @@ import UIKit
 public enum PhotoPickerPresentableAction {
     case viewDidLoad
     case xButtonDidTap
-    case imageSelect(asset: PHAsset)
 }
 
 public struct PhotoPickerPresentableState {
@@ -34,7 +34,7 @@ public protocol PhotoPickerPresentableListener: AnyObject {
     func action(_ action: PhotoPickerPresentableAction)
     var presentableState: Observable<PhotoPickerPresentableState> { get }
         
-    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void)
 }
 
 public final class PhotoPickerViewController: UIViewController {
@@ -70,7 +70,7 @@ public final class PhotoPickerViewController: UIViewController {
             
             cell.assetIdentifier = asset.localIdentifier
             
-            self?.listener?.requestPhotoImage(asset: asset, targetSize: .init(width: 250, height: 250), completion: { [weak cell] image in
+            self?.listener?.requestPhotoImage(asset: asset, targetSize: .init(width: 250, height: 250), fetchDegradedAlso: true, completion: { [weak cell] image in
                 if let cell, cell.assetIdentifier == asset.localIdentifier {
                     cell.configure(with: image)
                 }
@@ -127,9 +127,31 @@ public final class PhotoPickerViewController: UIViewController {
 // MARK: - CollectionView Delegate
 extension PhotoPickerViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if let asset = assets?[indexPath.item] {
-            listener?.action(.imageSelect(asset: asset))
+            let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+            listener?.requestPhotoImage(asset: asset, targetSize: size, fetchDegradedAlso: false, completion: { [weak self] image in
+                if let image {
+                    var config = Mantis.Config()
+                    config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1)                    
+                    let cropViewController = Mantis.cropViewController(image: image, config: config)
+                    cropViewController.delegate = self
+                    cropViewController.modalPresentationStyle = .fullScreen
+                    self?.present(cropViewController, animated: true)
+                }
+            })
         }
+    }
+}
+
+// MARK: - CropViewControllerDelegate
+extension PhotoPickerViewController: CropViewControllerDelegate {
+    public func cropViewControllerDidCrop(_ cropViewController: Mantis.CropViewController, cropped: UIImage, transformation: Mantis.Transformation, cropInfo: Mantis.CropInfo) {
+        
+    }
+    
+    public func cropViewControllerDidCancel(_ cropViewController: Mantis.CropViewController, original: UIImage) {
+        
     }
 }
 
@@ -156,7 +178,7 @@ extension PhotoPickerViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - Present the limited-library selection user interface/
+// MARK: - Present the limited-library selection user interface
 extension PhotoPickerViewController {
     func presentLimitedLibrarySelection() {
         PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)

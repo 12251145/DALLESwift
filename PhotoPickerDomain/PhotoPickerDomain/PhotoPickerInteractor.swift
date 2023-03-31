@@ -13,9 +13,7 @@ import RxSwift
 import UIKit
 
 public protocol PhotoPickerRouting: ViewableRouting {
-    func routeToImageEdit(asset: PHAsset)
-    func detachImageEdit()
-    func doneImageEdit(asset: PHAsset, rect: CGRect)
+
 }
 
 public protocol PhotoPickerPresentable: Presentable {
@@ -24,8 +22,7 @@ public protocol PhotoPickerPresentable: Presentable {
 }
 
 public protocol PhotoPickerListener: AnyObject {
-    func detachPhotoPicker()
-    func completeImagePick(asset: PHAsset, rect: CGRect)
+    func detachPhotoPicker()    
 }
 
 final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>, PhotoPickerInteractable, PhotoPickerPresentableListener {
@@ -87,8 +84,6 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                     })
                 case .xButtonDidTap:
                     self?.listener?.detachPhotoPicker()
-                case .imageSelect(let asset):
-                    self?.router?.routeToImageEdit(asset: asset)
                 }
             })
             .disposeOnDeactivate(interactor: self)
@@ -109,19 +104,7 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
         }
     }
 
-    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        requestPhotoImageUseCase.execute(with: asset, targetSize: targetSize, completion: completion)
-    }
-    
-    func detachImageEdit() {
-        router?.detachImageEdit()
-    }
-    
-    func doneImageEdit(asset: PHAsset, rect: CGRect) {
-        router?.doneImageEdit(asset: asset, rect: rect)
-    }
-    
-    func completeImagePick(asset: PHAsset, rect: CGRect) {
-        listener?.completeImagePick(asset: asset, rect: rect)
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void) {
+        requestPhotoImageUseCase.execute(with: asset, targetSize: targetSize, fetchDegradedAlso: fetchDegradedAlso, completion: completion)
     }
 }

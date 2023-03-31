@@ -9,5 +9,5 @@ import Photos
 import UIKit
 
 public protocol PhotoRepository {
-    func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
+    func requestImage(with asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void)
 }

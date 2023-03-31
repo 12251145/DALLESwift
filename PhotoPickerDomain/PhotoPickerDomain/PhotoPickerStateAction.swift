@@ -13,7 +13,6 @@ import UIKit
 public enum PhotoPickerPresentationAction {
     case viewDidLoad
     case xButtonDidTap
-    case imageSelect(asset: PHAsset)
 }
 
 public struct PhotoPickerPresentationState {
@@ -31,5 +30,5 @@ public protocol PhotoPickerPresentableListener: AnyObject {
     var action: PublishRelay<PhotoPickerPresentationAction> { get }
     var state: Observable<PhotoPickerPresentationState> { get }
         
-    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void)
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void)
 }

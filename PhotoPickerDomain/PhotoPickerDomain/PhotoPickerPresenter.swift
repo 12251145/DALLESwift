@@ -49,7 +49,7 @@ private final class PhotoPickerPresentableListenerMapper: PhotoPickerUserInterfa
         self.action.accept(userAction.toMapper)
     }
 
-    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        interactor?.requestPhotoImage(asset: asset, targetSize: targetSize, completion: completion)
+    func requestPhotoImage(asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool, completion: @escaping (UIImage?) -> Void) {
+        interactor?.requestPhotoImage(asset: asset, targetSize: targetSize, fetchDegradedAlso: fetchDegradedAlso, completion: completion)
     }
 }

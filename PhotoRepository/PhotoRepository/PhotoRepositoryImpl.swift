@@ -17,7 +17,7 @@ public struct PhotoRepositoryImpl: PhotoRepository {
         self.photoManager = photoManager
     }
     
-    public func requestImage(with asset: PHAsset?, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        photoManager.requestImage(with: asset, targetSize: targetSize, completion: completion)
+    public func requestImage(with asset: PHAsset?, targetSize: CGSize, fetchDegradedAlso: Bool = true, completion: @escaping (UIImage?) -> Void) {
+        photoManager.requestImage(with: asset, targetSize: targetSize, fetchDegradedAlso: fetchDegradedAlso, completion: completion)
     }
 }
