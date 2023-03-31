@@ -19,13 +19,16 @@ public enum FeatureDALLEPresentableAction {
 }
 
 public struct FeatureDALLEPresentableState {
+    var image: UIImage?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
         
     public init(
+        image: UIImage?,
         generateButtonEnabled: Bool,
         keyBoardHeight: CGFloat) {
         
+            self.image = image
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
     }
@@ -90,6 +93,16 @@ public final class FeatureDALLEViewController: UIViewController {
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] height in
                 self?.generateView.adjustUIWithKeyboardHeight(height)
+            })
+            .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .map(\.image)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] image in
+                if let image {
+                    self?.generateView.setImage(image)
+                }
             })
             .disposed(by: disposeBag)
     }

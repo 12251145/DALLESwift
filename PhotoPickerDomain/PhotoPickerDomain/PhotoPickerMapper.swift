@@ -16,6 +16,10 @@ extension PhotoPickerUserInterface.PhotoPickerPresentableAction {
             return .viewDidLoad
         case .xButtonDidTap:
             return .xButtonDidTap
+        case .imageEditComplete(let image):
+            return .imageEditComplete(image: image)
+        case .cropViewDismissed:
+            return .cropViewDismissed
         }
     }
 }

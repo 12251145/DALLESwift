@@ -22,7 +22,8 @@ public protocol PhotoPickerPresentable: Presentable {
 }
 
 public protocol PhotoPickerListener: AnyObject {
-    func detachPhotoPicker()    
+    func detachPhotoPicker()
+    func setImage(_ image: UIImage)
 }
 
 final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>, PhotoPickerInteractable, PhotoPickerPresentableListener {
@@ -83,6 +84,10 @@ final class PhotoPickerInteractor: PresentableInteractor<PhotoPickerPresentable>
                         }
                     })
                 case .xButtonDidTap:
+                    self?.listener?.detachPhotoPicker()
+                case .imageEditComplete(let image):
+                    self?.listener?.setImage(image)
+                case .cropViewDismissed:
                     self?.listener?.detachPhotoPicker()
                 }
             })

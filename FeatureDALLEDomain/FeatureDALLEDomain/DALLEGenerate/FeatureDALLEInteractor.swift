@@ -10,6 +10,7 @@ import RIBs
 import RxKeyboard
 import RxRelay
 import RxSwift
+import UIKit
 import Util
 
 public protocol FeatureDALLERouting: ViewableRouting {
@@ -42,7 +43,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: FeatureDALLEPresentable) {
-        self.stateRelay = .init(value: .init(generateButtonEnabled: false, keyBoardHeight: 0))
+        self.stateRelay = .init(value: .init(image: nil, generateButtonEnabled: false, keyBoardHeight: 0))
         self.state = stateRelay.asObservable()
         super.init(presenter: presenter)
         presenter.listener = self
@@ -84,6 +85,12 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     func detachPhotoPicker() {
         router?.detachPhotoPicker()
+    }
+    
+    func setImage(_ image: UIImage) {
+        var newState = stateRelay.value
+        newState.image = image
+        self.stateRelay.accept(newState)
     }
     
     func observeKeyboard() {

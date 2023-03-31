@@ -22,6 +22,6 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
 
 extension PresentationState {
     var toMapper: FeatureDALLEUserInterface.FeatureDALLEPresentableState {
-        return .init(generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight)
+        return .init(image: image, generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight)
     }
 }

@@ -71,4 +71,8 @@ final public class DALLEGenerateView: UIView {
     public func adjustUIWithKeyboardHeight(_ height: CGFloat) {
         keyboardHeight = height
     }
+    
+    public func setImage(_ image: UIImage) {
+        showPhotoPickerButton.backgroundImage = image
+    }
 }

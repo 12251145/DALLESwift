@@ -13,6 +13,8 @@ import UIKit
 public enum PhotoPickerPresentationAction {
     case viewDidLoad
     case xButtonDidTap
+    case imageEditComplete(image: UIImage)
+    case cropViewDismissed
 }
 
 public struct PhotoPickerPresentationState {

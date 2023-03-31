@@ -17,6 +17,8 @@ import UIKit
 public enum PhotoPickerPresentableAction {
     case viewDidLoad
     case xButtonDidTap
+    case imageEditComplete(image: UIImage)
+    case cropViewDismissed
 }
 
 public struct PhotoPickerPresentableState {
@@ -133,7 +135,7 @@ extension PhotoPickerViewController: UICollectionViewDelegate {
             listener?.requestPhotoImage(asset: asset, targetSize: size, fetchDegradedAlso: false, completion: { [weak self] image in
                 if let image {
                     var config = Mantis.Config()
-                    config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1)                    
+                    config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1)
                     let cropViewController = Mantis.cropViewController(image: image, config: config)
                     cropViewController.delegate = self
                     cropViewController.modalPresentationStyle = .fullScreen
@@ -147,11 +149,14 @@ extension PhotoPickerViewController: UICollectionViewDelegate {
 // MARK: - CropViewControllerDelegate
 extension PhotoPickerViewController: CropViewControllerDelegate {
     public func cropViewControllerDidCrop(_ cropViewController: Mantis.CropViewController, cropped: UIImage, transformation: Mantis.Transformation, cropInfo: Mantis.CropInfo) {
-        
+        listener?.action(.imageEditComplete(image: cropped))
+        cropViewController.dismiss(animated: true) { [weak self] in
+            self?.listener?.action(.cropViewDismissed)
+        }
     }
     
     public func cropViewControllerDidCancel(_ cropViewController: Mantis.CropViewController, original: UIImage) {
-        
+        cropViewController.dismiss(animated: true)
     }
 }
 

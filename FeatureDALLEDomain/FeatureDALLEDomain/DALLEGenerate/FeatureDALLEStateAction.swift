@@ -7,6 +7,7 @@
 
 import RxRelay
 import RxSwift
+import UIKit
 
 public enum PresentationAction {
     case promtInput(string: String?)
@@ -15,13 +16,15 @@ public enum PresentationAction {
 }
 
 public struct PresentationState {
+    var image: UIImage?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
         
     public init(
+        image: UIImage?,
         generateButtonEnabled: Bool,
         keyBoardHeight: CGFloat) {
-        
+            self.image = image
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
     }
