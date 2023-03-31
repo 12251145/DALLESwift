@@ -13,18 +13,23 @@ public enum PresentationAction {
     case promtInput(string: String?)
     case generateButtonTap
     case imageButtonTap
+    case imageXButtonTap
 }
 
 public struct PresentationState {
     var image: UIImage?
+    var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
         
     public init(
         image: UIImage?,
+        prompt: String?,
         generateButtonEnabled: Bool,
         keyBoardHeight: CGFloat) {
+        
             self.image = image
+            self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
     }

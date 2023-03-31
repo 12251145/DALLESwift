@@ -43,7 +43,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: FeatureDALLEPresentable) {
-        self.stateRelay = .init(value: .init(image: nil, generateButtonEnabled: false, keyBoardHeight: 0))
+        self.stateRelay = .init(value: .init(image: nil, prompt: nil, generateButtonEnabled: false, keyBoardHeight: 0))
         self.state = stateRelay.asObservable()
         super.init(presenter: presenter)
         presenter.listener = self
@@ -66,11 +66,11 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             .subscribe(onNext: { [weak self] action in
                 switch action {
                 case .promtInput(let text):
-                    
-                    let isEnabled = text.notNilNotEmpty()
-                    
+                                                            
                     if var newState = self?.stateRelay.value {
+                        let isEnabled = text.notNilNotEmpty() || newState.image != nil
                         newState.generateButtonEnabled = isEnabled
+                        newState.prompt = text
                         self?.stateRelay.accept(newState)
                     }
                     
@@ -78,6 +78,13 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     self?.router?.routeToImageResult()
                 case .imageButtonTap:
                     self?.router?.routeToPhotoPicker()
+                case .imageXButtonTap:
+                    if var newState = self?.stateRelay.value {
+                        let isEnabled = newState.prompt.notNilNotEmpty()
+                        newState.generateButtonEnabled = isEnabled
+                        newState.image = nil
+                        self?.stateRelay.accept(newState)
+                    }
                 }
             })
             .disposeOnDeactivate(interactor: self)                
@@ -90,6 +97,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     func setImage(_ image: UIImage) {
         var newState = stateRelay.value
         newState.image = image
+        newState.generateButtonEnabled = true
         self.stateRelay.accept(newState)
     }
     

@@ -16,12 +16,14 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
             return .generateButtonTap
         case .imageButtonTap:
             return .imageButtonTap
+        case .imageXButtonTap:
+            return .imageXButtonTap
         }
     }
 }
 
 extension PresentationState {
     var toMapper: FeatureDALLEUserInterface.FeatureDALLEPresentableState {
-        return .init(image: image, generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight)
+        return .init(image: image, prompt: prompt, generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight)
     }
 }

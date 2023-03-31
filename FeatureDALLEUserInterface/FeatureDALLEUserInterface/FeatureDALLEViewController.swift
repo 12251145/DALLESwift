@@ -16,19 +16,23 @@ public enum FeatureDALLEPresentableAction {
     case promtInput(string: String?)
     case generateButtonTap
     case imageButtonTap
+    case imageXButtonTap
 }
 
 public struct FeatureDALLEPresentableState {
     var image: UIImage?
+    var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
         
     public init(
         image: UIImage?,
+        prompt: String?,
         generateButtonEnabled: Bool,
         keyBoardHeight: CGFloat) {
         
             self.image = image
+            self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
     }
@@ -77,6 +81,12 @@ public final class FeatureDALLEViewController: UIViewController {
         generateView.showPhotoPickerButton.button.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self?.listener?.action(.imageButtonTap)
+            })
+            .disposed(by: disposeBag)
+        
+        generateView.showPhotoPickerButton.xButton.button.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.listener?.action(.imageXButtonTap)
             })
             .disposed(by: disposeBag)
     }
