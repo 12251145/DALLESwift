@@ -16,10 +16,10 @@ public enum ImageResultPresentableAction {
 }
 
 public struct ImageResultPresentableState {
-    var image: UIImage?
+    var images: [UIImage]
     
-    public init(image: UIImage? = nil) {
-        self.image = image
+    public init(images: [UIImage] = []) {
+        self.images = images
     }
 }
 
@@ -54,7 +54,8 @@ public final class ImageResultViewController: UIViewController {
     
     func bindState() {
         listener?.presentableState
-            .map(\.image)
+            .map(\.images)
+            .map { $0.first }
             .bind(to: imageResultView.imageView.rx.image)
             .disposed(by: disposeBag)
     }

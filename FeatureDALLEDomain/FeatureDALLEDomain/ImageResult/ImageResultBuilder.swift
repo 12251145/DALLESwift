@@ -21,7 +21,13 @@ final class ImageResultComponent: Component<ImageResultDependency> {
 // MARK: - Builder
 
 public protocol ImageResultBuildable: Buildable {
-    func build(withListener listener: ImageResultListener) -> ImageResultRouting
+    func build(
+        withListener listener: ImageResultListener,
+        prompt: String?,
+        n: Int,
+        image: String?,
+        mask: String?
+    ) -> ImageResultRouting
 }
 
 public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResultBuildable {
@@ -30,12 +36,22 @@ public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResu
         super.init(dependency: dependency)
     }
 
-    public func build(withListener listener: ImageResultListener) -> ImageResultRouting {
+    public func build(
+        withListener listener: ImageResultListener,
+        prompt: String?,
+        n: Int,
+        image: String?,
+        mask: String?
+    ) -> ImageResultRouting {
         let component = ImageResultComponent(dependency: dependency)
         let viewController = ImageResultPresenter()
         let interactor = ImageResultInteractor(
             generateImageUseCase: RequestGenerateImageUseCaseImpl(),
-            presenter: viewController
+            presenter: viewController,
+            prompt: prompt,
+            n: n,
+            image: image,
+            mask: mask
         )
         interactor.listener = listener
         return ImageResultRouter(interactor: interactor, viewController: viewController)

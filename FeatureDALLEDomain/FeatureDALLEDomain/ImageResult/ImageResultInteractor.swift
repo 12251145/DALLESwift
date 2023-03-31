@@ -33,13 +33,29 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
     let state: Observable<ImageResultPresentationState>
     
     private let generateImageUseCase: RequestGenerateImageUseCase
+    
+    private var prompt: String?
+    private var n: Int
+    private var image: String?
+    private var mask: String?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(generateImageUseCase: RequestGenerateImageUseCase, presenter: ImageResultPresentable) {
+    init(
+        generateImageUseCase: RequestGenerateImageUseCase,
+        presenter: ImageResultPresentable,
+        prompt: String?,
+        n: Int,
+        image: String?,
+        mask: String?
+    ) {
         self.generateImageUseCase = generateImageUseCase
         self.stateRelay = .init(value: .init())
         self.state = stateRelay.asObservable()
+        self.prompt = prompt
+        self.n = n
+        self.image = image
+        self.mask = mask
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -62,9 +78,14 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
                 case .viewDidLoad:
                     Task {
                         do {
-                            let image = try await self.generateImageUseCase.execute()
+                            let images = try await self.generateImageUseCase.execute(
+                                prompt: self.prompt,
+                                n: self.n,
+                                image: self.image,
+                                mask: self.mask
+                            )
                             var newState = self.stateRelay.value
-                            newState.image = image
+                            newState.images = images
                             self.stateRelay.accept(newState)
                         } catch {
                             print(error)

@@ -14,10 +14,10 @@ public enum ImageResultPresentationAction {
 }
 
 public struct ImageResultPresentationState {
-    var image: UIImage?
+    var images: [UIImage]
     
-    public init(image: UIImage? = nil) {
-        self.image = image
+    public init(images: [UIImage] = []) {
+        self.images = images
     }
 }
 

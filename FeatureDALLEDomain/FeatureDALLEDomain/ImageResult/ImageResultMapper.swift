@@ -18,6 +18,6 @@ extension ImageResultUserInterface.ImageResultPresentableAction {
 
 extension ImageResultPresentationState {
     var toMapper: ImageResultUserInterface.ImageResultPresentableState {
-        return .init(image: image)
+        return .init(images: images)
     }
 }
