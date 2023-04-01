@@ -36,7 +36,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
     
     private var prompt: String?
     private var n: Int
-    private var image: String?
+    private var image: Data?
     private var mask: String?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
@@ -46,7 +46,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
         presenter: ImageResultPresentable,
         prompt: String?,
         n: Int,
-        image: String?,
+        image: Data?,
         mask: String?
     ) {
         self.generateImageUseCase = generateImageUseCase
@@ -76,17 +76,22 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
             .subscribe(onNext: { action in
                 switch action {
                 case .viewDidLoad:
+                    
                     Task {
                         do {
+                            guard let image = self.image else { return }
+                            
                             let images = try await self.generateImageUseCase.execute(
                                 prompt: self.prompt,
                                 n: self.n,
-                                image: self.image,
+                                pngData: image,
                                 mask: self.mask
                             )
+                            
                             var newState = self.stateRelay.value
                             newState.images = images
                             self.stateRelay.accept(newState)
+                            
                         } catch {
                             print(error)
                         }

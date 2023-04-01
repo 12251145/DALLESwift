@@ -10,4 +10,6 @@ import Foundation
 public enum HTTPNetworkError: Error {
     case invalidURL
     case invalidResponse
+    case bodyRequired
+    case boundaryRequired
 }

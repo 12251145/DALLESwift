@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A78EB6C29D6C71800994F8B /* ThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EB6B29D6C71800994F8B /* ThirdPartyLibraryManager.framework */; };
+		6A78EB9629D71E9400994F8B /* FormDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EB9529D71E9400994F8B /* FormDataHelper.swift */; };
+		6A78EB9829D7385300994F8B /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EB9729D7385300994F8B /* FormData.swift */; };
+		6A78EB9A29D7A94200994F8B /* Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EB9929D7A94200994F8B /* Util.framework */; };
 		6AD550BD29C6E8D90035A8C5 /* RESTAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD550BC29C6E8D90035A8C5 /* RESTAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD550C429C6E92E0035A8C5 /* HTTPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD550C329C6E92E0035A8C5 /* HTTPNetwork.swift */; };
 		6AD550C629C6EFEF0035A8C5 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD550C529C6EFEF0035A8C5 /* EndPoint.swift */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A78EB6B29D6C71800994F8B /* ThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78EB9529D71E9400994F8B /* FormDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataHelper.swift; sourceTree = "<group>"; };
+		6A78EB9729D7385300994F8B /* FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
+		6A78EB9929D7A94200994F8B /* Util.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Util.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD550B929C6E8D90035A8C5 /* RESTAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RESTAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD550BC29C6E8D90035A8C5 /* RESTAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESTAPI.h; sourceTree = "<group>"; };
 		6AD550C329C6E92E0035A8C5 /* HTTPNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetwork.swift; sourceTree = "<group>"; };
@@ -28,17 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A78EB9A29D7A94200994F8B /* Util.framework in Frameworks */,
+				6A78EB6C29D6C71800994F8B /* ThirdPartyLibraryManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A78EB6A29D6C71800994F8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A78EB9929D7A94200994F8B /* Util.framework */,
+				6A78EB6B29D6C71800994F8B /* ThirdPartyLibraryManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6AD550AF29C6E8D90035A8C5 = {
 			isa = PBXGroup;
 			children = (
 				6AD550BB29C6E8D90035A8C5 /* RESTAPI */,
 				6AD550BA29C6E8D90035A8C5 /* Products */,
+				6A78EB6A29D6C71800994F8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				6AD550BC29C6E8D90035A8C5 /* RESTAPI.h */,
+				6A78EB9729D7385300994F8B /* FormData.swift */,
+				6A78EB9529D71E9400994F8B /* FormDataHelper.swift */,
 				6AD550EA29C6F9DD0035A8C5 /* HTTPMethod.swift */,
 				6AD550C329C6E92E0035A8C5 /* HTTPNetwork.swift */,
 				6AD550C729C6F0B40035A8C5 /* HTTPNetworkError.swift */,
@@ -145,7 +167,9 @@
 				6AD550EB29C6F9DE0035A8C5 /* HTTPMethod.swift in Sources */,
 				6AD550C629C6EFEF0035A8C5 /* EndPoint.swift in Sources */,
 				6AD550C829C6F0B40035A8C5 /* HTTPNetworkError.swift in Sources */,
+				6A78EB9629D71E9400994F8B /* FormDataHelper.swift in Sources */,
 				6AD550C429C6E92E0035A8C5 /* HTTPNetwork.swift in Sources */,
+				6A78EB9829D7385300994F8B /* FormData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ public protocol ImageResultBuildable: Buildable {
         withListener listener: ImageResultListener,
         prompt: String?,
         n: Int,
-        image: String?,
+        image: Data?,
         mask: String?
     ) -> ImageResultRouting
 }
@@ -40,7 +40,7 @@ public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResu
         withListener listener: ImageResultListener,
         prompt: String?,
         n: Int,
-        image: String?,
+        image: Data?,
         mask: String?
     ) -> ImageResultRouting {
         let component = ImageResultComponent(dependency: dependency)

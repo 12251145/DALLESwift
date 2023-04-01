@@ -8,5 +8,5 @@
 import UIKit
 
 public protocol DALLERepository {
-    func requestGenerateImage(prompt: String?, n: Int, image: String?, mask: String?) async throws -> [UIImage]
+    func requestGenerateImage(prompt: String?, n: Int, pngData: Data, mask: String?) async throws -> [UIImage]
 }

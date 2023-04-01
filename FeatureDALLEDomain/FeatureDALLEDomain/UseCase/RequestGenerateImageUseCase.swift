@@ -13,7 +13,7 @@ import UIKit
 
 
 protocol RequestGenerateImageUseCase {
-    func execute(prompt: String?, n: Int, image: String?, mask: String?) async throws -> [UIImage]
+    func execute(prompt: String?, n: Int, pngData: Data, mask: String?) async throws -> [UIImage]
 }
 
 struct RequestGenerateImageUseCaseImpl: RequestGenerateImageUseCase {
@@ -28,7 +28,7 @@ struct RequestGenerateImageUseCaseImpl: RequestGenerateImageUseCase {
         self.dallERepository = dallERepositoryImpl
     }
     
-    func execute(prompt: String?, n: Int, image: String?, mask: String?) async throws -> [UIImage] {
-        return try await dallERepository.requestGenerateImage(prompt: prompt, n: n, image: image, mask: mask)
+    func execute(prompt: String?, n: Int, pngData: Data, mask: String?) async throws -> [UIImage] {
+        return try await dallERepository.requestGenerateImage(prompt: prompt, n: n, pngData: pngData, mask: mask)
     }
 }

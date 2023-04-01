@@ -14,6 +14,7 @@ public struct EndPoint {
     var queryItems: [URLQueryItem]?
     var headers: [String: String]?
     var requestBody: [String: Any]?
+    var boundary: String?
     
     public init(
         method: HTTPMethod,
@@ -21,7 +22,8 @@ public struct EndPoint {
         pathComponents: [String]? = nil,
         queryItems: [URLQueryItem]? = nil,
         headers: [String : String]? = nil,
-        requestBody: [String : Any]? = nil) {
+        requestBody: [String : Any]? = nil,
+        boundary: String? = nil) {
             
             self.method = method
             self.url = url
@@ -29,5 +31,6 @@ public struct EndPoint {
             self.queryItems = queryItems
             self.headers = headers
             self.requestBody = requestBody
+            self.boundary = boundary
         }
 }

@@ -5,7 +5,7 @@
 //  Created by Hoen on 2023/03/19.
 //
 
-import RESTAPI
+@_exported import RESTAPI
 
 public final class DALLEAPI {
     private let baseURL = "https://api.openai.com"
@@ -16,13 +16,28 @@ public final class DALLEAPI {
     }
     
     public func createImage(_ request: DALLECreateImageRequest) async throws -> [ResponseFormat] {
-        let response: DALLECreateImageResponse = try await httpNetwork.request(
+        let response: DALLEAPIResponse = try await httpNetwork.request(
             endPoint: .init(
                 method: .post,
                 url: baseURL,
                 pathComponents: request.pathComponents,
                 headers: request.headers,
                 requestBody: request.body
+            )
+        )
+        
+        return response.data
+    }
+    
+    public func variationImage(_ request: DALLEVariationImageRequest) async throws -> [ResponseFormat] {
+        let response: DALLEAPIResponse = try await httpNetwork.requestWithMultiPartFormData(
+            endPoint: .init(
+                method: .post,
+                url: baseURL,
+                pathComponents: request.pathComponents,
+                headers: request.headers,
+                requestBody: request.body,
+                boundary: request.boundary
             )
         )
         
