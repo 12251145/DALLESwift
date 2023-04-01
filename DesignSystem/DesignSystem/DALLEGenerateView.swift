@@ -75,4 +75,7 @@ final public class DALLEGenerateView: UIView {
     public func setImage(_ image: UIImage) {
         showPhotoPickerButton.backgroundImage = image
     }
+    public func setProcessing(_ isProcessing: Bool) {
+        showPhotoPickerButton.isProcessing = isProcessing
+    }
 }

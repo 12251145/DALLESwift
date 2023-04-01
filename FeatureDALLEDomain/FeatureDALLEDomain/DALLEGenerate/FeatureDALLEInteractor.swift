@@ -49,7 +49,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
         downSamplingImageDataUseCase: DownSamplingImageDataUseCase,
         presenter: FeatureDALLEPresentable
     ) {
-        self.stateRelay = .init(value: .init(image: nil, prompt: nil, generateButtonEnabled: false, keyBoardHeight: 0))
+        self.stateRelay = .init(value: .init())
         self.state = stateRelay.asObservable()
         self.downSamplingImageDataUseCase = downSamplingImageDataUseCase
         super.init(presenter: presenter)
@@ -112,15 +112,24 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
         var newState = stateRelay.value
         newState.image = image
         newState.generateButtonEnabled = false
+        newState.imageProcessing = true
         self.stateRelay.accept(newState)
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            
             var completeState = newState
-            completeState.pngData = image.pngData()
-            let result = self?.downSamplingImageDataUseCase.execute(data: completeState.pngData!, originSize: image.size, maxMB: 4)
+            guard let imageData = image.pngData() else {
+                completeState.image = nil
+                self?.stateRelay.accept(completeState)
+                return
+            }
+            let result = self?.downSamplingImageDataUseCase.execute(data: imageData, originSize: image.size, maxMB: 4)
+            
             completeState.image = result?.image
             completeState.pngData = result?.data
             completeState.generateButtonEnabled = true
+            completeState.imageProcessing = false
+            
             self?.stateRelay.accept(completeState)
             
         }

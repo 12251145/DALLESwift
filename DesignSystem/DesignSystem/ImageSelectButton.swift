@@ -13,16 +13,32 @@ public final class ImageSelectButton: UIView {
     private enum Mode {
         case image
         case noImage
+        case processing
     }
     
     public private(set) var button = UIButton()
     private let imageView = UIImageView()
     private let borderLayer = CAShapeLayer()
+    private let processingBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
     public private(set) var xButton = XButton(xSize: 12, xColor: .black, effectStyle: .regular)
     
     public var backgroundImage: UIImage? {
         didSet {
-            mode = backgroundImage == nil ? .noImage : .image
+            if backgroundImage == nil {
+                mode = .noImage
+            } else {
+                mode = isProcessing ? .processing : .image
+            }
+        }
+    }
+    
+    public var isProcessing = false {
+        didSet {
+            if isProcessing {
+                mode = .processing
+            } else {
+                mode = backgroundImage == nil ? .noImage : .image
+            }
         }
     }
     
@@ -47,6 +63,7 @@ public final class ImageSelectButton: UIView {
         addSubview(imageView)
         addSubview(button)
         addSubview(xButton)
+        addSubview(processingBlurView)
         
         xButton.button.addAction(
             .init(handler: { [weak self] _ in
@@ -73,8 +90,8 @@ public final class ImageSelectButton: UIView {
         button.pin.all()
         updateBorderPath()
         xButton.pin.topRight(15).width(30).height(30)
-        
         xButton.layer.cornerRadius = xButton.bounds.size.height / 2
+        processingBlurView.pin.all()
     }
     
     private func updateBorderPath() {
@@ -89,6 +106,7 @@ public final class ImageSelectButton: UIView {
         setButton()
         setImageView()
         setXButton()
+        setProcessingBlur()
     }
     
     private func setBorderLayer() {
@@ -120,10 +138,14 @@ public final class ImageSelectButton: UIView {
     private func setImageView() {
         
         imageView.contentMode = .scaleAspectFill
-        imageView.image = mode == .noImage ? nil : backgroundImage
+        imageView.image = backgroundImage
     }
     
     private func setXButton() {
         xButton.isHidden = mode == .noImage ? true : false
+    }
+    
+    private func setProcessingBlur() {
+        processingBlurView.isHidden = !isProcessing
     }
 }

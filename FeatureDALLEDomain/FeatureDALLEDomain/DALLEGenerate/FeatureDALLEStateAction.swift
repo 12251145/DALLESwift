@@ -21,18 +21,23 @@ public struct PresentationState {
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
+    var imageProcessing: Bool
     var pngData: Data?
         
     public init(
-        image: UIImage?,
-        prompt: String?,
-        generateButtonEnabled: Bool,
-        keyBoardHeight: CGFloat) {
+        image: UIImage? = nil,
+        prompt: String? = nil,
+        generateButtonEnabled: Bool = false,
+        keyBoardHeight: CGFloat = 0,
+        imageProcessing: Bool = false,
+        pngData: Data? = nil) {
         
             self.image = image
             self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
+            self.imageProcessing = imageProcessing
+            self.pngData = pngData
     }
 }
 

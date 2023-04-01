@@ -23,17 +23,23 @@ public struct FeatureDALLEPresentableState {
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
+    var imageProcessing: Bool
+    var pngData: Data?
         
     public init(
-        image: UIImage?,
-        prompt: String?,
-        generateButtonEnabled: Bool,
-        keyBoardHeight: CGFloat) {
+        image: UIImage? = nil,
+        prompt: String? = nil,
+        generateButtonEnabled: Bool = false,
+        keyBoardHeight: CGFloat = 0,
+        imageProcessing: Bool = false,
+        pngData: Data? = nil) {
         
             self.image = image
             self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
+            self.imageProcessing = imageProcessing
+            self.pngData = pngData
     }
 }
 
@@ -106,12 +112,7 @@ public final class FeatureDALLEViewController: UIViewController {
             .disposed(by: disposeBag)
         
         listener?.presentableState
-            .asDriver(onErrorJustReturn: .init(
-                image: nil,
-                prompt: nil,
-                generateButtonEnabled: false,
-                keyBoardHeight: 0)
-            )
+            .asDriver(onErrorJustReturn: .init())
             .map(\.image)
             .distinctUntilChanged()
             .drive(onNext: { [weak self] image in
@@ -120,5 +121,15 @@ public final class FeatureDALLEViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .asDriver(onErrorJustReturn: .init())
+            .map(\.imageProcessing)
+            .distinctUntilChanged()
+            .drive(onNext: { [weak self] isProcessing in
+                self?.generateView.setProcessing(isProcessing)
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
