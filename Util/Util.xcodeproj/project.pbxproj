@@ -36,6 +36,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A78EBA229D7D14300994F8B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6AD54E7529C453B40035A8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD54E8229C453B40035A8C5 /* Util.h */,
+				6A78EBA229D7D14300994F8B /* Helper */,
 				6AD54E8B29C454230035A8C5 /* Extension */,
 			);
 			path = Util;

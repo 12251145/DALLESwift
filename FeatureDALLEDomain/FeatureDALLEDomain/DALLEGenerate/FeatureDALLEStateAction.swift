@@ -21,6 +21,7 @@ public struct PresentationState {
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
+    var pngData: Data?
         
     public init(
         image: UIImage?,

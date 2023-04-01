@@ -75,11 +75,11 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     }
                     
                 case .generateButtonTap:
-                    if var newState = self?.stateRelay.value {
+                    if let newState = self?.stateRelay.value {
                         self?.router?.routeToImageResult(
                             prompt: newState.prompt,
                             n: 1,
-                            image: newState.image?.pngData(),
+                            image: newState.pngData,
                             mask: nil
                         )
                     }
@@ -104,8 +104,17 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     func setImage(_ image: UIImage) {
         var newState = stateRelay.value
         newState.image = image
-        newState.generateButtonEnabled = true
+        newState.generateButtonEnabled = false
         self.stateRelay.accept(newState)
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            var completeState = newState
+            completeState.pngData = image.pngData()
+            completeState.generateButtonEnabled = true
+            self?.stateRelay.accept(completeState)
+            
+        }
+        
     }
     
     func observeKeyboard() {
