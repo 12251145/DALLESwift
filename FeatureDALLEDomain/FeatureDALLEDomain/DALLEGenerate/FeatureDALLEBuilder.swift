@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/16.
 //
 
+import BaseDependencyDomain
 import PhotoPickerDomain
 import RIBs
 
@@ -33,7 +34,7 @@ public final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, Feature
     public func build(withListener listener: FeatureDALLEListener) -> FeatureDALLERouting {
         let component = FeatureDALLEComponent(dependency: dependency)
         let viewController = FeatureDALLEPresenter()
-        let interactor = FeatureDALLEInteractor(presenter: viewController)
+        let interactor = FeatureDALLEInteractor(downSamplingImageDataUseCase: DownSamplingImageDataUseCaseImpl(), presenter: viewController)
         interactor.listener = listener
         
         let imageResultBuilder = ImageResultBuilder(dependency: component)

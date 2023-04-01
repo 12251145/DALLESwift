@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/16.
 //
 
+import BaseDependencyDomain
 import Photos
 import RIBs
 import RxKeyboard
@@ -39,12 +40,18 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     weak var router: FeatureDALLERouting?
     weak var listener: FeatureDALLEListener?
+    
+    private let downSamplingImageDataUseCase: DownSamplingImageDataUseCase
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: FeatureDALLEPresentable) {
+    init(
+        downSamplingImageDataUseCase: DownSamplingImageDataUseCase,
+        presenter: FeatureDALLEPresentable
+    ) {
         self.stateRelay = .init(value: .init(image: nil, prompt: nil, generateButtonEnabled: false, keyBoardHeight: 0))
         self.state = stateRelay.asObservable()
+        self.downSamplingImageDataUseCase = downSamplingImageDataUseCase
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -110,6 +117,9 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             var completeState = newState
             completeState.pngData = image.pngData()
+            let result = self?.downSamplingImageDataUseCase.execute(data: completeState.pngData!, originSize: image.size, maxMB: 4)
+            completeState.image = result?.image
+            completeState.pngData = result?.data
             completeState.generateButtonEnabled = true
             self?.stateRelay.accept(completeState)
             

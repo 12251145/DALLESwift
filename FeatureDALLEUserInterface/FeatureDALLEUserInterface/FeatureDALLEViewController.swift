@@ -106,9 +106,15 @@ public final class FeatureDALLEViewController: UIViewController {
             .disposed(by: disposeBag)
         
         listener?.presentableState
+            .asDriver(onErrorJustReturn: .init(
+                image: nil,
+                prompt: nil,
+                generateButtonEnabled: false,
+                keyBoardHeight: 0)
+            )
             .map(\.image)
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] image in
+            .drive(onNext: { [weak self] image in
                 if let image {
                     self?.generateView.setImage(image)
                 }
