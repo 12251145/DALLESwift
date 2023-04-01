@@ -109,24 +109,45 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     }
     
     func setImage(_ image: UIImage) {
+        
+        ///  우선 imageProcessing 상태 전달
         var newState = stateRelay.value
         newState.image = image
         newState.generateButtonEnabled = false
         newState.imageProcessing = true
         self.stateRelay.accept(newState)
         
+        ///  Background에서 이미지 프로세싱
+        ///  pngData로 변환 후 downSampling 진행
+        ///  만약 정사각형 아니라면 resizing 후 다시 downSampling
+        ///  완료 상태 전달
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
             var completeState = newState
+            
             guard let imageData = image.pngData() else {
                 completeState.image = nil
                 self?.stateRelay.accept(completeState)
                 return
             }
-            let result = self?.downSamplingImageDataUseCase.execute(data: imageData, originSize: image.size, maxMB: 4)
+            
+            var result = self?.downSamplingImageDataUseCase.execute(data: imageData, originImage: image, maxMB: 4)
+            
+            var downSampledImage = result?.image
+            
+            if let isSquare = self?.isImageSquare(downSampledImage), !isSquare {
+                if let width = downSampledImage?.size.width {
+                    
+                    downSampledImage = downSampledImage?.resize(to: .init(width: width, height: width))
+                    
+                    if let downSampledImage, let correctData = downSampledImage.pngData() {
+                        result = self?.downSamplingImageDataUseCase.execute(data: correctData, originImage: downSampledImage, maxMB: 4)
+                    }
+                }
+            }
             
             completeState.image = result?.image
-            completeState.pngData = result?.data
+            completeState.pngData = result?.data            
             completeState.generateButtonEnabled = true
             completeState.imageProcessing = false
             
@@ -145,5 +166,14 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 }
             })
             .disposeOnDeactivate(interactor: self)
+    }
+}
+
+// MARK: - Private functions
+private extension FeatureDALLEInteractor {
+    func isImageSquare(_ image: UIImage?) -> Bool {
+        guard let image else { return false }
+        
+        return image.size.width == image.size.height
     }
 }

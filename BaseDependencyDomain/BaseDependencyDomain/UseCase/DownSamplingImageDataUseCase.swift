@@ -10,14 +10,14 @@ import ImageIO
 import UIKit
 
 public protocol DownSamplingImageDataUseCase {
-    func execute(data: Data, originSize: CGSize, maxMB: Double) -> (data: Data, image: UIImage)?
+    func execute(data: Data, originImage: UIImage, maxMB: Double) -> (data: Data, image: UIImage)?
 }
 
 public final class DownSamplingImageDataUseCaseImpl: DownSamplingImageDataUseCase {
     
     public init() { }
     
-    public func execute(data: Data, originSize: CGSize, maxMB: Double) -> (data: Data, image: UIImage)? {
+    public func execute(data: Data, originImage: UIImage, maxMB: Double) -> (data: Data, image: UIImage)? {
                 
         let scale = UIScreen.main.scale
         let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
@@ -26,10 +26,10 @@ public final class DownSamplingImageDataUseCaseImpl: DownSamplingImageDataUseCas
             return nil
         }
         
-        var image: UIImage?
+        var image = originImage
         var downSampled = data
         var currentDataSize = data.count
-        var targetSize = originSize
+        var targetSize = originImage.size
         
         while Double(currentDataSize) / 1024 / 1024 >= maxMB {
             let downWidth = targetSize.width / 2
@@ -48,13 +48,11 @@ public final class DownSamplingImageDataUseCaseImpl: DownSamplingImageDataUseCas
             }
             
             image = UIImage(cgImage: downSampledImage)
-            guard let newData = image?.pngData() else { return nil }
+            guard let newData = image.pngData() else { return nil }
             
             downSampled = newData
             currentDataSize = newData.count
         }
-        
-        guard let image else { return nil }
         
         return (downSampled, image)
     }
