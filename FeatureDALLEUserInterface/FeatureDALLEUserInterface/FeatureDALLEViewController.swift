@@ -115,10 +115,8 @@ public final class FeatureDALLEViewController: UIViewController {
             .asDriver(onErrorJustReturn: .init())
             .map(\.image)
             .distinctUntilChanged()
-            .drive(onNext: { [weak self] image in
-                if let image {
-                    self?.generateView.setImage(image)
-                }
+            .drive(onNext: { [weak self] image in                
+                self?.generateView.setImage(image)
             })
             .disposed(by: disposeBag)
         

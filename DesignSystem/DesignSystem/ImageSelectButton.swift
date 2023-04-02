@@ -17,7 +17,7 @@ public final class ImageSelectButton: UIView {
     }
     
     public private(set) var button = UIButton()
-    private let imageView = UIImageView()
+    public private(set) var imageView = UIImageView()
     private let borderLayer = CAShapeLayer()
     private let processingBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
     public private(set) var xButton = XButton(xSize: 12, xColor: .black, effectStyle: .regular)
@@ -65,12 +65,6 @@ public final class ImageSelectButton: UIView {
         addSubview(xButton)
         addSubview(processingBlurView)
         
-        xButton.button.addAction(
-            .init(handler: { [weak self] _ in
-                self?.backgroundImage = nil
-            }),
-            for: .touchUpInside
-        )
         
         configure()
         
@@ -84,7 +78,6 @@ public final class ImageSelectButton: UIView {
         super.layoutSubviews()
         
         self.layer.cornerCurve = .continuous
-        self.layer.cornerRadius = self.bounds.size.height * 0.2
                 
         imageView.pin.all()
         button.pin.all()

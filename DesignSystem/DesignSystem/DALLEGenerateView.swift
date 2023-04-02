@@ -22,6 +22,8 @@ final public class DALLEGenerateView: UIView {
         }
     }
     
+    private var photoPickerButtonHeight: CGFloat = 130
+    
     public init() {
         super.init(frame: .zero)
         
@@ -47,11 +49,13 @@ final public class DALLEGenerateView: UIView {
         contentInset.top = 20
         contentInset.bottom = 40
         
+        showPhotoPickerButton.layer.cornerRadius = 20
+        
         scrollView.spacing = 30
         scrollView.contentInset = contentInset
         scrollView.append(promptView, 90%, 170)
+        scrollView.append(showPhotoPickerButton, 90%, photoPickerButtonHeight)
         scrollView.append(nStepper, 85%, 50)
-        scrollView.append(showPhotoPickerButton, 90%, 130)
     }
     
     private func layout() {
@@ -66,14 +70,36 @@ final public class DALLEGenerateView: UIView {
             scrollView.updateHeight(promptView, 150)
         }
         
+        scrollView.updateHeight(showPhotoPickerButton, photoPickerButtonHeight)
     }
     
     public func adjustUIWithKeyboardHeight(_ height: CGFloat) {
-        keyboardHeight = height
+        keyboardHeight = height        
     }
     
-    public func setImage(_ image: UIImage) {
-        showPhotoPickerButton.backgroundImage = image
+    public func setImage(_ image: UIImage?) {
+        if image == nil {
+            
+            photoPickerButtonHeight = 130
+            
+            UIView.animate(
+                withDuration: 0.2,
+                delay: 0,
+                options: .curveEaseOut,
+                animations: { [weak self] in
+                    self?.layout()
+                    self?.showPhotoPickerButton.imageView.alpha = 0
+                },
+                completion: { [weak self] _ in
+                    self?.showPhotoPickerButton.backgroundImage = image
+                    self?.showPhotoPickerButton.imageView.alpha = 1
+                }
+            )
+        } else {
+            showPhotoPickerButton.backgroundImage = image
+            photoPickerButtonHeight = 300
+            layout()
+        }
     }
     public func setProcessing(_ isProcessing: Bool) {
         showPhotoPickerButton.isProcessing = isProcessing

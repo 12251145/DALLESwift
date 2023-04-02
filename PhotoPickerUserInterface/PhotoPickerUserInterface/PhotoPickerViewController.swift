@@ -131,7 +131,7 @@ extension PhotoPickerViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let asset = assets?[indexPath.item] {
-            let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+            let size = CGSize(width: asset.pixelWidth / 2, height: asset.pixelHeight / 2)
             listener?.requestPhotoImage(asset: asset, targetSize: size, fetchDegradedAlso: false, completion: { [weak self] image in
                 if let image {
                     var config = Mantis.Config()
