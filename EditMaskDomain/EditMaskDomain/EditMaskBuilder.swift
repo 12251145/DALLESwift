@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import UIKit
 
 public protocol EditMaskDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -20,7 +21,7 @@ final class EditMaskComponent: Component<EditMaskDependency> {
 // MARK: - Builder
 
 public protocol EditMaskBuildable: Buildable {
-    func build(withListener listener: EditMaskListener) -> EditMaskRouting
+    func build(withListener listener: EditMaskListener, image: UIImage) -> EditMaskRouting
 }
 
 public final class EditMaskBuilder: Builder<EditMaskDependency>, EditMaskBuildable {
@@ -29,10 +30,10 @@ public final class EditMaskBuilder: Builder<EditMaskDependency>, EditMaskBuildab
         super.init(dependency: dependency)
     }
 
-    public func build(withListener listener: EditMaskListener) -> EditMaskRouting {
+    public func build(withListener listener: EditMaskListener, image: UIImage) -> EditMaskRouting {
         let component = EditMaskComponent(dependency: dependency)
-        let viewController = EditMaskPresenter()
-        let interactor = EditMaskInteractor(presenter: viewController)
+        let viewController = EditMaskPresenter()    
+        let interactor = EditMaskInteractor(presenter: viewController, image: image)
         interactor.listener = listener
         return EditMaskRouter(interactor: interactor, viewController: viewController)
     }

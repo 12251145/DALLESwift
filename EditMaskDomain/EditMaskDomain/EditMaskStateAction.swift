@@ -14,7 +14,11 @@ public enum EditMaskPresentationAction {
 }
 
 public struct EditMaskPresentationState {
-    public init() { }
+    var image: UIImage?
+    
+    public init(image: UIImage? = nil) {
+        self.image = image
+    }
 }
 
 public protocol EditMaskPresentableListener: AnyObject {

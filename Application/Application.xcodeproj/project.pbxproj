@@ -42,6 +42,8 @@
 		6AD5516329C739990035A8C5 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5515F29C739990035A8C5 /* RootInteractor.swift */; };
 		6AD5516529C739BD0035A8C5 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5516429C739BD0035A8C5 /* AppComponent.swift */; };
 		6AD5518229C74C650035A8C5 /* RepositoryInjectManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */; };
+		6AE1300729DB10BE008A0D29 /* EditMaskDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */; };
+		6AE1300A29DB10C8008A0D29 /* EditMaskUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +97,8 @@
 		6AD5515F29C739990035A8C5 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		6AD5516429C739BD0035A8C5 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RepositoryInjectManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditMaskDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditMaskUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				6AD5515929C738AF0035A8C5 /* Features.framework in Frameworks */,
 				6A6AFA2429CD504200B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */,
 				6AD5514E29C7379A0035A8C5 /* Util.framework in Frameworks */,
+				6AE1300A29DB10C8008A0D29 /* EditMaskUserInterface.framework in Frameworks */,
 				6AD5514229C737660035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
 				6AD5514B29C737870035A8C5 /* ThirdPartyLibraryManager.framework in Frameworks */,
 				6AD5518229C74C650035A8C5 /* RepositoryInjectManager.framework in Frameworks */,
@@ -118,6 +123,7 @@
 				6A78EB6429D67F5D00994F8B /* UIThirdPartyLibraryManager.framework in Frameworks */,
 				6AD5514829C7377F0035A8C5 /* RxPackage.framework in Frameworks */,
 				6AD5514529C737760035A8C5 /* RESTAPI.framework in Frameworks */,
+				6AE1300729DB10BE008A0D29 /* EditMaskDomain.framework in Frameworks */,
 				6A6AFA2129CD503600B44FE8 /* PhotoPickerDomain.framework in Frameworks */,
 				6AD305F029CDEB1F00C3531F /* PhotoRepository.framework in Frameworks */,
 			);
@@ -160,6 +166,8 @@
 		6AD5513329C7344A0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */,
+				6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */,
 				6A78EB6329D67F5D00994F8B /* UIThirdPartyLibraryManager.framework */,
 				6AD305F229CDEB3100C3531F /* PhotoManager.framework */,
 				6AD305EF29CDEB1F00C3531F /* PhotoRepository.framework */,

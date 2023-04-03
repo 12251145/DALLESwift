@@ -23,6 +23,6 @@ extension EditMaskPresentationState {
     // TODO: Return DomainState
     var toMapper: EditMaskUserInterface.EditMaskPresentableState {
 
-        return .init()
+        return .init(image: image)
     }
 }

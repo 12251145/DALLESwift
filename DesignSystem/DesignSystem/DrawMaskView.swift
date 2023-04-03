@@ -10,20 +10,26 @@ import UIKit
 
 public final class DrawMaskView: UIView {
     
+    private var imageView = UIImageView()
     private var drawImageView = UIImageView()
     private var tempImageView = UIImageView()
     
-    var originImage: UIImage?
-    var lastPoint: CGPoint = .zero
-    var color: UIColor = .white
+    public var originImage: UIImage? {
+        didSet {
+            imageView.image = originImage
+        }
+    }
+    private var lastPoint: CGPoint = .zero
+    private var color: UIColor = .white
     
-    var brushWidth: CGFloat = 20.0
-    var swiped = false
+    private var brushWidth: CGFloat = 20.0
+    private var swiped = false
     
     public init() {
         super.init(frame: .zero)
         
         self.backgroundColor = .black
+        self.addSubview(imageView)
         self.addSubview(tempImageView)
         self.addSubview(drawImageView)
     }
@@ -36,6 +42,7 @@ public final class DrawMaskView: UIView {
         super.layoutSubviews()
         
         let width = self.bounds.size.width
+        imageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
         tempImageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
         drawImageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
     }

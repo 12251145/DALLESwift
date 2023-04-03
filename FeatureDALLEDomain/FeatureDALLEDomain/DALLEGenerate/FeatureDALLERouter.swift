@@ -10,6 +10,7 @@ import Photos
 import PhotoPickerDomain
 import EditMaskDomain
 import RIBs
+import UIKit
 
 public protocol FeatureDALLEInteractable: Interactable, ImageResultListener, PhotoPickerListener, EditMaskListener {
     var router: FeatureDALLERouting? { get set }
@@ -61,9 +62,9 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
     }
     
-    func routeToEditMask() {
+    func routeToEditMask(image: UIImage) {
         guard editMaskRouter == nil else { return }
-        let router = editMaskBuilder.build(withListener: interactor)
+        let router = editMaskBuilder.build(withListener: interactor, image: image)
         editMaskRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
