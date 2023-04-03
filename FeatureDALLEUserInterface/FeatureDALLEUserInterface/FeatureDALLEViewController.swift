@@ -21,6 +21,7 @@ public enum FeatureDALLEPresentableAction {
 
 public struct FeatureDALLEPresentableState {
     var image: UIImage?
+    var mask: UIImage?
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
@@ -29,6 +30,7 @@ public struct FeatureDALLEPresentableState {
         
     public init(
         image: UIImage? = nil,
+        mask: UIImage? = nil,
         prompt: String? = nil,
         generateButtonEnabled: Bool = false,
         keyBoardHeight: CGFloat = 0,
@@ -36,6 +38,7 @@ public struct FeatureDALLEPresentableState {
         pngData: Data? = nil) {
         
             self.image = image
+            self.mask = mask
             self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight
@@ -133,6 +136,15 @@ public final class FeatureDALLEViewController: UIViewController {
             .distinctUntilChanged()
             .drive(onNext: { [weak self] isProcessing in
                 self?.generateView.setProcessing(isProcessing)
+            })
+            .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .asDriver(onErrorJustReturn: .init())
+            .map(\.mask)
+            .map({ $0 != nil })
+            .drive(onNext: { [weak self] maskOn in
+                self?.generateView.maskOn(maskOn)
             })
             .disposed(by: disposeBag)
         

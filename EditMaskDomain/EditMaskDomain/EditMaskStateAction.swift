@@ -11,6 +11,7 @@ import UIKit
 
 public enum EditMaskPresentationAction {
     case viewDidLoad
+    case imageMasked(image: UIImage?)
 }
 
 public struct EditMaskPresentationState {

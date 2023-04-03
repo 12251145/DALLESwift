@@ -76,4 +76,11 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         detachChild(router)
         photoPickerRouter = nil
     }
+    
+    func detachEditMask() {
+        guard let router = editMaskRouter else { return }
+        router.viewControllable.uiviewController.dismiss(animated: true)
+        detachChild(router)
+        editMaskRouter = nil
+    }
 }

@@ -19,6 +19,7 @@ public enum PresentationAction {
 
 public struct PresentationState {
     var image: UIImage?
+    var mask: UIImage?
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
@@ -27,6 +28,7 @@ public struct PresentationState {
         
     public init(
         image: UIImage? = nil,
+        mask: UIImage? = nil,
         prompt: String? = nil,
         generateButtonEnabled: Bool = false,
         keyBoardHeight: CGFloat = 0,
@@ -34,6 +36,7 @@ public struct PresentationState {
         pngData: Data? = nil) {
         
             self.image = image
+            self.mask = mask
             self.prompt = prompt
             self.generateButtonEnabled = generateButtonEnabled
             self.keyBoardHeight = keyBoardHeight

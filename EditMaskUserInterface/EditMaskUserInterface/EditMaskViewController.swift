@@ -13,6 +13,7 @@ import UIKit
 
 public enum EditMaskPresentableAction {
     case viewDidLoad
+    case imageMasked(image: UIImage?)
 }
 
 public struct EditMaskPresentableState {
@@ -46,6 +47,13 @@ public final class EditMaskViewController: UIViewController {
     
     private func bindAction() {
         listener?.action(.viewDidLoad)
+        
+        drawMaskView.doneButton.rx.tap
+            .subscribe { [weak self] _ in
+                let maskedImage = self?.drawMaskView.maskedImage()
+                self?.listener?.action(.imageMasked(image: maskedImage))                
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindState() {

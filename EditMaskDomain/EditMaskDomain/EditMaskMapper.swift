@@ -14,6 +14,8 @@ extension EditMaskUserInterface.EditMaskPresentableAction {
         switch self {
         case .viewDidLoad:
             return .viewDidLoad
+        case .imageMasked(let image):
+            return .imageMasked(image: image)
         }
     }
 }

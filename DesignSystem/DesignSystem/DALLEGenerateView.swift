@@ -14,7 +14,7 @@ final public class DALLEGenerateView: UIView {
     public private(set) var promptView = PromptView()
     public private(set) var nStepper = NStepper(low: 1, high: 10)
     public private(set) var showPhotoPickerButton = ImageSelectButton(title: "Image to edit or variation", guideImage: UIImage(systemName: "photo"))
-    public private(set) var generateButton = CapsuleButton(title: "GENERATE")
+    public private(set) var generateButton = CapsuleButton(with: .init(title: "GENERATE"))
     
     private var keyboardHeight: CGFloat = 0 {
         didSet {
@@ -103,5 +103,9 @@ final public class DALLEGenerateView: UIView {
     }
     public func setProcessing(_ isProcessing: Bool) {
         showPhotoPickerButton.isProcessing = isProcessing
+    }
+    
+    public func maskOn(_ isOn: Bool) {
+        showPhotoPickerButton.maskOn(isOn: isOn)
     }
 }

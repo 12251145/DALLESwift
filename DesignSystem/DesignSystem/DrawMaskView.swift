@@ -19,6 +19,11 @@ public final class DrawMaskView: UIView {
             imageView.image = originImage
         }
     }
+    
+    public var doneButton = SFSymbolButton(symbolName: "checkmark", size: 13, color: .white)
+    public var deleteMaskButton = SFSymbolButton(symbolName: "trash", size: 13, color: .white)
+    public var cancelButton = SFSymbolButton(symbolName: "xmark", size: 13, color: .white)
+    
     private var lastPoint: CGPoint = .zero
     private var color: UIColor = .white
     
@@ -32,19 +37,38 @@ public final class DrawMaskView: UIView {
         self.addSubview(imageView)
         self.addSubview(tempImageView)
         self.addSubview(drawImageView)
+        self.addSubview(doneButton)
+        self.addSubview(deleteMaskButton)
+        self.addSubview(cancelButton)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func maskedImage() -> UIImage? {
+        guard let originImage else { return nil }
+        UIGraphicsBeginImageContext(originImage.size)
+        imageView.image?.draw(in: .init(origin: .zero, size: originImage.size), blendMode: .normal, alpha: 1.0)
+        tempImageView.image?.draw(in: .init(origin: .zero, size: originImage.size), blendMode: .destinationOut, alpha: 1.0)
+        
+        let maskedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return maskedImage
+    }
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
         let width = self.bounds.size.width
-        imageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
-        tempImageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
-        drawImageView.pin.top(pin.safeArea.top + 30).left().right().height(width)
+        imageView.pin.top(pin.safeArea.top + 50).left().right().height(width)
+        tempImageView.pin.top(pin.safeArea.top + 50).left().right().height(width)
+        drawImageView.pin.top(pin.safeArea.top + 50).left().right().height(width)
+        
+        doneButton.pin.bottom(pin.safeArea.bottom + 60).hCenter().width(50).height(50)
+        deleteMaskButton.pin.bottom(pin.safeArea.bottom + 60).before(of: doneButton).width(50).height(50).marginRight(60)
+        cancelButton.pin.bottom(pin.safeArea.bottom + 60).after(of: doneButton).width(50).height(50).marginLeft(60)
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

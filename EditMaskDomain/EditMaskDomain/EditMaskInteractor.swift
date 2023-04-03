@@ -20,7 +20,8 @@ public protocol EditMaskPresentable: Presentable {
 }
 
 public protocol EditMaskListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func setMaskedImage(_ image: UIImage?)
+    func detachEditMask()
 }
 
 final class EditMaskInteractor: PresentableInteractor<EditMaskPresentable>, EditMaskInteractable, EditMaskPresentableListener {
@@ -66,6 +67,9 @@ final class EditMaskInteractor: PresentableInteractor<EditMaskPresentable>, Edit
                         newState.image = self?.image
                         self?.stateRelay.accept(newState)
                     }
+                case .imageMasked(let image):
+                    self?.listener?.setMaskedImage(image)
+                    self?.listener?.detachEditMask()
                 }
             }
             .disposeOnDeactivate(interactor: self)

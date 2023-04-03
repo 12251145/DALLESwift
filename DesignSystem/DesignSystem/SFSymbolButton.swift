@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SFSymbolButton: UIButton {
+public final class SFSymbolButton: UIButton {
     
     public init(symbolName: String, size: CGFloat, color: UIColor) {
         super.init(frame: .zero)

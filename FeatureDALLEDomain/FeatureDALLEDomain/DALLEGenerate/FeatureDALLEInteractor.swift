@@ -20,7 +20,8 @@ public protocol FeatureDALLERouting: ViewableRouting {
     func routeToPhotoPicker()
     func routeToEditMask(image: UIImage)
     
-    func detachPhotoPicker()    
+    func detachPhotoPicker()
+    func detachEditMask()
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
@@ -98,6 +99,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                         let isEnabled = newState.prompt.notNilNotEmpty()
                         newState.generateButtonEnabled = isEnabled
                         newState.image = nil
+                        newState.mask = nil
                         self?.stateRelay.accept(newState)
                     }
                     
@@ -113,6 +115,10 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     func detachPhotoPicker() {
         router?.detachPhotoPicker()
+    }
+    
+    func detachEditMask() {
+        router?.detachEditMask()
     }
     
     func setImage(_ image: UIImage) {
@@ -162,6 +168,13 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             
         }
         
+    }
+    
+    
+    func setMaskedImage(_ image: UIImage?) {
+        var newState = stateRelay.value
+        newState.mask = image
+        stateRelay.accept(newState)
     }
     
     func observeKeyboard() {
