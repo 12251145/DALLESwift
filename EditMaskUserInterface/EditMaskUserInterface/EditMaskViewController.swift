@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/04/03.
 //
 
+import DesignSystem
 import RxSwift
 import UIKit
 
@@ -24,9 +25,11 @@ public protocol EditMaskPresentableListener: AnyObject {
 public final class EditMaskViewController: UIViewController {
     public weak var listener: EditMaskPresentableListener?
     
+    public override func loadView() {
+        view = DrawMaskView()
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
     }
 }
