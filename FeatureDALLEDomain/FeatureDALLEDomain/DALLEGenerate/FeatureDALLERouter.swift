@@ -8,9 +8,10 @@
 import BaseDependencyDomain
 import Photos
 import PhotoPickerDomain
+import EditMaskDomain
 import RIBs
 
-public protocol FeatureDALLEInteractable: Interactable, ImageResultListener, PhotoPickerListener {
+public protocol FeatureDALLEInteractable: Interactable, ImageResultListener, PhotoPickerListener, EditMaskListener {
     var router: FeatureDALLERouting? { get set }
     var listener: FeatureDALLEListener? { get set }
 }
@@ -24,6 +25,9 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
     private let imageResultBuilder: ImageResultBuildable
     private var imageRouter: ImageResultRouting?
     
+    private let editMaskBuilder: EditMaskBuildable
+    private var editMaskRouter: EditMaskRouting?
+    
     private let photoPickerBuilder: PhotoPickerBuilder
     private var photoPickerRouter: PhotoPickerRouting?
 
@@ -31,11 +35,13 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
     init(
         imageResultBuilder: ImageResultBuildable,
         photoPickerBuilder: PhotoPickerBuilder,
+        editMaskBuilder: EditMaskBuildable,
         interactor: FeatureDALLEInteractable,
         viewController: FeatureDALLEViewControllable) {
             
             self.imageResultBuilder = imageResultBuilder
             self.photoPickerBuilder = photoPickerBuilder
+            self.editMaskBuilder = editMaskBuilder
             
             super.init(interactor: interactor, viewController: viewController)
             interactor.router = self
@@ -51,6 +57,14 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
     func routeToPhotoPicker() {
         let router = photoPickerBuilder.build(withListener: interactor)
         photoPickerRouter = router
+        attachChild(router)
+        viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
+    }
+    
+    func routeToEditMask() {
+        guard editMaskRouter == nil else { return }
+        let router = editMaskBuilder.build(withListener: interactor)
+        editMaskRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
     }

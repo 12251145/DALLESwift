@@ -14,6 +14,7 @@ public enum PresentationAction {
     case generateButtonTap
     case imageButtonTap
     case imageXButtonTap
+    case editMaskButtonTap
 }
 
 public struct PresentationState {

@@ -7,83 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A6AF9F429CD4F8200B44FE8 /* PhotoPickerDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6AF9F329CD4F8200B44FE8 /* PhotoPickerDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A6AFA1629CD4FEB00B44FE8 /* PhotoPickerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1029CD4FEA00B44FE8 /* PhotoPickerMapper.swift */; };
-		6A6AFA1729CD4FEC00B44FE8 /* PhotoPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1129CD4FEA00B44FE8 /* PhotoPickerPresenter.swift */; };
-		6A6AFA1829CD4FEC00B44FE8 /* PhotoPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1229CD4FEA00B44FE8 /* PhotoPickerRouter.swift */; };
-		6A6AFA1929CD4FEC00B44FE8 /* PhotoPickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1329CD4FEA00B44FE8 /* PhotoPickerBuilder.swift */; };
-		6A6AFA1A29CD4FEC00B44FE8 /* PhotoPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1429CD4FEA00B44FE8 /* PhotoPickerInteractor.swift */; };
-		6A6AFA1B29CD4FEC00B44FE8 /* PhotoPickerStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA1529CD4FEA00B44FE8 /* PhotoPickerStateAction.swift */; };
-		6A6AFA3429CD9B0400B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */; };
-		6A6AFA3729CD9B1C00B44FE8 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */; };
+		6A78EBD329DA869800994F8B /* EditMaskDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A78EBD229DA869800994F8B /* EditMaskDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A78EBDF29DA86B000994F8B /* EditMaskMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBD929DA86B000994F8B /* EditMaskMapper.swift */; };
+		6A78EBE029DA86B000994F8B /* EditMaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBDA29DA86B000994F8B /* EditMaskPresenter.swift */; };
+		6A78EBE129DA86B000994F8B /* EditMaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBDB29DA86B000994F8B /* EditMaskRouter.swift */; };
+		6A78EBE229DA86B000994F8B /* EditMaskBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBDC29DA86B000994F8B /* EditMaskBuilder.swift */; };
+		6A78EBE329DA86B000994F8B /* EditMaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBDD29DA86B000994F8B /* EditMaskInteractor.swift */; };
+		6A78EBE429DA86B000994F8B /* EditMaskStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBDE29DA86B000994F8B /* EditMaskStateAction.swift */; };
+		6A78EBE729DA86D200994F8B /* EditMaskUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EBE629DA86D200994F8B /* EditMaskUserInterface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A6AF9F029CD4F8200B44FE8 /* PhotoPickerDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoPickerDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AF9F329CD4F8200B44FE8 /* PhotoPickerDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPickerDomain.h; sourceTree = "<group>"; };
-		6A6AFA1029CD4FEA00B44FE8 /* PhotoPickerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerMapper.swift; sourceTree = "<group>"; };
-		6A6AFA1129CD4FEA00B44FE8 /* PhotoPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPresenter.swift; sourceTree = "<group>"; };
-		6A6AFA1229CD4FEA00B44FE8 /* PhotoPickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerRouter.swift; sourceTree = "<group>"; };
-		6A6AFA1329CD4FEA00B44FE8 /* PhotoPickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerBuilder.swift; sourceTree = "<group>"; };
-		6A6AFA1429CD4FEA00B44FE8 /* PhotoPickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerInteractor.swift; sourceTree = "<group>"; };
-		6A6AFA1529CD4FEA00B44FE8 /* PhotoPickerStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerStateAction.swift; sourceTree = "<group>"; };
-		6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ACE53C829D1440A00DC547D /* ImageEditDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageEditDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78EBCF29DA869800994F8B /* EditMaskDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditMaskDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78EBD229DA869800994F8B /* EditMaskDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMaskDomain.h; sourceTree = "<group>"; };
+		6A78EBD929DA86B000994F8B /* EditMaskMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskMapper.swift; sourceTree = "<group>"; };
+		6A78EBDA29DA86B000994F8B /* EditMaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskPresenter.swift; sourceTree = "<group>"; };
+		6A78EBDB29DA86B000994F8B /* EditMaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskRouter.swift; sourceTree = "<group>"; };
+		6A78EBDC29DA86B000994F8B /* EditMaskBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskBuilder.swift; sourceTree = "<group>"; };
+		6A78EBDD29DA86B000994F8B /* EditMaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskInteractor.swift; sourceTree = "<group>"; };
+		6A78EBDE29DA86B000994F8B /* EditMaskStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaskStateAction.swift; sourceTree = "<group>"; };
+		6A78EBE629DA86D200994F8B /* EditMaskUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditMaskUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78EBEA29DA86DA00994F8B /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6A6AF9ED29CD4F8100B44FE8 /* Frameworks */ = {
+		6A78EBCC29DA869800994F8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AFA3729CD9B1C00B44FE8 /* BaseDependencyDomain.framework in Frameworks */,
-				6A6AFA3429CD9B0400B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */,
+				6A78EBE729DA86D200994F8B /* EditMaskUserInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A6AF9E629CD4F8100B44FE8 = {
+		6A78EBC529DA869800994F8B = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9F229CD4F8200B44FE8 /* PhotoPickerDomain */,
-				6A6AF9F129CD4F8200B44FE8 /* Products */,
-				6A6AFA2E29CD9AF800B44FE8 /* Frameworks */,
+				6A78EBD129DA869800994F8B /* EditMaskDomain */,
+				6A78EBD029DA869800994F8B /* Products */,
+				6A78EBE529DA86D200994F8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6A6AF9F129CD4F8200B44FE8 /* Products */ = {
+		6A78EBD029DA869800994F8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9F029CD4F8200B44FE8 /* PhotoPickerDomain.framework */,
+				6A78EBCF29DA869800994F8B /* EditMaskDomain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6A6AF9F229CD4F8200B44FE8 /* PhotoPickerDomain */ = {
+		6A78EBD129DA869800994F8B /* EditMaskDomain */ = {
 			isa = PBXGroup;
 			children = (
-				6A6AF9F329CD4F8200B44FE8 /* PhotoPickerDomain.h */,
-				6A6AFA1029CD4FEA00B44FE8 /* PhotoPickerMapper.swift */,
-				6A6AFA1129CD4FEA00B44FE8 /* PhotoPickerPresenter.swift */,
-				6A6AFA1229CD4FEA00B44FE8 /* PhotoPickerRouter.swift */,
-				6A6AFA1329CD4FEA00B44FE8 /* PhotoPickerBuilder.swift */,
-				6A6AFA1429CD4FEA00B44FE8 /* PhotoPickerInteractor.swift */,
-				6A6AFA1529CD4FEA00B44FE8 /* PhotoPickerStateAction.swift */,
+				6A78EBD229DA869800994F8B /* EditMaskDomain.h */,
+				6A78EBD929DA86B000994F8B /* EditMaskMapper.swift */,
+				6A78EBDA29DA86B000994F8B /* EditMaskPresenter.swift */,
+				6A78EBDB29DA86B000994F8B /* EditMaskRouter.swift */,
+				6A78EBDC29DA86B000994F8B /* EditMaskBuilder.swift */,
+				6A78EBDD29DA86B000994F8B /* EditMaskInteractor.swift */,
+				6A78EBDE29DA86B000994F8B /* EditMaskStateAction.swift */,
 			);
-			path = PhotoPickerDomain;
+			path = EditMaskDomain;
 			sourceTree = "<group>";
 		};
-		6A6AFA2E29CD9AF800B44FE8 /* Frameworks */ = {
+		6A78EBE529DA86D200994F8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6ACE53C829D1440A00DC547D /* ImageEditDomain.framework */,
-				6A6AFA3629CD9B1C00B44FE8 /* BaseDependencyDomain.framework */,
-				6A6AFA3329CD9B0400B44FE8 /* PhotoPickerUserInterface.framework */,
-				6A6AFA2F29CD9AF800B44FE8 /* RxPackage.framework */,
+				6A78EBEA29DA86DA00994F8B /* RxPackage.framework */,
+				6A78EBE629DA86D200994F8B /* EditMaskUserInterface.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,50 +85,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6A6AF9EB29CD4F8100B44FE8 /* Headers */ = {
+		6A78EBCA29DA869800994F8B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AF9F429CD4F8200B44FE8 /* PhotoPickerDomain.h in Headers */,
+				6A78EBD329DA869800994F8B /* EditMaskDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6A6AF9EF29CD4F8100B44FE8 /* PhotoPickerDomain */ = {
+		6A78EBCE29DA869800994F8B /* EditMaskDomain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6AF9F729CD4F8200B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerDomain" */;
+			buildConfigurationList = 6A78EBD629DA869800994F8B /* Build configuration list for PBXNativeTarget "EditMaskDomain" */;
 			buildPhases = (
-				6A6AF9EB29CD4F8100B44FE8 /* Headers */,
-				6A6AF9EC29CD4F8100B44FE8 /* Sources */,
-				6A6AF9ED29CD4F8100B44FE8 /* Frameworks */,
-				6A6AF9EE29CD4F8100B44FE8 /* Resources */,
+				6A78EBCA29DA869800994F8B /* Headers */,
+				6A78EBCB29DA869800994F8B /* Sources */,
+				6A78EBCC29DA869800994F8B /* Frameworks */,
+				6A78EBCD29DA869800994F8B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PhotoPickerDomain;
-			productName = PhotoPickerDomain;
-			productReference = 6A6AF9F029CD4F8200B44FE8 /* PhotoPickerDomain.framework */;
+			name = EditMaskDomain;
+			productName = EditMaskDomain;
+			productReference = 6A78EBCF29DA869800994F8B /* EditMaskDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6A6AF9E729CD4F8100B44FE8 /* Project object */ = {
+		6A78EBC629DA869800994F8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6A6AF9EF29CD4F8100B44FE8 = {
+					6A78EBCE29DA869800994F8B = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 6A6AF9EA29CD4F8100B44FE8 /* Build configuration list for PBXProject "PhotoPickerDomain" */;
+			buildConfigurationList = 6A78EBC929DA869800994F8B /* Build configuration list for PBXProject "EditMaskDomain" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -142,18 +136,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6A6AF9E629CD4F8100B44FE8;
-			productRefGroup = 6A6AF9F129CD4F8200B44FE8 /* Products */;
+			mainGroup = 6A78EBC529DA869800994F8B;
+			productRefGroup = 6A78EBD029DA869800994F8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A6AF9EF29CD4F8100B44FE8 /* PhotoPickerDomain */,
+				6A78EBCE29DA869800994F8B /* EditMaskDomain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6A6AF9EE29CD4F8100B44FE8 /* Resources */ = {
+		6A78EBCD29DA869800994F8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,23 +157,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6A6AF9EC29CD4F8100B44FE8 /* Sources */ = {
+		6A78EBCB29DA869800994F8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6AFA1B29CD4FEC00B44FE8 /* PhotoPickerStateAction.swift in Sources */,
-				6A6AFA1629CD4FEB00B44FE8 /* PhotoPickerMapper.swift in Sources */,
-				6A6AFA1829CD4FEC00B44FE8 /* PhotoPickerRouter.swift in Sources */,
-				6A6AFA1929CD4FEC00B44FE8 /* PhotoPickerBuilder.swift in Sources */,
-				6A6AFA1A29CD4FEC00B44FE8 /* PhotoPickerInteractor.swift in Sources */,
-				6A6AFA1729CD4FEC00B44FE8 /* PhotoPickerPresenter.swift in Sources */,
+				6A78EBE029DA86B000994F8B /* EditMaskPresenter.swift in Sources */,
+				6A78EBE429DA86B000994F8B /* EditMaskStateAction.swift in Sources */,
+				6A78EBE229DA86B000994F8B /* EditMaskBuilder.swift in Sources */,
+				6A78EBE329DA86B000994F8B /* EditMaskInteractor.swift in Sources */,
+				6A78EBE129DA86B000994F8B /* EditMaskRouter.swift in Sources */,
+				6A78EBDF29DA86B000994F8B /* EditMaskMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6A6AF9F529CD4F8200B44FE8 /* Debug */ = {
+		6A78EBD429DA869800994F8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +236,7 @@
 			};
 			name = Debug;
 		};
-		6A6AF9F629CD4F8200B44FE8 /* Release */ = {
+		6A78EBD529DA869800994F8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,7 +293,7 @@
 			};
 			name = Release;
 		};
-		6A6AF9F829CD4F8200B44FE8 /* Debug */ = {
+		6A78EBD729DA869800994F8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -319,7 +313,7 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoPickerDomain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.EditMaskDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -328,7 +322,7 @@
 			};
 			name = Debug;
 		};
-		6A6AF9F929CD4F8200B44FE8 /* Release */ = {
+		6A78EBD829DA869800994F8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -348,7 +342,7 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoPickerDomain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.EditMaskDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -360,25 +354,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A6AF9EA29CD4F8100B44FE8 /* Build configuration list for PBXProject "PhotoPickerDomain" */ = {
+		6A78EBC929DA869800994F8B /* Build configuration list for PBXProject "EditMaskDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A6AF9F529CD4F8200B44FE8 /* Debug */,
-				6A6AF9F629CD4F8200B44FE8 /* Release */,
+				6A78EBD429DA869800994F8B /* Debug */,
+				6A78EBD529DA869800994F8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A6AF9F729CD4F8200B44FE8 /* Build configuration list for PBXNativeTarget "PhotoPickerDomain" */ = {
+		6A78EBD629DA869800994F8B /* Build configuration list for PBXNativeTarget "EditMaskDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A6AF9F829CD4F8200B44FE8 /* Debug */,
-				6A6AF9F929CD4F8200B44FE8 /* Release */,
+				6A78EBD729DA869800994F8B /* Debug */,
+				6A78EBD829DA869800994F8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6A6AF9E729CD4F8100B44FE8 /* Project object */;
+	rootObject = 6A78EBC629DA869800994F8B /* Project object */;
 }

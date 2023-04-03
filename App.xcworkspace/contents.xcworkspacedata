@@ -26,6 +26,9 @@
       location = "group:PhotoPickerDomain/PhotoPickerDomain.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:EditMaskDomain/EditMaskDomain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
    </FileRef>
    <FileRef
@@ -33,6 +36,9 @@
    </FileRef>
    <FileRef
       location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EditMaskUserInterface/EditMaskUserInterface.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:CoreKit/CoreKit.xcodeproj">

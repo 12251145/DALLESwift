@@ -16,6 +16,7 @@ public enum FeatureDALLEPresentableAction {
     case generateButtonTap
     case imageButtonTap
     case imageXButtonTap
+    case editMaskButtonTap
 }
 
 public struct FeatureDALLEPresentableState {
@@ -86,6 +87,12 @@ public final class FeatureDALLEViewController: UIViewController {
         generateView.showPhotoPickerButton.button.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self?.listener?.action(.imageButtonTap)
+            })
+            .disposed(by: disposeBag)
+        
+        generateView.showPhotoPickerButton.editMaskButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.listener?.action(.editMaskButtonTap)
             })
             .disposed(by: disposeBag)
         

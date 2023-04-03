@@ -18,6 +18,7 @@ public protocol FeatureDALLERouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func routeToImageResult(prompt: String?, n: Int, image: Data?, mask: String?)
     func routeToPhotoPicker()
+    func routeToEditMask()
     
     func detachPhotoPicker()    
 }
@@ -99,6 +100,9 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                         newState.image = nil
                         self?.stateRelay.accept(newState)
                     }
+                    
+                case .editMaskButtonTap:
+                    self?.router?.routeToEditMask()
                 }
             })
             .disposeOnDeactivate(interactor: self)                

@@ -21,6 +21,10 @@ public final class ImageSelectButton: UIView {
     private let borderLayer = CAShapeLayer()
     private let processingBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
     public private(set) var xButton = XButton(xSize: 12, xColor: .black, effectStyle: .regular)
+    public private(set) var editMaskButton = CapsuleButton(
+        title: "Mask",
+        symbolName: "moonphase.waxing.gibbous"
+    )
     
     public var backgroundImage: UIImage? {
         didSet {
@@ -63,6 +67,7 @@ public final class ImageSelectButton: UIView {
         addSubview(imageView)
         addSubview(button)
         addSubview(xButton)
+        addSubview(editMaskButton)
         addSubview(processingBlurView)
         
         
@@ -84,6 +89,7 @@ public final class ImageSelectButton: UIView {
         updateBorderPath()
         xButton.pin.topRight(15).width(30).height(30)
         xButton.layer.cornerRadius = xButton.bounds.size.height / 2
+        editMaskButton.pin.bottomRight(15).width(100).height(36)
         processingBlurView.pin.all()
     }
     
@@ -99,6 +105,7 @@ public final class ImageSelectButton: UIView {
         setButton()
         setImageView()
         setXButton()
+        setEditMaskButton()
         setProcessingBlur()
     }
     
@@ -136,6 +143,10 @@ public final class ImageSelectButton: UIView {
     
     private func setXButton() {
         xButton.isHidden = mode == .noImage ? true : false
+    }
+    
+    private func setEditMaskButton() {
+        editMaskButton.isHidden = mode == .noImage ? true: false
     }
     
     private func setProcessingBlur() {

@@ -18,6 +18,8 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
             return .imageButtonTap
         case .imageXButtonTap:
             return .imageXButtonTap
+        case .editMaskButtonTap:
+            return .editMaskButtonTap
         }
     }
 }
