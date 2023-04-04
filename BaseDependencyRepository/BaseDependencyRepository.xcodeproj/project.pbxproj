@@ -7,72 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD305D629CDE89A00C3531F /* PhotoRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD305D529CDE89A00C3531F /* PhotoRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD305E529CDE8BF00C3531F /* PhotoPickerDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305E429CDE8BF00C3531F /* PhotoPickerDomain.framework */; };
-		6AD305E829CDE8EA00C3531F /* PhotoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305E729CDE8EA00C3531F /* PhotoRepositoryImpl.swift */; };
-		6AE1305829DC5385008A0D29 /* BaseDependencyRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1305729DC5385008A0D29 /* BaseDependencyRepository.framework */; };
+		6AE1304429DC5319008A0D29 /* BaseDependencyRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AE1304329DC5319008A0D29 /* BaseDependencyRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AE1304C29DC532E008A0D29 /* CoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1304B29DC532E008A0D29 /* CoreKit.framework */; };
+		6AE1305029DC5334008A0D29 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1304F29DC5334008A0D29 /* RxPackage.framework */; };
+		6AE1305429DC5372008A0D29 /* BaseDependencyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1305329DC5372008A0D29 /* BaseDependencyDomain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6ACE53D229D1761300DC547D /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ACE53D629D1771C00DC547D /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD305D229CDE89A00C3531F /* PhotoRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD305D529CDE89A00C3531F /* PhotoRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoRepository.h; sourceTree = "<group>"; };
-		6AD305DD29CDE8B300C3531F /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD305E129CDE8B700C3531F /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD305E429CDE8BF00C3531F /* PhotoPickerDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoPickerDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AD305E729CDE8EA00C3531F /* PhotoRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryImpl.swift; sourceTree = "<group>"; };
-		6AE1305729DC5385008A0D29 /* BaseDependencyRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1304029DC5319008A0D29 /* BaseDependencyRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseDependencyRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1304329DC5319008A0D29 /* BaseDependencyRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDependencyRepository.h; sourceTree = "<group>"; };
+		6AE1304B29DC532E008A0D29 /* CoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1304F29DC5334008A0D29 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1305329DC5372008A0D29 /* BaseDependencyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AD305CF29CDE89A00C3531F /* Frameworks */ = {
+		6AE1303D29DC5319008A0D29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AE1305829DC5385008A0D29 /* BaseDependencyRepository.framework in Frameworks */,
-				6AD305E529CDE8BF00C3531F /* PhotoPickerDomain.framework in Frameworks */,
+				6AE1305429DC5372008A0D29 /* BaseDependencyDomain.framework in Frameworks */,
+				6AE1304C29DC532E008A0D29 /* CoreKit.framework in Frameworks */,
+				6AE1305029DC5334008A0D29 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AD305C829CDE89A00C3531F = {
+		6AE1303629DC5319008A0D29 = {
 			isa = PBXGroup;
 			children = (
-				6AD305D429CDE89A00C3531F /* PhotoRepository */,
-				6AD305D329CDE89A00C3531F /* Products */,
-				6AD305DC29CDE8B300C3531F /* Frameworks */,
+				6AE1304229DC5319008A0D29 /* BaseDependencyRepository */,
+				6AE1304129DC5319008A0D29 /* Products */,
+				6AE1304A29DC532E008A0D29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6AD305D329CDE89A00C3531F /* Products */ = {
+		6AE1304129DC5319008A0D29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6AD305D229CDE89A00C3531F /* PhotoRepository.framework */,
+				6AE1304029DC5319008A0D29 /* BaseDependencyRepository.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AD305D429CDE89A00C3531F /* PhotoRepository */ = {
+		6AE1304229DC5319008A0D29 /* BaseDependencyRepository */ = {
 			isa = PBXGroup;
 			children = (
-				6AD305D529CDE89A00C3531F /* PhotoRepository.h */,
-				6AD305E729CDE8EA00C3531F /* PhotoRepositoryImpl.swift */,
+				6AE1304329DC5319008A0D29 /* BaseDependencyRepository.h */,
 			);
-			path = PhotoRepository;
+			path = BaseDependencyRepository;
 			sourceTree = "<group>";
 		};
-		6AD305DC29CDE8B300C3531F /* Frameworks */ = {
+		6AE1304A29DC532E008A0D29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6AE1305729DC5385008A0D29 /* BaseDependencyRepository.framework */,
-				6ACE53D629D1771C00DC547D /* BaseDependencyDomain.framework */,
-				6ACE53D229D1761300DC547D /* BaseDependencyDomain.framework */,
-				6AD305E429CDE8BF00C3531F /* PhotoPickerDomain.framework */,
-				6AD305E129CDE8B700C3531F /* RxPackage.framework */,
-				6AD305DD29CDE8B300C3531F /* CoreKit.framework */,
+				6AE1305329DC5372008A0D29 /* BaseDependencyDomain.framework */,
+				6AE1304F29DC5334008A0D29 /* RxPackage.framework */,
+				6AE1304B29DC532E008A0D29 /* CoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,51 +73,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6AD305CD29CDE89A00C3531F /* Headers */ = {
+		6AE1303B29DC5319008A0D29 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD305D629CDE89A00C3531F /* PhotoRepository.h in Headers */,
+				6AE1304429DC5319008A0D29 /* BaseDependencyRepository.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AD305D129CDE89A00C3531F /* PhotoRepository */ = {
+		6AE1303F29DC5319008A0D29 /* BaseDependencyRepository */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD305D929CDE89A00C3531F /* Build configuration list for PBXNativeTarget "PhotoRepository" */;
+			buildConfigurationList = 6AE1304729DC5319008A0D29 /* Build configuration list for PBXNativeTarget "BaseDependencyRepository" */;
 			buildPhases = (
-				6AD305CD29CDE89A00C3531F /* Headers */,
-				6AD305CE29CDE89A00C3531F /* Sources */,
-				6AD305CF29CDE89A00C3531F /* Frameworks */,
-				6AD305D029CDE89A00C3531F /* Resources */,
+				6AE1303B29DC5319008A0D29 /* Headers */,
+				6AE1303C29DC5319008A0D29 /* Sources */,
+				6AE1303D29DC5319008A0D29 /* Frameworks */,
+				6AE1303E29DC5319008A0D29 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PhotoRepository;
-			productName = PhotoRepository;
-			productReference = 6AD305D229CDE89A00C3531F /* PhotoRepository.framework */;
+			name = BaseDependencyRepository;
+			productName = BaseDependencyRepository;
+			productReference = 6AE1304029DC5319008A0D29 /* BaseDependencyRepository.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6AD305C929CDE89A00C3531F /* Project object */ = {
+		6AE1303729DC5319008A0D29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					6AD305D129CDE89A00C3531F = {
+					6AE1303F29DC5319008A0D29 = {
 						CreatedOnToolsVersion = 14.2;
-						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 6AD305CC29CDE89A00C3531F /* Build configuration list for PBXProject "PhotoRepository" */;
+			buildConfigurationList = 6AE1303A29DC5319008A0D29 /* Build configuration list for PBXProject "BaseDependencyRepository" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,18 +124,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 6AD305C829CDE89A00C3531F;
-			productRefGroup = 6AD305D329CDE89A00C3531F /* Products */;
+			mainGroup = 6AE1303629DC5319008A0D29;
+			productRefGroup = 6AE1304129DC5319008A0D29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6AD305D129CDE89A00C3531F /* PhotoRepository */,
+				6AE1303F29DC5319008A0D29 /* BaseDependencyRepository */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6AD305D029CDE89A00C3531F /* Resources */ = {
+		6AE1303E29DC5319008A0D29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -153,18 +145,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD305CE29CDE89A00C3531F /* Sources */ = {
+		6AE1303C29DC5319008A0D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD305E829CDE8EA00C3531F /* PhotoRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6AD305D729CDE89A00C3531F /* Debug */ = {
+		6AE1304529DC5319008A0D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -227,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		6AD305D829CDE89A00C3531F /* Release */ = {
+		6AE1304629DC5319008A0D29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,10 +275,9 @@
 			};
 			name = Release;
 		};
-		6AD305DA29CDE89A00C3531F /* Debug */ = {
+		6AE1304829DC5319008A0D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -305,20 +295,18 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoRepository;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.BaseDependencyRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6AD305DB29CDE89A00C3531F /* Release */ = {
+		6AE1304929DC5319008A0D29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -336,7 +324,7 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.PhotoRepository;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghdps.BaseDependencyRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -348,25 +336,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AD305CC29CDE89A00C3531F /* Build configuration list for PBXProject "PhotoRepository" */ = {
+		6AE1303A29DC5319008A0D29 /* Build configuration list for PBXProject "BaseDependencyRepository" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD305D729CDE89A00C3531F /* Debug */,
-				6AD305D829CDE89A00C3531F /* Release */,
+				6AE1304529DC5319008A0D29 /* Debug */,
+				6AE1304629DC5319008A0D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD305D929CDE89A00C3531F /* Build configuration list for PBXNativeTarget "PhotoRepository" */ = {
+		6AE1304729DC5319008A0D29 /* Build configuration list for PBXNativeTarget "BaseDependencyRepository" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AD305DA29CDE89A00C3531F /* Debug */,
-				6AD305DB29CDE89A00C3531F /* Release */,
+				6AE1304829DC5319008A0D29 /* Debug */,
+				6AE1304929DC5319008A0D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6AD305C929CDE89A00C3531F /* Project object */;
+	rootObject = 6AE1303729DC5319008A0D29 /* Project object */;
 }

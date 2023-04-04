@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		6AD305C329CDE33500C3531F /* PhotoManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305C229CDE33500C3531F /* PhotoManager.framework */; };
 		6AD550A929C6D24D0035A8C5 /* CoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD550A829C6D24D0035A8C5 /* CoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD550F029C701D40035A8C5 /* RESTAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550EF29C701D40035A8C5 /* RESTAPI.framework */; };
 		6AD550F429C701D90035A8C5 /* DALLEAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550F329C701D90035A8C5 /* DALLEAPI.framework */; };
+		6AE1306229DC566C008A0D29 /* RESTAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD550EF29C701D40035A8C5 /* RESTAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			files = (
 				6AD305C329CDE33500C3531F /* PhotoManager.framework in Frameworks */,
 				6AD550F429C701D90035A8C5 /* DALLEAPI.framework in Frameworks */,
-				6AD550F029C701D40035A8C5 /* RESTAPI.framework in Frameworks */,
+				6AE1306229DC566C008A0D29 /* RESTAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AD305F629CDEB7800C3531F /* PhotoRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD305F529CDEB7800C3531F /* PhotoRepository.framework */; };
 		6AD5510829C7340D0035A8C5 /* Features.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD5510729C7340D0035A8C5 /* Features.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AD5511029C7341D0035A8C5 /* FeatureDALLERepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */; };
+		6AE1303029DC527D008A0D29 /* FeatureDALLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1302F29DC527D008A0D29 /* FeatureDALLE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +16,7 @@
 		6AD5510429C7340D0035A8C5 /* Features.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Features.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5510729C7340D0035A8C5 /* Features.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Features.h; sourceTree = "<group>"; };
 		6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLERepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1302F29DC527D008A0D29 /* FeatureDALLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,8 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD5511029C7341D0035A8C5 /* FeatureDALLERepository.framework in Frameworks */,
-				6AD305F629CDEB7800C3531F /* PhotoRepository.framework in Frameworks */,
+				6AE1303029DC527D008A0D29 /* FeatureDALLE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +59,7 @@
 		6AD5510E29C7341C0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AE1302F29DC527D008A0D29 /* FeatureDALLE.framework */,
 				6AD305F529CDEB7800C3531F /* PhotoRepository.framework */,
 				6AD5510F29C7341D0035A8C5 /* FeatureDALLERepository.framework */,
 			);

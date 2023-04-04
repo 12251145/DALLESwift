@@ -44,6 +44,8 @@
 		6AD5518229C74C650035A8C5 /* RepositoryInjectManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */; };
 		6AE1300729DB10BE008A0D29 /* EditMaskDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */; };
 		6AE1300A29DB10C8008A0D29 /* EditMaskUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */; };
+		6AE1303429DC5294008A0D29 /* FeatureDALLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1303329DC5294008A0D29 /* FeatureDALLE.framework */; };
+		6AE1305C29DC538E008A0D29 /* BaseDependencyRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1305B29DC538E008A0D29 /* BaseDependencyRepository.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +101,8 @@
 		6AD5518129C74C650035A8C5 /* RepositoryInjectManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RepositoryInjectManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditMaskDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditMaskUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1303329DC5294008A0D29 /* FeatureDALLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureDALLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE1305B29DC538E008A0D29 /* BaseDependencyRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseDependencyRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +112,13 @@
 			files = (
 				6AD305F329CDEB3100C3531F /* PhotoManager.framework in Frameworks */,
 				6AD5513F29C7375A0035A8C5 /* BaseDependencyDomain.framework in Frameworks */,
+				6AE1305C29DC538E008A0D29 /* BaseDependencyRepository.framework in Frameworks */,
 				6AD5515429C737B60035A8C5 /* DALLEAPI.framework in Frameworks */,
 				6AD5515729C737C40035A8C5 /* CoreKit.framework in Frameworks */,
 				6AD5513C29C737490035A8C5 /* FeatureDALLEDomain.framework in Frameworks */,
 				6AD5513929C737400035A8C5 /* FeatureDALLERepository.framework in Frameworks */,
 				6AD5515929C738AF0035A8C5 /* Features.framework in Frameworks */,
+				6AE1303429DC5294008A0D29 /* FeatureDALLE.framework in Frameworks */,
 				6A6AFA2429CD504200B44FE8 /* PhotoPickerUserInterface.framework in Frameworks */,
 				6AD5514E29C7379A0035A8C5 /* Util.framework in Frameworks */,
 				6AE1300A29DB10C8008A0D29 /* EditMaskUserInterface.framework in Frameworks */,
@@ -166,6 +172,8 @@
 		6AD5513329C7344A0035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AE1305B29DC538E008A0D29 /* BaseDependencyRepository.framework */,
+				6AE1303329DC5294008A0D29 /* FeatureDALLE.framework */,
 				6AE1300929DB10C8008A0D29 /* EditMaskUserInterface.framework */,
 				6AE1300629DB10BE008A0D29 /* EditMaskDomain.framework */,
 				6A78EB6329D67F5D00994F8B /* UIThirdPartyLibraryManager.framework */,

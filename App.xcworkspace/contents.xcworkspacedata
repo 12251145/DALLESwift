@@ -11,47 +11,69 @@
       location = "group:Features/Features.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:PhotoRepository/PhotoRepository.xcodeproj">
+      location = "group:FeatureDALLE/FeatureDALLE.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:FeatureDALLERepository/FeatureDALLERepository.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:BaseDependencyDomain/BaseDependencyDomain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:PhotoPickerDomain/PhotoPickerDomain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:EditMaskDomain/EditMaskDomain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:EditMaskUserInterface/EditMaskUserInterface.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:CoreKit/CoreKit.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:PhotoManager/PhotoManager.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:DALLEAPI/DALLEAPI.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:RESTAPI/RESTAPI.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Repository">
+      <FileRef
+         location = "group:PhotoRepository/PhotoRepository.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:FeatureDALLERepository/FeatureDALLERepository.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:BaseDependencyRepository/BaseDependencyRepository.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Domain">
+      <FileRef
+         location = "group:BaseDependencyDomain/BaseDependencyDomain.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:FeatureDALLEDomain/FeatureDALLEDomain.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PhotoPickerDomain/PhotoPickerDomain.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:EditMaskDomain/EditMaskDomain.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "UserInterface">
+      <FileRef
+         location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:EditMaskUserInterface/EditMaskUserInterface.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "CoreKit">
+      <FileRef
+         location = "group:CoreKit/CoreKit.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PhotoManager/PhotoManager.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:DALLEAPI/DALLEAPI.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:RESTAPI/RESTAPI.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:RxPackage/RxPackage.xcodeproj">
    </FileRef>
