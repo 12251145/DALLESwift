@@ -34,6 +34,12 @@ public final class ImageResultViewController: UIViewController {
     
     private var imageResultView = ImageResultView()
     
+    private var imageCellRegistration = UICollectionView.CellRegistration<GeneratedImageCell, UIImage> { cell, _, image in
+        cell.configure(with: image)
+    }
+    
+    private var images: [UIImage] = []
+    
     public override func loadView() {
         self.view = imageResultView
     }
@@ -43,6 +49,7 @@ public final class ImageResultViewController: UIViewController {
         view.backgroundColor = .white
         
         self.isModalInPresentation = true
+        self.imageResultView.imageCollectionView.dataSource = self
         
         bindAction()
         bindState()
@@ -55,8 +62,28 @@ public final class ImageResultViewController: UIViewController {
     func bindState() {
         listener?.presentableState
             .map(\.images)
-            .map { $0.first }
-            .bind(to: imageResultView.imageView.rx.image)
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] images in
+                self?.images = images
+                self?.imageResultView.imageCollectionView.reloadData()
+            })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - CollectionView DataSource
+extension ImageResultViewController: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let item = images[indexPath.item]
+        
+        return collectionView.dequeueConfiguredReusableCell(
+            using: imageCellRegistration,
+            for: indexPath,
+            item: item
+        )
     }
 }

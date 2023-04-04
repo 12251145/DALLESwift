@@ -20,7 +20,7 @@ public struct DALLERepositoryImpl: DALLERepository {
     }
     
     private let dallEApi: DALLEAPI
-    private let apiKey: String = "apiKey"
+    private let apiKey: String = "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"
     public init(dallEApi: DALLEAPI) {
         self.dallEApi = dallEApi
     }
@@ -107,7 +107,7 @@ public struct DALLERepositoryImpl: DALLERepository {
             .init(
                 prompt: prompt,
                 image: data,
-                n: 1,
+                n: 3,
                 size: .high,
                 apiKey: apiKey
             )

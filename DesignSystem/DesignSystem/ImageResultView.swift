@@ -9,23 +9,15 @@ import PinLayout
 import UIKit
 
 final public class ImageResultView: UIView {
-    public private(set) var imageView: UIImageView = {
-        let imageView = UIImageView()
-        
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerCurve = .continuous
-        imageView.layer.cornerRadius = 15
-        imageView.backgroundColor = .systemGray6
-        imageView.clipsToBounds = true
-        
-        return imageView
-    }()
+
+    public private(set) var imageCollectionView = CenteredPagingCollectionView(width: 300, height: 300)
     
     public init() {
         super.init(frame: .zero)
         
-        backgroundColor = .white
-        addSubview(imageView)
+        imageCollectionView.delaysContentTouches = false
+        backgroundColor = .white        
+        addSubview(imageCollectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +26,7 @@ final public class ImageResultView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
-        imageView.pin.hCenter().vCenter(-10%).width(200).height(200)
+                
+        imageCollectionView.pin.vCenter(-15%).left().right().height(300)
     }
 }
