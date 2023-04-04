@@ -15,6 +15,7 @@ public enum PresentationAction {
     case imageButtonTap
     case imageXButtonTap
     case editMaskButtonTap
+    case nChanged(n: Int)
 }
 
 public struct PresentationState {
@@ -26,6 +27,7 @@ public struct PresentationState {
     var imageProcessing: Bool
     var pngData: Data?
     var maskPngData: Data?
+    var n: Int
         
     public init(
         image: UIImage? = nil,
@@ -35,7 +37,8 @@ public struct PresentationState {
         keyBoardHeight: CGFloat = 0,
         imageProcessing: Bool = false,
         pngData: Data? = nil,
-        maskPngData: Data? = nil
+        maskPngData: Data? = nil,
+        n: Int = 1
     ) {
         
         self.image = image
@@ -46,6 +49,7 @@ public struct PresentationState {
         self.imageProcessing = imageProcessing
         self.pngData = pngData
         self.maskPngData = maskPngData
+        self.n = n
     }
 }
 

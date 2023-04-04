@@ -17,6 +17,7 @@ public enum FeatureDALLEPresentableAction {
     case imageButtonTap
     case imageXButtonTap
     case editMaskButtonTap
+    case nChanged(n: Int)
 }
 
 public struct FeatureDALLEPresentableState {
@@ -28,6 +29,7 @@ public struct FeatureDALLEPresentableState {
     var imageProcessing: Bool
     var pngData: Data?
     var maskPngData: Data?
+    var n: Int
     
     public init(
         image: UIImage? = nil,
@@ -37,7 +39,8 @@ public struct FeatureDALLEPresentableState {
         keyBoardHeight: CGFloat = 0,
         imageProcessing: Bool = false,
         pngData: Data? = nil,
-        maskPngData: Data? = nil
+        maskPngData: Data? = nil,
+        n: Int = 1
     ) {
         
         self.image = image
@@ -48,6 +51,7 @@ public struct FeatureDALLEPresentableState {
         self.imageProcessing = imageProcessing
         self.pngData = pngData
         self.maskPngData = maskPngData
+        self.n = n
     }
 }
 
@@ -107,6 +111,12 @@ public final class FeatureDALLEViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.listener?.action(.imageXButtonTap)
             })
+            .disposed(by: disposeBag)
+        
+        generateView.nStepper.stepper.rx.value
+            .subscribe { value in
+                self.listener?.action(.nChanged(n: Int(value)))
+            }
             .disposed(by: disposeBag)
     }
     

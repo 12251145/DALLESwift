@@ -87,16 +87,17 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                     if let currentState = self?.stateRelay.value {
                         
                         if currentState.mask == nil {
+
                             self?.router?.routeToImageResult(
                                 prompt: currentState.prompt,
-                                n: 1,
+                                n: currentState.n,
                                 image: currentState.pngData,
                                 masked: false
                             )
                         } else {
                             self?.router?.routeToImageResult(
                                 prompt: currentState.prompt,
-                                n: 1,
+                                n: currentState.n,
                                 image: currentState.maskPngData,
                                 masked: true
                             )
@@ -120,6 +121,12 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                         } else if let image = currentState.image {
                             self?.router?.routeToEditMask(image: image)
                         }
+                    }
+                    
+                case .nChanged(let n):
+                    if var currentState = self?.stateRelay.value {
+                        currentState.n = n
+                        self?.stateRelay.accept(currentState)
                     }
                 }
             })

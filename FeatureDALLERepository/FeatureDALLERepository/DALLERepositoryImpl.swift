@@ -20,7 +20,7 @@ public struct DALLERepositoryImpl: DALLERepository {
     }
     
     private let dallEApi: DALLEAPI
-    private let apiKey: String = "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"
+    private let apiKey: String = "apiKey"
     public init(dallEApi: DALLEAPI) {
         self.dallEApi = dallEApi
     }
@@ -39,11 +39,11 @@ public struct DALLERepositoryImpl: DALLERepository {
         
         switch requestKind {
         case .promptOnly(let prompt):
-            images = try await requestPromptOnly(prompt)
+            images = try await requestPromptOnly(prompt, n)
         case .variation(let data):
-            images = try await requestVariation(data)
+            images = try await requestVariation(data, n)
         case .edit(let prompt, let data):
-            images = try await requestImageEdit(prompt, data)
+            images = try await requestImageEdit(prompt, data, n)
         case .unknown:
             break
         }
@@ -67,7 +67,7 @@ public struct DALLERepositoryImpl: DALLERepository {
         return .unknown
     }
     
-    private func requestPromptOnly(_ prompt: String) async throws -> [UIImage] {
+    private func requestPromptOnly(_ prompt: String, _ n: Int) async throws -> [UIImage] {
         var images: [UIImage] = []
         let result = try await dallEApi.createImage(
             .init(
@@ -83,7 +83,7 @@ public struct DALLERepositoryImpl: DALLERepository {
         return images
     }
     
-    private func requestVariation(_ data: FormData) async throws -> [UIImage] {
+    private func requestVariation(_ data: FormData, _ n: Int) async throws -> [UIImage] {
         var images: [UIImage] = []
         
         let result = try await dallEApi.variationImage(
@@ -100,7 +100,7 @@ public struct DALLERepositoryImpl: DALLERepository {
         return images
     }
     
-    public func requestImageEdit(_ prompt: String, _ data: FormData) async throws -> [UIImage] {
+    public func requestImageEdit(_ prompt: String, _ data: FormData, _ n: Int) async throws -> [UIImage] {
         var images: [UIImage] = []
 
         let result = try await dallEApi.editImage(

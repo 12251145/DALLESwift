@@ -8,6 +8,7 @@
 import RIBs
 import RxRelay
 import RxSwift
+import UIKit
 
 public protocol ImageResultRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -76,6 +77,10 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
             .subscribe(onNext: { action in
                 switch action {
                 case .viewDidLoad:
+                    let dummies = [UIImage](repeating: UIImage(), count: self.n)
+                    var state = self.stateRelay.value
+                    state.images = dummies
+                    self.stateRelay.accept(state)
                     
                     Task {
                         do {

@@ -41,6 +41,8 @@ public final class CenteredPagingCollectionView: UICollectionView {
         }
         
         super.init(frame: .zero, collectionViewLayout: layout)
+        
+        self.alwaysBounceVertical = false
     }
     
     required init?(coder: NSCoder) {
