@@ -15,7 +15,7 @@ public struct DALLERepositoryImpl: DALLERepository {
     private enum RequestKind {
         case promptOnly(prompt: String)
         case variation(data: FormData)
-        case edit
+        case edit(prompt: String, data: FormData)
         case unknown
     }
     
@@ -42,8 +42,8 @@ public struct DALLERepositoryImpl: DALLERepository {
             images = try await requestPromptOnly(prompt)
         case .variation(let data):
             images = try await requestVariation(data)
-        case .edit:
-            break
+        case .edit(let prompt, let data):
+            images = try await requestImageEdit(prompt, data)
         case .unknown:
             break
         }
@@ -60,15 +60,15 @@ public struct DALLERepositoryImpl: DALLERepository {
             return .variation(data: image)
         }
         
-        if prompt != nil && image != nil && masked {
-            return .edit
+        if let prompt, let image, masked {
+            return .edit(prompt: prompt, data: image)
         }
         
         return .unknown
     }
     
     private func requestPromptOnly(_ prompt: String) async throws -> [UIImage] {
-        var images: [UIImage?] = []
+        var images: [UIImage] = []
         let result = try await dallEApi.createImage(
             .init(
                 prompt: prompt,
@@ -78,20 +78,13 @@ public struct DALLERepositoryImpl: DALLERepository {
             )
         )
         
-        result.forEach { format in
-            let base64String = format.base64Json
-            if let imageData = Data(base64Encoded: base64String) {
-                images.append(UIImage(data: imageData))
-            } else {
-                print("Base64 decoding failed!")
-            }
-        }
+        images = base64DecodedImages(result)
         
-        return images.compactMap { $0 }
+        return images
     }
     
     private func requestVariation(_ data: FormData) async throws -> [UIImage] {
-        var images: [UIImage?] = []
+        var images: [UIImage] = []
         
         let result = try await dallEApi.variationImage(
             .init(
@@ -102,6 +95,32 @@ public struct DALLERepositoryImpl: DALLERepository {
             )
         )
 
+        images = base64DecodedImages(result)
+        
+        return images
+    }
+    
+    public func requestImageEdit(_ prompt: String, _ data: FormData) async throws -> [UIImage] {
+        var images: [UIImage] = []
+
+        let result = try await dallEApi.editImage(
+            .init(
+                prompt: prompt,
+                image: data,
+                n: 1,
+                size: .high,
+                apiKey: apiKey
+            )
+        )
+
+        images = base64DecodedImages(result)
+        
+        return images
+    }
+    
+    private func base64DecodedImages(_ result: [ResponseFormat]) -> [UIImage] {
+        var images: [UIImage?] = []
+        
         result.forEach { format in
             let base64String = format.base64Json
             if let imageData = Data(base64Encoded: base64String) {

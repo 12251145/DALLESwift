@@ -15,6 +15,7 @@
 		6AD550E729C6F7430035A8C5 /* DALLEAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD550E629C6F7430035A8C5 /* DALLEAPIResponse.swift */; };
 		6AD550E929C6F7A00035A8C5 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD550E829C6F7A00035A8C5 /* ImageSize.swift */; };
 		6AD550ED29C6FF020035A8C5 /* ResponseFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD550EC29C6FF020035A8C5 /* ResponseFormat.swift */; };
+		6AE1300D29DBC2B1008A0D29 /* DALLEImageEditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1300C29DBC2B1008A0D29 /* DALLEImageEditRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6AD550E629C6F7430035A8C5 /* DALLEAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEAPIResponse.swift; sourceTree = "<group>"; };
 		6AD550E829C6F7A00035A8C5 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		6AD550EC29C6FF020035A8C5 /* ResponseFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormat.swift; sourceTree = "<group>"; };
+		6AE1300C29DBC2B1008A0D29 /* DALLEImageEditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEImageEditRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				6AD550E229C6F54E0035A8C5 /* DALLEAPI.swift */,
 				6AD550E429C6F7390035A8C5 /* DALLECreateImageRequest.swift */,
 				6A78EB6829D6B04200994F8B /* DALLEVariationImageRequest.swift */,
+				6AE1300C29DBC2B1008A0D29 /* DALLEImageEditRequest.swift */,
 				6AD550E629C6F7430035A8C5 /* DALLEAPIResponse.swift */,
 			);
 			path = DALLEAPI;
@@ -165,6 +168,7 @@
 				6AD550E529C6F7390035A8C5 /* DALLECreateImageRequest.swift in Sources */,
 				6AD550ED29C6FF020035A8C5 /* ResponseFormat.swift in Sources */,
 				6AD550E329C6F54E0035A8C5 /* DALLEAPI.swift in Sources */,
+				6AE1300D29DBC2B1008A0D29 /* DALLEImageEditRequest.swift in Sources */,
 				6AD550E729C6F7430035A8C5 /* DALLEAPIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,4 +43,20 @@ public final class DALLEAPI {
         
         return response.data
     }
+    
+    public func editImage(_ request: DALLEImageEditRequest) async throws -> [ResponseFormat] {
+
+        let response: DALLEAPIResponse = try await httpNetwork.requestWithMultiPartFormData(
+            endPoint: .init(
+                method: .post,
+                url: baseURL,
+                pathComponents: request.pathComponents,
+                headers: request.headers,
+                requestBody: request.body,
+                boundary: request.boundary
+            )
+        )
+        
+        return response.data
+    }
 }
