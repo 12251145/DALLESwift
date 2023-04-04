@@ -29,12 +29,12 @@ public struct DALLERepositoryImpl: DALLERepository {
         prompt: String?,
         n: Int,
         pngData: Data,
-        mask: String?
+        masked: Bool
     ) async throws -> [UIImage] {
         
         let image = FormData(data: pngData, mimeType: "png", fileName: "image")
         
-        let requestKind = requestKind(prompt: prompt, image: image, mask: mask)
+        let requestKind = requestKind(prompt: prompt, image: image, masked: masked)
         var images: [UIImage] = []
         
         switch requestKind {
@@ -51,16 +51,16 @@ public struct DALLERepositoryImpl: DALLERepository {
         return images
     }
     
-    private func requestKind(prompt: String?, image: FormData?, mask: String?) -> RequestKind {
-        if let prompt, image == nil, mask == nil {
+    private func requestKind(prompt: String?, image: FormData?, masked: Bool) -> RequestKind {
+        if let prompt, image == nil, !masked {
             return .promptOnly(prompt: prompt)
         }
         
-        if let image, !prompt.notNilNotEmpty() {
+        if let image, !prompt.notNilNotEmpty(), !masked {
             return .variation(data: image)
         }
         
-        if prompt != nil && image != nil && mask != nil {
+        if prompt != nil && image != nil && masked {
             return .edit
         }
         

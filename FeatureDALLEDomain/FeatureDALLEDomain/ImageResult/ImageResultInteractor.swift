@@ -37,7 +37,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
     private var prompt: String?
     private var n: Int
     private var image: Data?
-    private var mask: String?
+    private var masked: Bool
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
@@ -47,7 +47,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
         prompt: String?,
         n: Int,
         image: Data?,
-        mask: String?
+        masked: Bool
     ) {
         self.generateImageUseCase = generateImageUseCase
         self.stateRelay = .init(value: .init())
@@ -55,7 +55,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
         self.prompt = prompt
         self.n = n
         self.image = image
-        self.mask = mask
+        self.masked = masked
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -85,7 +85,7 @@ final class ImageResultInteractor: PresentableInteractor<ImageResultPresentable>
                                 prompt: self.prompt,
                                 n: self.n,
                                 pngData: image,
-                                mask: self.mask
+                                masked: self.masked
                             )
                             
                             var newState = self.stateRelay.value

@@ -25,6 +25,7 @@ public struct PresentationState {
     var keyBoardHeight: CGFloat
     var imageProcessing: Bool
     var pngData: Data?
+    var maskPngData: Data?
         
     public init(
         image: UIImage? = nil,
@@ -33,15 +34,18 @@ public struct PresentationState {
         generateButtonEnabled: Bool = false,
         keyBoardHeight: CGFloat = 0,
         imageProcessing: Bool = false,
-        pngData: Data? = nil) {
+        pngData: Data? = nil,
+        maskPngData: Data? = nil
+    ) {
         
-            self.image = image
-            self.mask = mask
-            self.prompt = prompt
-            self.generateButtonEnabled = generateButtonEnabled
-            self.keyBoardHeight = keyBoardHeight
-            self.imageProcessing = imageProcessing
-            self.pngData = pngData
+        self.image = image
+        self.mask = mask
+        self.prompt = prompt
+        self.generateButtonEnabled = generateButtonEnabled
+        self.keyBoardHeight = keyBoardHeight
+        self.imageProcessing = imageProcessing
+        self.pngData = pngData
+        self.maskPngData = maskPngData
     }
 }
 

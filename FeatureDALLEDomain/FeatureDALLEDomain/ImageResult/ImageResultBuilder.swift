@@ -26,7 +26,7 @@ public protocol ImageResultBuildable: Buildable {
         prompt: String?,
         n: Int,
         image: Data?,
-        mask: String?
+        masked: Bool
     ) -> ImageResultRouting
 }
 
@@ -41,7 +41,7 @@ public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResu
         prompt: String?,
         n: Int,
         image: Data?,
-        mask: String?
+        masked: Bool
     ) -> ImageResultRouting {
         let component = ImageResultComponent(dependency: dependency)
         let viewController = ImageResultPresenter()
@@ -51,7 +51,7 @@ public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResu
             prompt: prompt,
             n: n,
             image: image,
-            mask: mask
+            masked: masked
         )
         interactor.listener = listener
         return ImageResultRouter(interactor: interactor, viewController: viewController)

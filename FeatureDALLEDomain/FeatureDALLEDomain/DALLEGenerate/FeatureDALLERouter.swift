@@ -48,8 +48,8 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
             interactor.router = self
         }
     
-    func routeToImageResult(prompt: String? , n: Int, image: Data?, mask: String?) {
-        let router = imageResultBuilder.build(withListener: interactor, prompt: prompt, n: n, image: image, mask: mask)
+    func routeToImageResult(prompt: String? , n: Int, image: Data?, masked: Bool) {
+        let router = imageResultBuilder.build(withListener: interactor, prompt: prompt, n: n, image: image, masked: masked)
         imageRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .automatic)
