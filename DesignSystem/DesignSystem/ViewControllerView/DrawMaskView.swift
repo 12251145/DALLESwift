@@ -48,7 +48,7 @@ public final class DrawMaskView: UIView {
     
     public func maskedImage() -> UIImage? {
         guard let originImage else { return nil }
-        UIGraphicsBeginImageContext(originImage.size)
+        UIGraphicsBeginImageContextWithOptions(originImage.size, false, 0.0)
         imageView.image?.draw(in: .init(origin: .zero, size: originImage.size), blendMode: .normal, alpha: 1.0)
         tempImageView.image?.draw(in: .init(origin: .zero, size: originImage.size), blendMode: .destinationOut, alpha: 1.0)
         
@@ -93,7 +93,9 @@ public final class DrawMaskView: UIView {
           drawLine(from: lastPoint, to: lastPoint)
         }
 
-        UIGraphicsBeginImageContext(tempImageView.frame.size)
+        UIGraphicsBeginImageContextWithOptions(tempImageView.frame.size, false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        context?.interpolationQuality = .high
         tempImageView.image?.draw(in: tempImageView.bounds, blendMode: .normal, alpha: 1.0)
         drawImageView.image?.draw(in: tempImageView.bounds, blendMode: .normal, alpha: 1.0)
         
@@ -104,9 +106,10 @@ public final class DrawMaskView: UIView {
     }
     
     private func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        UIGraphicsBeginImageContext(drawImageView.bounds.size)
+        UIGraphicsBeginImageContextWithOptions(drawImageView.bounds.size, false, 0.0)
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.interpolationQuality = .high
         drawImageView.image?.draw(in: drawImageView.bounds)
         
         context.move(to: fromPoint)

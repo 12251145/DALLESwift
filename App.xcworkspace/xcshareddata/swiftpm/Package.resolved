@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "kimageeraser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/12251145/KImageEraser.git",
+      "state" : {
+        "revision" : "5c141b7c84e734a4e6174b6b24da4ee7c036d628",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "mantis",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/guoyingtao/Mantis.git",

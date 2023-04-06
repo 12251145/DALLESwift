@@ -15,18 +15,17 @@ import UIKit
 import Util
 
 public protocol FeatureDALLERouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    
     func routeToImageResult(prompt: String?, n: Int, image: Data?, masked: Bool)
     func routeToPhotoPicker()
-    func routeToEditMask(image: UIImage)
     
     func detachPhotoPicker()
-    func detachEditMask()
 }
 
 public protocol FeatureDALLEPresentable: Presentable {
     var listener: FeatureDALLEPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    
+    func presentImageEraser(with image: UIImage)
 }
 
 public protocol FeatureDALLEListener: AnyObject {
@@ -117,9 +116,9 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 case .editMaskButtonTap:
                     if let currentState = self?.stateRelay.value {
                         if let mask = currentState.mask {
-                            self?.router?.routeToEditMask(image: mask)
+                            self?.presenter.presentImageEraser(with: mask)
                         } else if let image = currentState.image {
-                            self?.router?.routeToEditMask(image: image)
+                            self?.presenter.presentImageEraser(with: image)                            
                         }
                     }
                     
@@ -135,10 +134,6 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     func detachPhotoPicker() {
         router?.detachPhotoPicker()
-    }
-    
-    func detachEditMask() {
-        router?.detachEditMask()
     }
     
     func setImage(_ image: UIImage) {
@@ -188,21 +183,6 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             
         }
         
-    }
-    
-    
-    func setMaskedImage(_ image: UIImage?) {
-        var newState = stateRelay.value
-        newState.generateButtonEnabled = false
-        stateRelay.accept(newState)
-        
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            var completeState = newState
-            completeState.mask = image
-            completeState.maskPngData = image?.pngData()
-            completeState.generateButtonEnabled = true
-            self?.stateRelay.accept(completeState)
-        }
     }
     
     func observeKeyboard() {

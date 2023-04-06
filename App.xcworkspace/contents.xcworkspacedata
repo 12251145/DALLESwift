@@ -33,9 +33,6 @@
       location = "group:UserInterface"
       name = "UserInterface">
       <FileRef
-         location = "group:EditMaskUserInterface/EditMaskUserInterface.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
       </FileRef>
       <FileRef
@@ -56,9 +53,6 @@
       </FileRef>
       <FileRef
          location = "group:BaseDependencyDomain/BaseDependencyDomain.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:EditMaskDomain/EditMaskDomain.xcodeproj">
       </FileRef>
    </Group>
    <Group

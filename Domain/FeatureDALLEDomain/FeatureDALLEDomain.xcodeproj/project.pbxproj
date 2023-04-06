@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6A6AF96429CC551400B44FE8 /* ImageResultUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AF96329CC551400B44FE8 /* ImageResultUserInterface.framework */; };
 		6A6AFA1D29CD502100B44FE8 /* PhotoPickerDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA1C29CD502100B44FE8 /* PhotoPickerDomain.framework */; };
-		6A78EBF629DA87AC00994F8B /* EditMaskDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EBF529DA87AC00994F8B /* EditMaskDomain.framework */; };
 		6AD54E0F29C2F0280035A8C5 /* FeatureDALLEDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD54E0E29C2F0280035A8C5 /* FeatureDALLEDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD54E1629C2F0310035A8C5 /* FeatureDALLEUserInterface.framework */; };
 		6AD54E1B29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54E1A29C2F0C90035A8C5 /* FeatureDALLEStateAction.swift */; };
@@ -67,7 +66,6 @@
 				6A6AF96429CC551400B44FE8 /* ImageResultUserInterface.framework in Frameworks */,
 				6AD54E1729C2F0310035A8C5 /* FeatureDALLEUserInterface.framework in Frameworks */,
 				6A6AFA1D29CD502100B44FE8 /* PhotoPickerDomain.framework in Frameworks */,
-				6A78EBF629DA87AC00994F8B /* EditMaskDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

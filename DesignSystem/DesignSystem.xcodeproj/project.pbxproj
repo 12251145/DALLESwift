@@ -18,6 +18,7 @@
 		6A6AF9DF29CC78E700B44FE8 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9DE29CC78E700B44FE8 /* PhotoPickerView.swift */; };
 		6A6AF9E529CD3A2C00B44FE8 /* XButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AF9E429CD3A2B00B44FE8 /* XButton.swift */; };
 		6A78EBFC29DAACE300994F8B /* DrawMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78EBFB29DAACE300994F8B /* DrawMaskView.swift */; };
+		6AADAAE429DEF3FC00EC2527 /* UIThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AADAAE329DEF3FC00EC2527 /* UIThirdPartyLibraryManager.framework */; };
 		6ACE540129D3DD3A00DC547D /* UIView+setAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE540029D3DD3900DC547D /* UIView+setAnchorPoint.swift */; };
 		6ACE540329D3EC1400DC547D /* SFSymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE540229D3EC1400DC547D /* SFSymbolButton.swift */; };
 		6AD305FC29CE823F00C3531F /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD305FB29CE823E00C3531F /* RectangleButton.swift */; };
@@ -45,6 +46,7 @@
 		6A6AF9DE29CC78E700B44FE8 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
 		6A6AF9E429CD3A2B00B44FE8 /* XButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XButton.swift; sourceTree = "<group>"; };
 		6A78EBFB29DAACE300994F8B /* DrawMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawMaskView.swift; sourceTree = "<group>"; };
+		6AADAAE329DEF3FC00EC2527 /* UIThirdPartyLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIThirdPartyLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE540029D3DD3900DC547D /* UIView+setAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setAnchorPoint.swift"; sourceTree = "<group>"; };
 		6ACE540229D3EC1400DC547D /* SFSymbolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolButton.swift; sourceTree = "<group>"; };
 		6AD305FB29CE823E00C3531F /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD54EA429C46C0C0035A8C5 /* Util.framework in Frameworks */,
+				6AADAAE429DEF3FC00EC2527 /* UIThirdPartyLibraryManager.framework in Frameworks */,
 				6AD54D9B29C2AB630035A8C5 /* PinLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +114,7 @@
 		6AD54E8C29C454A10035A8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AADAAE329DEF3FC00EC2527 /* UIThirdPartyLibraryManager.framework */,
 				6AD54EA329C46C0C0035A8C5 /* Util.framework */,
 			);
 			name = Frameworks;

@@ -26,6 +26,10 @@ public final class FeatureDALLEPresenter: FeatureDALLEPresentable, FeatureDALLEV
     private var listenerMapper: FeatureDALLEPresentableListenerMapper?
     
     init() {}
+    
+    public func presentImageEraser(with image: UIImage) {
+        viewController.presentImageEraser(with: image)
+    }
 }
 
 private final class FeatureDALLEPresentableListenerMapper: FeatureDALLEUserInterface.FeatureDALLEPresentableListener, FeatureDALLEPresentableListener {

@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import KImageEraser
 import PinLayout
 import RxCocoa
 import RxSwift
@@ -82,6 +83,14 @@ public final class FeatureDALLEViewController: UIViewController {
         setupHideKeyboardOnTap()
     }
     
+    public func presentImageEraser(with image: UIImage) {
+        let imageEraser = KImageEraserViewController(image: image)
+        imageEraser.delegate = self
+        imageEraser.modalPresentationStyle = .fullScreen
+        
+        self.present(imageEraser, animated: true)
+    }
+    
     func bindAction() {
         generateView.promptView.promptTextView.rx.text
             .subscribe(onNext: { [weak self] text in
@@ -152,15 +161,16 @@ public final class FeatureDALLEViewController: UIViewController {
                 self?.generateView.setProcessing(isProcessing)
             })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - ImageEraserDelegate
+extension FeatureDALLEViewController: KImageEraserViewControllerDelegate {
+    public func imageEraserViewControllerDoneImageErase(_ viewController: KImageEraser.KImageEraserViewController, image: UIImage) {
         
-        listener?.presentableState
-            .asDriver(onErrorJustReturn: .init())
-            .map(\.mask)
-            .map({ $0 != nil })
-            .drive(onNext: { [weak self] maskOn in
-                self?.generateView.maskOn(maskOn)
-            })
-            .disposed(by: disposeBag)
-        
+    }
+    
+    public func imageEraserViewControllerCloseButtonDidTap(_ viewController: KImageEraser.KImageEraserViewController) {
+        viewController.dismiss(animated: true)
     }
 }

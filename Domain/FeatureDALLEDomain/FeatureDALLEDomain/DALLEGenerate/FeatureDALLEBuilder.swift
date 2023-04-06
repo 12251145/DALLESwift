@@ -7,7 +7,6 @@
 
 import BaseDependencyDomain
 import PhotoPickerDomain
-import EditMaskDomain
 import RIBs
 
 public protocol FeatureDALLEDependency: Dependency {
@@ -15,7 +14,7 @@ public protocol FeatureDALLEDependency: Dependency {
     // created by this RIB.
 }
 
-final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResultDependency, PhotoPickerDependency, EditMaskDependency {
+final class FeatureDALLEComponent: Component<FeatureDALLEDependency>, ImageResultDependency, PhotoPickerDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -40,8 +39,7 @@ public final class FeatureDALLEBuilder: Builder<FeatureDALLEDependency>, Feature
         
         let imageResultBuilder = ImageResultBuilder(dependency: component)
         let photoPickerBuilder = PhotoPickerBuilder(dependency: component)
-        let editMaskBuilder = EditMaskBuilder(dependency: component)
         
-        return FeatureDALLERouter(imageResultBuilder: imageResultBuilder, photoPickerBuilder: photoPickerBuilder, editMaskBuilder: editMaskBuilder, interactor: interactor, viewController: viewController)
+        return FeatureDALLERouter(imageResultBuilder: imageResultBuilder, photoPickerBuilder: photoPickerBuilder, interactor: interactor, viewController: viewController)
     }
 }

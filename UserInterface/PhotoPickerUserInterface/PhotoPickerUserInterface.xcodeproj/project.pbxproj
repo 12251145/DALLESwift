@@ -11,7 +11,6 @@
 		6A6AFA0F29CD4FC600B44FE8 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AFA0E29CD4FC600B44FE8 /* PhotoPickerViewController.swift */; };
 		6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2729CD505500B44FE8 /* DesignSystem.framework */; };
 		6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6AFA2B29CD505A00B44FE8 /* RxPackage.framework */; };
-		6A78EB6029D6798000994F8B /* UIThirdPartyLibraryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78EB5F29D6798000994F8B /* UIThirdPartyLibraryManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6AFA2829CD505500B44FE8 /* DesignSystem.framework in Frameworks */,
-				6A78EB6029D6798000994F8B /* UIThirdPartyLibraryManager.framework in Frameworks */,
 				6A6AFA2C29CD505A00B44FE8 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
