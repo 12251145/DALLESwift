@@ -30,16 +30,16 @@
       </FileRef>
    </Group>
    <Group
-      location = "group:UserInterface"
-      name = "UserInterface">
+      location = "group:Repository"
+      name = "Repository">
       <FileRef
-         location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
+         location = "group:BaseDependencyRepository/BaseDependencyRepository.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
+         location = "group:FeatureDALLERepository/FeatureDALLERepository.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
+         location = "group:PhotoRepository/PhotoRepository.xcodeproj">
       </FileRef>
    </Group>
    <Group
@@ -56,16 +56,16 @@
       </FileRef>
    </Group>
    <Group
-      location = "group:Repository"
-      name = "Repository">
+      location = "group:UserInterface"
+      name = "UserInterface">
       <FileRef
-         location = "group:BaseDependencyRepository/BaseDependencyRepository.xcodeproj">
+         location = "group:PhotoPickerUserInterface/PhotoPickerUserInterface.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:FeatureDALLERepository/FeatureDALLERepository.xcodeproj">
+         location = "group:FeatureDALLEUserInterface/FeatureDALLEUserInterface.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:PhotoRepository/PhotoRepository.xcodeproj">
+         location = "group:ImageResultUserInterface/ImageResultUserInterface.xcodeproj">
       </FileRef>
    </Group>
    <FileRef

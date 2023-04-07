@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/12251145/KImageEraser.git",
       "state" : {
-        "revision" : "5c141b7c84e734a4e6174b6b24da4ee7c036d628",
-        "version" : "0.1.0"
+        "revision" : "6a431db170358691d6312894d9fc8251a83426e4",
+        "version" : "0.1.2"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/layoutBox/PinLayout",
       "state" : {
-        "revision" : "75c88c5c374c7bc78a154ffdf963cd362f38258a",
-        "version" : "1.10.3"
+        "revision" : "ce929a6ecdc6701adee9bdf9d949e0036f567ca7",
+        "version" : "1.10.4"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uber/RIBs",
       "state" : {
-        "revision" : "c03347f24e10be4e08ba3b7865e8818719c016d0",
-        "version" : "0.13.2"
+        "revision" : "dd2301b7029692a6c9a940bc2fc6b9d979697c88",
+        "version" : "0.13.3"
       }
     },
     {

@@ -104,8 +104,4 @@ final public class DALLEGenerateView: UIView {
     public func setProcessing(_ isProcessing: Bool) {
         showPhotoPickerButton.isProcessing = isProcessing
     }
-    
-    public func maskOn(_ isOn: Bool) {
-        showPhotoPickerButton.maskOn(isOn: isOn)
-    }
 }

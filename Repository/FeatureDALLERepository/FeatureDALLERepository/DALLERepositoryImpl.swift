@@ -20,7 +20,7 @@ public struct DALLERepositoryImpl: DALLERepository {
     }
     
     private let dallEApi: DALLEAPI
-    private let apiKey: String = "apiKey"
+    private let apiKey: String = "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"
     public init(dallEApi: DALLEAPI) {
         self.dallEApi = dallEApi
     }
@@ -72,7 +72,7 @@ public struct DALLERepositoryImpl: DALLERepository {
         let result = try await dallEApi.createImage(
             .init(
                 prompt: prompt,
-                n: 1,
+                n: n,
                 size: .high,
                 apiKey: apiKey
             )
@@ -89,7 +89,7 @@ public struct DALLERepositoryImpl: DALLERepository {
         let result = try await dallEApi.variationImage(
             .init(
                 image: data,
-                n: 1,
+                n: n,
                 size: .high,
                 apiKey: apiKey
             )
@@ -107,7 +107,7 @@ public struct DALLERepositoryImpl: DALLERepository {
             .init(
                 prompt: prompt,
                 image: data,
-                n: 3,
+                n: n,
                 size: .high,
                 apiKey: apiKey
             )

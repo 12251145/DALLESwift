@@ -85,22 +85,12 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                 case .generateButtonTap:
                     if let currentState = self?.stateRelay.value {
                         
-                        if currentState.mask == nil {
-
-                            self?.router?.routeToImageResult(
-                                prompt: currentState.prompt,
-                                n: currentState.n,
-                                image: currentState.pngData,
-                                masked: false
-                            )
-                        } else {
-                            self?.router?.routeToImageResult(
-                                prompt: currentState.prompt,
-                                n: currentState.n,
-                                image: currentState.maskPngData,
-                                masked: true
-                            )
-                        }
+                        self?.router?.routeToImageResult(
+                            prompt: currentState.prompt,
+                            n: currentState.n,
+                            image: currentState.pngData,
+                            masked: currentState.masked
+                        )
                     }
                 case .imageButtonTap:
                     self?.router?.routeToPhotoPicker()
@@ -109,16 +99,14 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                         let isEnabled = newState.prompt.notNilNotEmpty()
                         newState.generateButtonEnabled = isEnabled
                         newState.image = nil
-                        newState.mask = nil
+                        newState.masked = false
                         self?.stateRelay.accept(newState)
                     }
                     
                 case .editMaskButtonTap:
                     if let currentState = self?.stateRelay.value {
-                        if let mask = currentState.mask {
+                        if let mask = currentState.image {
                             self?.presenter.presentImageEraser(with: mask)
-                        } else if let image = currentState.image {
-                            self?.presenter.presentImageEraser(with: image)                            
                         }
                     }
                     
@@ -127,6 +115,9 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
                         currentState.n = n
                         self?.stateRelay.accept(currentState)
                     }
+                    
+                case .imageEraseDone(let image):
+                    self?.setMask(image)
                 }
             })
             .disposeOnDeactivate(interactor: self)                
@@ -134,6 +125,34 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     func detachPhotoPicker() {
         router?.detachPhotoPicker()
+    }
+    
+    func setMask(_ image: UIImage) {
+        
+        var newState = self.stateRelay.value
+        newState.generateButtonEnabled = false
+        newState.imageProcessing = true
+        self.stateRelay.accept(newState)
+        
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            var completeState = newState
+            
+            if let currentImage = completeState.image {
+                if currentImage.hash != image.hash {
+                    
+                    let result = self?.resizedDownSampledImageAndData(image: image)
+                    
+                    completeState.masked = true
+                    completeState.image = result?.image
+                    completeState.pngData = result?.data
+                }
+            }
+            
+            completeState.generateButtonEnabled = true
+            completeState.imageProcessing = false
+            self?.stateRelay.accept(completeState)
+        }
     }
     
     func setImage(_ image: UIImage) {
@@ -153,26 +172,7 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
             
             var completeState = newState
             
-            guard let imageData = image.pngData() else {
-                completeState.image = nil
-                self?.stateRelay.accept(completeState)
-                return
-            }
-            
-            var result = self?.downSamplingImageDataUseCase.execute(data: imageData, originImage: image, maxMB: 4)
-            
-            var downSampledImage = result?.image
-            
-            if let isSquare = self?.isImageSquare(downSampledImage), !isSquare {
-                if let width = downSampledImage?.size.width {
-                    
-                    downSampledImage = downSampledImage?.resize(to: .init(width: width, height: width))
-                    
-                    if let downSampledImage, let correctData = downSampledImage.pngData() {
-                        result = self?.downSamplingImageDataUseCase.execute(data: correctData, originImage: downSampledImage, maxMB: 4)
-                    }
-                }
-            }
+            let result = self?.resizedDownSampledImageAndData(image: image)
             
             completeState.image = result?.image
             completeState.pngData = result?.data            
@@ -203,5 +203,27 @@ private extension FeatureDALLEInteractor {
         guard let image else { return false }
         
         return image.size.width == image.size.height
+    }
+    
+    func resizedDownSampledImageAndData(image: UIImage) -> (data: Data, image: UIImage)? {
+        
+        guard let imageData = image.pngData() else { return nil }
+
+        var result = downSamplingImageDataUseCase.execute(data: imageData, originImage: image, maxMB: 4)
+        
+        var downSampledImage = result?.image
+        
+        if !isImageSquare(downSampledImage) {
+            if let width = downSampledImage?.size.width {
+                
+                downSampledImage = downSampledImage?.resize(to: .init(width: width, height: width))
+                
+                if let downSampledImage, let correctData = downSampledImage.pngData() {
+                    result = downSamplingImageDataUseCase.execute(data: correctData, originImage: downSampledImage, maxMB: 4)
+                }
+            }
+        }
+        
+        return result
     }
 }

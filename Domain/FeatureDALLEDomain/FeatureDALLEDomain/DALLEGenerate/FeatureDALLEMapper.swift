@@ -22,12 +22,14 @@ extension FeatureDALLEUserInterface.FeatureDALLEPresentableAction {
             return .editMaskButtonTap
         case .nChanged(let n):
             return .nChanged(n: n)
+        case .imageEraseDone(let image):
+            return .imageEraseDone(image: image)
         }
     }
 }
 
 extension PresentationState {
     var toMapper: FeatureDALLEUserInterface.FeatureDALLEPresentableState {
-        return .init(image: image, mask: mask, prompt: prompt, generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight, imageProcessing: imageProcessing, pngData: pngData, maskPngData: maskPngData, n: n)
+        return .init(image: image, masked: masked, prompt: prompt, generateButtonEnabled: generateButtonEnabled, keyBoardHeight: keyBoardHeight, imageProcessing: imageProcessing, pngData: pngData, n: n)
     }
 }

@@ -90,19 +90,6 @@ public final class ImageSelectButton: UIView {
         processingBlurView.pin.all()
     }
     
-    public func maskOn(isOn: Bool) {
-        
-        var config = editMaskButton.config
-        
-        if isOn {
-            config.foregroundColor = .systemYellow
-        } else {
-            config.foregroundColor = .white
-        }
-        
-        editMaskButton.config = config
-    }
-    
     private func updateBorderPath() {
 
         let borderPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius)

@@ -19,11 +19,12 @@ public enum FeatureDALLEPresentableAction {
     case imageXButtonTap
     case editMaskButtonTap
     case nChanged(n: Int)
+    case imageEraseDone(image: UIImage)
 }
 
 public struct FeatureDALLEPresentableState {
     var image: UIImage?
-    var mask: UIImage?
+    var masked: Bool
     var prompt: String?
     var generateButtonEnabled: Bool
     var keyBoardHeight: CGFloat
@@ -34,24 +35,22 @@ public struct FeatureDALLEPresentableState {
     
     public init(
         image: UIImage? = nil,
-        mask: UIImage? = nil,
+        masked: Bool = false,
         prompt: String? = nil,
         generateButtonEnabled: Bool = false,
         keyBoardHeight: CGFloat = 0,
         imageProcessing: Bool = false,
         pngData: Data? = nil,
-        maskPngData: Data? = nil,
         n: Int = 1
     ) {
         
         self.image = image
-        self.mask = mask
+        self.masked = masked
         self.prompt = prompt
         self.generateButtonEnabled = generateButtonEnabled
         self.keyBoardHeight = keyBoardHeight
         self.imageProcessing = imageProcessing
         self.pngData = pngData
-        self.maskPngData = maskPngData
         self.n = n
     }
 }
@@ -167,7 +166,8 @@ public final class FeatureDALLEViewController: UIViewController {
 // MARK: - ImageEraserDelegate
 extension FeatureDALLEViewController: KImageEraserViewControllerDelegate {
     public func imageEraserViewControllerDoneImageErase(_ viewController: KImageEraser.KImageEraserViewController, image: UIImage) {
-        
+        listener?.action(.imageEraseDone(image: image))
+        viewController.dismiss(animated: true)
     }
     
     public func imageEraserViewControllerCloseButtonDidTap(_ viewController: KImageEraser.KImageEraserViewController) {
