@@ -5,6 +5,7 @@
 //  Created by Hoen on 2023/03/18.
 //
 
+import BaseDependencyDomain
 import RIBs
 
 
@@ -47,6 +48,7 @@ public final class ImageResultBuilder: Builder<ImageResultDependency>, ImageResu
         let viewController = ImageResultPresenter()
         let interactor = ImageResultInteractor(
             generateImageUseCase: RequestGenerateImageUseCaseImpl(),
+            downSamplingImageDataUseCase: DownSamplingImageDataUseCaseImpl(),
             presenter: viewController,
             prompt: prompt,
             n: n,

@@ -23,7 +23,7 @@ public protocol FeatureDALLEViewControllable: NavigateViewControllable {
 final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, FeatureDALLEViewControllable>, FeatureDALLERouting {
     
     private let imageResultBuilder: ImageResultBuildable
-    private var imageRouter: ImageResultRouting?
+    private var imageResultRouter: ImageResultRouting?
     
     private let photoPickerBuilder: PhotoPickerBuilder
     private var photoPickerRouter: PhotoPickerRouting?
@@ -44,7 +44,7 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
     
     func routeToImageResult(prompt: String? , n: Int, image: Data?, masked: Bool) {
         let router = imageResultBuilder.build(withListener: interactor, prompt: prompt, n: n, image: image, masked: masked)
-        imageRouter = router
+        imageResultRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .automatic)
     }
@@ -54,6 +54,13 @@ final class FeatureDALLERouter: ViewableRouter<FeatureDALLEInteractable, Feature
         photoPickerRouter = router
         attachChild(router)
         viewController.presentViewController(viewController: router.viewControllable, modalPresentationStyle: .fullScreen)
+    }
+    
+    func detachImageResult() {
+        guard let router = imageResultRouter else { return }
+        router.viewControllable.uiviewController.dismiss(animated: true)
+        detachChild(router)
+        imageResultRouter = nil
     }
 
     func detachPhotoPicker() {

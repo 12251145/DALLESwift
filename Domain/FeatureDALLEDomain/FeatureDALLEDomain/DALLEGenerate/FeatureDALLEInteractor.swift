@@ -19,6 +19,7 @@ public protocol FeatureDALLERouting: ViewableRouting {
     func routeToImageResult(prompt: String?, n: Int, image: Data?, masked: Bool)
     func routeToPhotoPicker()
     
+    func detachImageResult()
     func detachPhotoPicker()
 }
 
@@ -125,6 +126,10 @@ final class FeatureDALLEInteractor: PresentableInteractor<FeatureDALLEPresentabl
     
     func detachPhotoPicker() {
         router?.detachPhotoPicker()
+    }
+    
+    func detachImageResult() {
+        router?.detachImageResult()
     }
     
     func setMask(_ image: UIImage) {

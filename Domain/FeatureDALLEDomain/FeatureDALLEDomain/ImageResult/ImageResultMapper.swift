@@ -12,12 +12,16 @@ extension ImageResultUserInterface.ImageResultPresentableAction {
         switch self {
         case .viewDidLoad:
             return .viewDidLoad
+        case .variationButtonDidTap(let image):
+            return .variationButtonDidTap(image: image)
+        case .xButtonDidTap:
+            return .xButtonDidTap
         }
     }
 }
 
 extension ImageResultPresentationState {
     var toMapper: ImageResultUserInterface.ImageResultPresentableState {
-        return .init(images: images)
+        return .init(images: images, variationButtonEnabled: variationButtonEnabled)
     }
 }

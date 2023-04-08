@@ -13,13 +13,17 @@ import UIKit
 
 public enum ImageResultPresentableAction {
     case viewDidLoad
+    case variationButtonDidTap(image: UIImage)
+    case xButtonDidTap
 }
 
 public struct ImageResultPresentableState {
     var images: [UIImage]
+    var variationButtonEnabled: Bool
     
-    public init(images: [UIImage] = []) {
+    public init(images: [UIImage] = [], variationButtonEnabled: Bool = false) {
         self.images = images
+        self.variationButtonEnabled = variationButtonEnabled
     }
 }
 
@@ -57,6 +61,26 @@ public final class ImageResultViewController: UIViewController {
     
     func bindAction() {
         listener?.action(.viewDidLoad)
+        
+        imageResultView.variationButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+
+                guard let isEmpty = self?.images.isEmpty,
+                      !isEmpty,
+                      let collectionViewCenter = self?.imageResultView.imageCollectionView.center,
+                      let cell = self?.view.hitTest(collectionViewCenter, with: .none) as? GeneratedImageCell,
+                      let index = self?.imageResultView.imageCollectionView.indexPath(for: cell)?.item,
+                      let image = self?.images[index] else { return }
+                
+                self?.listener?.action(.variationButtonDidTap(image: image))
+            })
+            .disposed(by: disposeBag)
+        
+        imageResultView.xButton.button.rx.tap
+            .subscribe { [weak self] _ in
+                self?.listener?.action(.xButtonDidTap)
+            }
+            .disposed(by: disposeBag)
     }
     
     func bindState() {
@@ -66,6 +90,14 @@ public final class ImageResultViewController: UIViewController {
             .drive(onNext: { [weak self] images in
                 self?.images = images
                 self?.imageResultView.imageCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        listener?.presentableState
+            .map(\.variationButtonEnabled)
+            .asDriver(onErrorJustReturn: false)
+            .drive(onNext: { [weak self] isEnabled in                
+                self?.imageResultView.variationButton.isEnabled = isEnabled
             })
             .disposed(by: disposeBag)
     }

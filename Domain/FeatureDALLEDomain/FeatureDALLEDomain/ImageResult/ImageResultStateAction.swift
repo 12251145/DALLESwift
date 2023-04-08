@@ -11,13 +11,17 @@ import UIKit
 
 public enum ImageResultPresentationAction {
     case viewDidLoad
+    case variationButtonDidTap(image: UIImage)
+    case xButtonDidTap
 }
 
 public struct ImageResultPresentationState {
     var images: [UIImage]
+    var variationButtonEnabled: Bool
     
-    public init(images: [UIImage] = []) {
+    public init(images: [UIImage] = [], variationButtonEnabled: Bool = false) {
         self.images = images
+        self.variationButtonEnabled = variationButtonEnabled
     }
 }
 
